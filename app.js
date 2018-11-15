@@ -7,6 +7,7 @@ const bodyParser   = require('body-parser');
 const session      = require('express-session');
 const uuid         = require('node-uuid');
 const assignId     = require('./middlewares/assignId');
+const Index        = require('./controllers');
 const app          = express();
 
 // view engine setup
@@ -38,6 +39,12 @@ app.use(express.static(path.join(__dirname, 'static')));
 /**
  * router
  */
+app.use('/', function(req, res, next) {
+
+  let index = new Index();
+
+  index.index(req, res, next);
+})
 
 /**
  * catch 404 and forward to error handler

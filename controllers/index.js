@@ -4,7 +4,16 @@
 class Index{
   constructor(){}
 
+  /**
+   *
+   * @param req
+   * @param res
+   * @param next
+   */
+  index(req, res, next){
 
+    res.render('index')
+  }
 }
 
 module.exports = Index;

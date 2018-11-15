@@ -5,147 +5,57 @@
         <title>SpaceLab</title>
         <link rel=stylesheet href=/app/assets/css/magic.css>
         <link rel=stylesheet href=/app/assets/css/iview.css>
-
-        <style>
-            html,body{
-                padding: 0;
-                margin: 0;
-                height: 100%;
-            }
-            .left-content li,.left-content ul{
-                margin: 0;
-                padding: 0;
-            }
-            #app,.left{
-                height: 100%;
-            }
-            .left{
-                width: 100%;
-                overflow: hidden;
-                position: relative;
-                height: 80px;
-            }
-
-            .left-header{
-                width: 187px;
-                min-height: 80px;
-                background: #1abc9c url(/app/img/logo_old.png) /*tpa=http://authenticgoods.co/wrapbootstrap/themes/spacelab/assets/img/logo.png*/ no-repeat 25px 26px;
-                background-size: 55px;
-                background-position: 35px 41%;
-                float: left;
-            }
-            .banner{
-                height: 100%;
-            }
-            .content{
-                height: 100%;
-            }
-            .left-header>h3{
-                position: absolute;
-                left: 89px;
-                color: #FFF;
-                font-weight: lighter;
-                font-size: 22px;
-                margin-top: 28px;
-            }
-            .left-content{
-                overflow: hidden;
-                height: 100%;
-                width: 187px;
-                float: left;
-                background: #293949;
-                margin-right: 15px;
-            }
-
-            .right-content{
-                height: 100%;
-                background: #f1f2f7;
-                padding: 10px 0;
-            }
-            .left-content li{
-                color: #aeb2b7;
-                padding-left: 25px;
-                list-style-type: none;
-                border-bottom: 1px solid rgba(255, 255, 255, .05);
-            }
-
-            .left-content li i{
-
-                font-size: 12px;
-            }
-            .left-content li a{
-                color: #aeb2b7;
-                text-decoration: none;
-                padding: 18px 88px 18px 10px;
-                font-size: 12px;
-                outline: 0;
-                line-height: 54px;
-            }
-            .left-content li:hover{
-                 color: #1abc9c;
-             }
-            .left-content li:hover a{
-                color: #1abc9c;
-            }
-            .top-btn{
-                background: #F6F6F6;
-                border-radius: 50%;
-                -moz-border-radius: 50%;
-                -webkit-border-radius: 50%;
-                width: 35px;
-                height: 35px;
-                margin-left: 210px;
-                margin-top: 24px;
-            }
-            .top-btn i{
-                margin-top: 12px;
-                margin-left: 12px;
-                cursor: pointer;
-                color: #797979;
-            }
-            .top-btn:hover{
-                background: #1abc9c;
-            }
-            .top-btn:hover i{
-                color: #FFF;
-            }
-        </style>
+        <link rel=stylesheet href=/app/css/index.css>
     </head>
     <body>
     <div class=panel-body style="display: none">
         <div id=sales-chart style="height: 250px;"></div>
     </div>
     <div id=app>
-        <div class="left">
-            <!--<span class="left-icon">ii</span>-->
-            <div class="left-header">
-                <h3><i></i>Magic</h3>
-            </div>
-            <div class="banner">
-                <div class="top-btn">
-                    <i class="fa fa-bars"></i>
-                </div>
-            </div>
-        </div>
         <div class="content">
-            <div class="left-content">
-                <ul>
-                        <li>
-                            <i class="fa fa-home"></i><a href="/">首页</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-table"></i><a href="/index/report">统计报表</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-file"></i><a href="/index/conf">配置中心</a>
-                        </li>
-                    </ul>
+            <div class="content-left">
+                <template>
+                    用户：<i-input v-model="username" placeholder="用户名" style="width: 200px" />
+                </template>
+                <template>
+                    密码：<i-input v-model="ps" type="password" placeholder="密码" style="width: 200px" />
+                </template>
+                <template>
+                    网页地址：<i-input v-model="detailUrl" placeholder="输入演唱会URL地址" style="width: 500px" />
+                </template>
+                <div style="height: 5px"></div>
+                <br />
+                <template>
+                    姓名：<i-input v-model="user" placeholder="姓名" style="width: 200px" />
+                </template>
+                <template>
+                    电话：<i-input v-model="tel_1" placeholder="010" style="width: 60px" />
+                </template>
+                <template>
+                    -<i-input v-model="tel_2" type="password" placeholder="5811" style="width: 60px" />
+                </template>
+                <template>
+                    -<i-input v-model="tel_3" type="password" placeholder="2859" style="width: 65px" />
+                </template>
+                <template>
+                    邮寄地址：<i-input v-model="address" placeholder="输入地址" style="width: 500px" />
+                </template>
+                <div style="height: 5px"></div>
+                <br />
+                <template>
+                    邮箱：<i-input v-model="email" placeholder="输入邮箱" style="width: 130px" />
+                </template>
+                <br />
+                <template>
+                    <i-button type="primary" style="margin-top: 10px">开始抢票</i-button>
+                </template>
             </div>
-            <div class="right-content">
+            <iframe src="http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001" width="1000px" height="800px"></iframe>
+            <!--<div class="right-content">
                 <i-button type="primary">Primary</i-button>
                 <i-button type="dashed">Dashed</i-button>
                 <i-button type="text">Text</i-button>
-            </div>
+            </div>-->
         </div>
     </div>
     <script src=/app/assets/js/jquery-1.10.2.min.js></script>
@@ -157,7 +67,16 @@
           new Vue({
             el: '#app',
             data: {
-              visible: false
+              visible: false,
+              email:'',
+              address:'',
+              detailUrl:'',
+              user:'',
+              tel_1:'',
+              tel_2:'',
+              tel_3:'',
+              username:'',
+              ps:''
             },
             methods: {
               show: function () {
