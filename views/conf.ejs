@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>新铁管理</title>
+        <link rel=stylesheet href=/app/assets/css/magic.css>
+        <link rel=stylesheet href=/app/assets/css/iview.css>
+        <link rel=stylesheet href=/app/css/conf.css>
+    </head>
+    <body>
+    <div class=panel-body style="display: none">
+        <div id=sales-chart style="height: 250px;"></div>
+    </div>
+    <div id=app>
+        <div class="left">
+            <!--<span class="left-icon">ii</span>-->
+            <div class="left-header">
+                <h3><i></i>Magic</h3>
+            </div>
+            <div class="banner">
+                <div class="top-btn">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <ul>
+                    <li>
+                        <i class="fa fa-home"></i><a href="javascript:void(0);">首页</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-table"></i><a href="/index/report">统计报表</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-file"></i><a href="/index/conf">配置中心</a>
+                    </li>
+                    </ul>
+            </div>
+            <div class="right-content">
+                <h3>调整拦截比例</h3>
+
+                <p><i>当前拦截状态：</i> <em>正常</em></p>
+                <p><i>当前拦截比例：</i> <em>{{value}}%</em></p>
+
+                <Slider v-model="value" :step="10" style="width:70%; margin-bottom: 30px" show-stops show-input></Slider>
+
+                <i-button type="primary" @click="submit">提交更新</i-button>
+            </div>
+        </div>
+
+        <Modal
+                v-model="confirm"
+                title="修改拦截比例"
+                @on-ok="ok"
+                @on-cancel="cancel">
+            <p>确定要更新当前的拦截比例？</p>
+        </Modal>
+
+    </div>
+
+
+    <script src=/app/assets/js/jquery-1.10.2.min.js></script>
+    <script src=/app/assets/js/vue.min.js></script>
+    <script src=/app/assets/js/iview.min.js></script>
+    <script>
+        $(function() {
+
+          new Vue({
+            el: '#app',
+            data: {
+              value: 30,
+              confirm: false
+            },
+            methods: {
+              submit: function() {
+                this.confirm = true;
+              },
+              show: function () {
+                this.visible = true;
+              },
+              ok () {
+                var that = this;
+
+                $.ajax({
+                  url: `/product/updaterate/${that.value}`,
+                  type: 'POST',
+                  success: function(res) {
+                    if(res.status-0 === 200 && !res.err){
+                      that.$Message.success({
+                        content: res.msg,
+                        duration: 2,
+                        closable: true
+                      });
+
+                      that.value = res.result;
+                    }else{
+                      that.$Message.error({
+                        content: res.msg,
+                        duration: 2,
+                        closable: true
+                      });
+                    }
+                  }
+                })
+              },
+              cancel () {
+                this.$Message.info('取消修改');
+              }
+            }
+          })
+
+
+          var opened = true;
+          $('.top-btn').click(function() {
+
+            if(opened)
+              $('.left-content').animate({
+                'width':'0px'
+              }, 'speed', function() {
+                opened = false;
+              });
+            else
+              $('.left-content').animate({
+                'width':'187px'
+              }, 'speed', function() {
+                opened = true;
+              });
+
+          });
+
+        })
+    </script>
+    </body>
+</html>

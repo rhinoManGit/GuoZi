@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>SpaceLab</title>
+        <link rel=stylesheet href=/app/assets/css/magic.css>
+        <link rel=stylesheet href=/app/assets/css/iview.css>
+
+        <style>
+            html,body{
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .left-content li,.left-content ul{
+                margin: 0;
+                padding: 0;
+            }
+            #app,.left{
+                height: 100%;
+            }
+            .left{
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                height: 80px;
+            }
+
+            .left-header{
+                width: 187px;
+                min-height: 80px;
+                background: #1abc9c url(/app/img/logo_old.png) /*tpa=http://authenticgoods.co/wrapbootstrap/themes/spacelab/assets/img/logo.png*/ no-repeat 25px 26px;
+                background-size: 55px;
+                background-position: 35px 41%;
+                float: left;
+            }
+            .banner{
+                height: 100%;
+            }
+            .content{
+                height: 100%;
+            }
+            .left-header>h3{
+                position: absolute;
+                left: 89px;
+                color: #FFF;
+                font-weight: lighter;
+                font-size: 22px;
+                margin-top: 28px;
+            }
+            .left-content{
+                overflow: hidden;
+                height: 100%;
+                width: 187px;
+                float: left;
+                background: #293949;
+                margin-right: 15px;
+            }
+
+            .right-content{
+                height: 100%;
+                background: #f1f2f7;
+                padding: 10px 0;
+            }
+            .left-content li{
+                color: #aeb2b7;
+                padding-left: 25px;
+                list-style-type: none;
+                border-bottom: 1px solid rgba(255, 255, 255, .05);
+            }
+
+            .left-content li i{
+
+                font-size: 12px;
+            }
+            .left-content li a{
+                color: #aeb2b7;
+                text-decoration: none;
+                padding: 18px 88px 18px 10px;
+                font-size: 12px;
+                outline: 0;
+                line-height: 54px;
+            }
+            .left-content li:hover{
+                 color: #1abc9c;
+             }
+            .left-content li:hover a{
+                color: #1abc9c;
+            }
+            .top-btn{
+                background: #F6F6F6;
+                border-radius: 50%;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin-left: 210px;
+                margin-top: 24px;
+            }
+            .top-btn i{
+                margin-top: 12px;
+                margin-left: 12px;
+                cursor: pointer;
+                color: #797979;
+            }
+            .top-btn:hover{
+                background: #1abc9c;
+            }
+            .top-btn:hover i{
+                color: #FFF;
+            }
+        </style>
+    </head>
+    <body>
+    <div class=panel-body style="display: none">
+        <div id=sales-chart style="height: 250px;"></div>
+    </div>
+    <div id=app>
+        <div class="left">
+            <!--<span class="left-icon">ii</span>-->
+            <div class="left-header">
+                <h3><i></i>Magic</h3>
+            </div>
+            <div class="banner">
+                <div class="top-btn">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <ul>
+                        <li>
+                            <i class="fa fa-home"></i><a href="/">首页</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-table"></i><a href="/index/report">统计报表</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-file"></i><a href="/index/conf">配置中心</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="right-content">
+                <i-button type="primary">Primary</i-button>
+                <i-button type="dashed">Dashed</i-button>
+                <i-button type="text">Text</i-button>
+            </div>
+        </div>
+    </div>
+    <script src=/app/assets/js/jquery-1.10.2.min.js></script>
+    <script src=/app/assets/js/vue.min.js></script>
+    <script src=/app/assets/js/iview.min.js></script>
+    <script>
+        $(function() {
+
+          new Vue({
+            el: '#app',
+            data: {
+              visible: false
+            },
+            methods: {
+              show: function () {
+                this.visible = true;
+              }
+            }
+          })
+
+
+          var opened = true;
+          $('.top-btn').click(function() {
+
+            if(opened)
+              $('.left-content').animate({
+                'width':'0px'
+              }, 'speed', function() {
+                opened = false;
+              });
+            else
+              $('.left-content').animate({
+                'width':'187px'
+              }, 'speed', function() {
+                opened = true;
+              });
+
+          });
+
+        })
+    </script>
+    </body>
+</html>

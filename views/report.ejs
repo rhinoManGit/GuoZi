@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>新铁管理</title>
+        <link rel=stylesheet href=/app/assets/css/magic.css>
+        <link rel=stylesheet href=/app/assets/css/iview.css>
+        <link rel=stylesheet href=/app/css/report.css>
+
+    </head>
+    <body>
+    <div class=panel-body style="display: none">
+        <div id=sales-chart style="height: 250px;"></div>
+    </div>
+    <div id=app>
+        <div class="left">
+            <!--<span class="left-icon">ii</span>-->
+            <div class="left-header">
+                <h3><i></i>Magic</h3>
+            </div>
+            <div class="banner">
+                <div class="top-btn">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <ul>
+                    <li>
+                        <i class="fa fa-home"></i><a href="javascript:void(0);">首页</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-table"></i><a href="/index/report">统计报表</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-file"></i><a href="/index/conf">配置中心</a>
+                    </li>
+                    </ul>
+            </div>
+            <div class="right-content">
+                <h3>拦截统计</h3>
+
+                <Row>
+                    <i-col span="6">
+                        开始时间
+                        <Date-Picker type="datetime" v-model="startTime" placeholder="Select date" style="width: 200px"></Date-Picker>
+                    </i-col>
+                    <i-col span="6">
+                        截止时间
+                        <Date-Picker type="datetime" v-model="endTime" placeholder="Select date" style="width: 200px"></Date-Picker>
+                    </i-col>
+                    <i-col span="8">
+                        商品关键词<i-input v-model="keyword" placeholder="请输入关键词" style="width: 300px;margin-left: 3px" />
+                        <i-select v-model="status" style="display: none">
+                            <i-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                        </i-select>
+                    </i-col>
+                </Row>
+                <br>
+                <Row>
+                    <i-col span="4">
+                        <i-button type="primary" style="margin-bottom: 15px;margin-left: 52px;" @click="fetch">查询</i-button>
+                    </i-col>
+                    <i-col span="8"></i-col>
+                    <i-col span="8"></i-col>
+                </Row>
+
+                <div class="content-list">
+                    <h3><span>列表</span>
+                        <em style="color: #F44336;font-size: 12px;font-weight: 400;">
+                            （*根据查询条件查询到的数据分页查看）</em></h3>
+                    <i-table height="300" :columns="columns" :data="data"></i-table>
+                    <div style="padding: 10px 0;">
+                        <Page :total="total" :current="currentPage" show-total @on-change="pageChange"/>
+                    </div>
+
+                    <h3><span>汇总</span>
+                        <em style="color: #F44336;font-size: 12px;font-weight: 400;">
+                            （*根据查询条件查询到的总数据汇总）</em></h3>
+                    <div class="total-info">
+                        <p><em>时间区间：</em>
+                            <i>{{formatStart()}}</i>
+                            &nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;
+                            <i>{{formatEnd()}}</i></p>
+                        <Row>
+                            <i-col span="6">
+                                <p><em>商品总数：</em><i>[&nbsp;{{total}}&nbsp;件&nbsp;]</i></p>
+                            </i-col>
+                            <i-col span="6">
+                                <p><em>商品拦截总数：</em><i>{{quantity}}件</i></p>
+                            </i-col>
+                            <i-col span="6">
+                                <p><em>商品非拦截总数：</em><i>{{noQuantity}}件</i></p>
+                            </i-col>
+                        </Row>
+                        <Row>
+                            <i-col span="6">
+                                <p><em>总流水金额：</em><i>[&nbsp;{{amount + noAmount}}&nbsp;元&nbsp;]</i></p>
+                            </i-col>
+                            <i-col span="6">
+                                <p><em>拦截总金额：</em><i>{{amount}}元</i></p>
+                            </i-col>
+                            <i-col span="6">
+                                <p><em>非拦截总金额：</em><i>{{noAmount}}元</i></p>
+                            </i-col>
+                        </Row>
+                    </div>
+
+                    <div id="main" style="height:300px; background: #FFF"></div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <p style="padding: 10px 0 30px 0;text-align: center;">新上铁高铁商业管理系统 https://github.com/rhinoManGit.</p>
+    </div>
+
+    <script src=/app/assets/js/jquery-1.10.2.min.js></script>
+    <script src=/app/assets/js/echarts.common.min.js></script>
+    <script src=/app/assets/js/vue.min.js></script>
+    <script src=/app/assets/js/iview.min.js></script>
+    <script>
+        $(function() {
+
+          new Vue({
+            el: '#app',
+            data: {
+              keyword:'',
+              amount: '--',
+              noAmount: '--',
+              quantity: '--',
+              noQuantity: '--',
+              cityList : [
+                {
+                  value: '1',
+                  label: '被拦截',
+                },
+                {
+                  value: '2',
+                  label: '未拦截',
+                },
+                {
+                  value: '3',
+                  label: '不限',
+                },
+              ],
+              total    : '--',
+              currentPage: 1,
+              status   : '3',
+              startTime: new Date(1536076800000),
+              endTime  : new Date(1537545600000),
+              columns  : [
+                {
+                  title: '商品名称',
+                  key  : 'name',
+                  width: 300,
+                  align: 'center',
+                },
+                {
+                  title: '商品价格',
+                  key  : 'price',
+                  width: 90,
+                  align: 'center',
+                },
+                {
+                  title: '购买数量',
+                  key  : 'purchaseNumber',
+                  width: 90,
+                  align: 'center',
+                },
+                {
+                  title: '拦截状态',
+                  key  : 'status',
+                  width: 100,
+                  align: 'center',
+                },
+                {
+                  title: '下单时间',
+                  key  : 'orderTime',
+                  width: 170,
+                  align: 'center',
+                },
+                {
+                  title: '商品描述',
+                  key  : 'info',
+                },
+              ],
+              data     : [
+                /*{
+                  name     : '哇哈哈 养乐多',
+                  price    : 24, purchaseNumber: 5,
+                  status   : '已拦截',
+                  orderTime: '2016-10-03',
+                  info     : '瑞金医院携手养乐多共同研究——益生菌干酪乳杆菌代田株（LcS）对帕金森病胃肠症状的影响\n' +
+                  '近日，上海交通大学医学院附属瑞金医院与株式会社养乐多本社签署了《益生菌干酪乳杆菌代田株（LcS）对帕金森病胃肠症状的影响》研究委托协议书，标志着该共同研究项目正式启动。',
+                },
+                {
+                  name     : '哇哈哈 矿泉水',
+                  price    : 18, purchaseNumber: 5,
+                  status   : '未拦截',
+                  orderTime: '2016-10-03',
+                  info     : '哇哈哈矿泉水....',
+                }*/
+              ],
+            },
+            methods: {
+              formatStart: function () {
+                let d = this.startTime? new Date(this.startTime) : new Date;
+
+                return d.getFullYear() + '年' + (d.getMonth() + 1
+                )
+                + '月' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+              },
+              formatEnd: function () {
+                let d = this.endTime? new Date(this.endTime) : new Date;
+
+                return d.getFullYear() + '年' + (d.getMonth() + 1
+                )
+                + '月' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+              },
+              draw: function() {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('main'));
+
+                var option = {
+                  title  : {
+                    text   : '拦截统计',
+                    subtext: '统计比例',
+                    x      : 'right'
+                  },
+                  tooltip: {
+                    trigger  : 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                  },
+                  legend : {
+                    orient: 'vertical',
+                    left  : 'left',
+                    data  : ['金额拦截', '金额未拦截', '商品拦截', '商品未拦截']
+                  },
+                  series : [
+                    {
+                      name     : '商品总数量' + this.total,
+                      type     : 'pie',
+                      radius   : '55%',
+                      center   : ['35%', '50%'],
+                      data     : [
+                        {value: this.quantity, name: '商品拦截'},
+                        {value: this.noQuantity, name: '商品未拦截'}
+                      ],
+                      itemStyle: {
+                        emphasis: {
+                          shadowBlur   : 10,
+                          shadowOffsetX: 0,
+                          shadowColor  : 'rgba(0, 0, 0, 0.5)'
+                        }
+                      }
+                    },
+                    {
+                      name  : '总金额' + (this.amount -0 + this.noAmount - 0),
+                      type  : 'pie',
+                      radius: '55%',
+                      center: ['70%', '50%'],
+                      data  : [
+                        {value: this.amount, name: '金额拦截'},
+                        {value: this.noAmount, name: '金额未拦截'}
+                      ]
+                    }
+                  ],
+                  backgroundColor: '#e8eaf3'
+                };
+
+                myChart.setOption(option);
+              },
+              fetch: function() {
+                var that = this;
+
+                that.$Loading.start();
+
+                $.ajax({
+                  url: `/product/list`,
+                  type: 'GET',
+                  data: {
+                    startTime: +new Date(that.startTime),
+                    endTime  : +new Date(that.endTime),
+                    status   : that.status,
+                    keyword  : that.keyword,
+                    page     : that.currentPage,
+                  },
+                  success: function(res) {
+                    if(!res.err){
+                      that.$Loading.finish();
+                      that.data  = res.list;
+                      that.total = res.total;
+
+                      res.totalInfo.forEach(function(item) {
+                        if(item._id -0 === 1){
+                          that.quantity = item.quantity;
+                          that.amount = item.amount;
+                        }else if(item._id -0 === 2){
+                          that.noQuantity = item.quantity;
+                          that.noAmount = item.amount;
+                        }
+                      })
+
+                      that.draw();
+                    }else{
+                      that.$Loading.error();
+                      that.$Message.error({
+                        content: res.msg,
+                        duration: 2,
+                        closable: true
+                      });
+                    }
+
+                  },
+                  error: function() {
+                    that.$Loading.error();
+                  }
+                })
+              },
+              show: function () {
+                this.visible = true;
+              },
+              pageChange: function(page) {
+                this.currentPage = page;
+                console.log(page, '.......', this.currentPage)
+                this.fetch(page)
+              }
+            }
+          })
+
+
+          var opened = true;
+          $('.top-btn').click(function() {
+
+            if(opened)
+              $('.left-content').animate({
+                'width':'0px'
+              }, 'speed', function() {
+                opened = false;
+              });
+            else
+              $('.left-content').animate({
+                'width':'187px'
+              }, 'speed', function() {
+                opened = true;
+              });
+
+          });
+
+        })
+    </script>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.left-content li,.left-content ul{
+    margin: 0;
+    padding: 0;
+}
+#app,.left{
+    height: 100%;
+}
+.left{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 80px;
+}
+
+.left-header{
+    width: 187px;
+    min-height: 80px;
+    background: #1abc9c url(/app/img/logo_old.png) /*tpa=http://authenticgoods.co/wrapbootstrap/themes/spacelab/assets/img/logo.png*/ no-repeat 25px 26px;
+    background-size: 55px;
+    background-position: 35px 41%;
+    float: left;
+}
+.banner{
+    height: 100%;
+}
+.content{
+    height: 100%;
+}
+.left-header>h3{
+    position: absolute;
+    left: 89px;
+    color: #FFF;
+    font-weight: lighter;
+    font-size: 22px;
+    margin-top: 28px;
+}
+.left-content{
+    overflow: hidden;
+    height: 100%;
+    width: 187px;
+    float: left;
+    background: #293949;
+    margin-right: 10px;
+}
+
+.right-content{
+    height: 100%;
+    background: #f1f2f7;
+    padding: 10px 10px;
+    overflow: hidden;
+}
+.left-content li{
+    overflow: hidden;
+    color: #aeb2b7;
+    padding-left: 25px;
+    list-style-type: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.left-content li i{
+    font-size: 12px;
+}
+.left-content li a{
+    color: #aeb2b7;
+    text-decoration: none;
+    padding: 18px 88px 18px 10px;
+    font-size: 12px;
+    outline: 0;
+    line-height: 54px;
+}
+.left-content li:hover{
+    color: #1abc9c;
+}
+.left-content li:hover a{
+    color: #1abc9c;
+}
+.top-btn{
+    background: #F6F6F6;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-left: 210px;
+    margin-top: 24px;
+}
+.top-btn i{
+    margin-top: 12px;
+    margin-left: 12px;
+    cursor: pointer;
+    color: #797979;
+}
+.top-btn:hover{
+    background: #1abc9c;
+}
+.top-btn:hover i{
+    color: #FFF;
+}
+.right-content h3{
+    border-bottom: 1px solid #dcddde;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.right-content p i{
+    color: #1abc9b;
+    font-style: normal;
+}
+.right-content p{
+    padding: 10px 0;
+}
+.right-content p em{
+    color: #1abc9b;
+    font-weight: 700;
+    font-style: normal;
+}
