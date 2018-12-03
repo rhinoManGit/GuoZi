@@ -21,7 +21,10 @@
                     密码：<i-input v-model="ps" type="password" placeholder="密码" style="width: 200px" />
                 </template>
                 <template>
-                    网页地址：<i-input v-model="detailUrl" placeholder="输入演唱会URL地址" style="width: 500px" />
+                    演唱会id：<i-input v-model="detailId" placeholder="输入演唱会URL地址" style="width: 200px" />
+                </template>
+                <template>
+                    时间（选择月份即可）：<Date-Picker type="date" v-model="date" placeholder="Select date" style="width: 200px"></Date-Picker>
                 </template>
                 <div style="height: 5px"></div>
                 <br />
@@ -47,15 +50,23 @@
                 </template>
                 <br />
                 <template>
-                    <i-button type="primary" style="margin-top: 10px">开始抢票</i-button>
+                    <i-button type="primary" style="margin-top: 10px" @click="running">开始抢票</i-button>
                 </template>
             </div>
-            <iframe src="http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001" width="1000px" height="800px"></iframe>
-            <!--<div class="right-content">
-                <i-button type="primary">Primary</i-button>
-                <i-button type="dashed">Dashed</i-button>
-                <i-button type="text">Text</i-button>
-            </div>-->
+            <!-- 内容 -->
+            <div class="frame-content">
+                <h3 style="padding: 0px 10px;color: #a01717dd;">当前演唱会【本月】场次时间：</h3>
+                <p style="padding: 0 30px;color: #03A9F4;">{{monthList.join(' , ')}}</p>
+
+                <h3 style="padding: 0px 10px;color: #a01717dd;">演唱会抢票状态：</h3>
+                <p style="padding: 0 30px;color: #03A9F4;">[{{sDateStatus}}]</p>
+
+                <h3 style="padding: 0px 10px;color: #a01717dd;">获取当前日期{{date}}坐席信息：</h3>
+                <p style="padding: 0 30px;color: #03A9F4;">{{step3}}.......</p>
+
+                <h3 style="padding: 0px 10px;color: #a01717dd;">获取当天{{date}}场次时间：</h3>
+                <p style="padding: 0 30px;color: #03A9F4;">{{playTime}}.......</p>
+            </div>
         </div>
     </div>
     <script src=/app/assets/js/jquery-1.10.2.min.js></script>
@@ -67,18 +78,85 @@
           new Vue({
             el: '#app',
             data: {
+              iframeUrl:'/*http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001*/',
               visible: false,
               email:'',
               address:'',
-              detailUrl:'',
+              date:'',
+              detailId:'30851',///*http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001*/
               user:'',
               tel_1:'',
               tel_2:'',
               tel_3:'',
               username:'',
-              ps:''
+              ps:'',
+              /**
+               * 本月可选场次
+               */
+              monthList: [],
+              dateStatus: false,
+              sDateStatus:'待开始',
+              resDate :'',
+              step3: '',
+
+              playTime:''
             },
             methods: {
+              running: function() {
+                let that = this;
+
+                if (!this.date || !this.detailId) {
+                  alert('请填写演唱会id和日期。');
+                  return;
+                }
+                let date  = new Date(this.date);
+                let sDate = `${date.getFullYear()}-${date.getMonth() + 1}`;
+
+                $.ajax({
+                  url    : `/index/fetchdetail?id=${that.detailId}&date=${sDate}`,
+                  success: function(res) {
+                    //console.log(res);
+                    //$('.frame-content').html(res);
+                    that.monthList = res;
+
+                    /**
+                     * 获取对应的坐席1
+                     */
+                    let current = +date;
+
+                    res.forEach(v=>{
+                      if(current === +new Date(`${v}  00:00:00`))
+                      {
+                        that.resDate = v;
+                        that.dateStatus = true;
+                        that.sDateStatus = '可以抢票';
+                      }
+                    })
+
+                    if(that.dateStatus){
+                        that.step3 = '开始获取坐席';
+                        that.fetchPlayTime();
+                    }
+                  },
+                });
+              },
+
+              /**
+               * 获取演唱会的具体时间。下面3点，7点等
+               * 返回值：<option value='' selected='selected'>회차 선택</option><option value='976608'>오후 3시 00분</option><option value='976612'>오후 7시 00분</option>
+               * 或者 <option value='976600'>오후 8시 00분</option>
+               *
+               */
+              fetchPlayTime: function() {
+                let that = this;
+                $.ajax({
+                  url    : `/index/fetchplaytime?id=${that.detailId}&date=${that.resDate.replace(/-/g, '')}`,
+                  success: function(res) {
+
+                    that.playTime = res;
+                  },
+                });
+              },
               show: function () {
                 this.visible = true;
               }

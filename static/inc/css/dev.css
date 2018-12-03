@@ -1,0 +1,54 @@
+.dialogfont { font-family: "돋움"; font-size: 11px; line-height:16px; }
+.ui-button-text { font-family: "돋움"; font-size: 11px; }
+.ui-autocomplete { max-height: 300px; overflow-y: auto; overflow-x: hidden; padding-right: 10px; z-index:10000 !important; }
+
+.nocss {}
+.dcursor { cursor:hand; cursor:pointer; }
+.dcursor span:hover { text-decoration:underline; }
+
+.imekor { ime-mode:active; }
+.imeeng { ime-mode:inactive; }
+.imedisable { ime-mode:disabled; }
+
+.onlynumber {}
+.noinput {}
+
+.inlinetooltip { color:#ABADB3; }
+
+#divPayInfoSendForm .PayInfoSendForm { z-index:100; position:absolute; top:38px; left:13px; width:0px; height:0px; background:#373635;}
+#divPayInfoSendForm .PayInfoSendForm iframe {background:#373635;}
+
+.lnb .gnbBB{width:310px;padding:8px;border:1px solid #FFF; height:15px; margin-top:2px; margin-left:2px;}
+
+
+/* located in demo.css and creates a little calendar icon
+ * instead of a text link for "Choose date"
+ */
+a.dp-choose-date {
+	float: left;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 5px 3px 0;
+	display: block;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(calendar.png) no-repeat; 
+}
+a.dp-choose-date.dp-disabled {
+	background-position: 0 -20px;
+	cursor: default;
+}
+/* makes the input field shorter once the date picker code
+ * has run (to allow space for the calendar icon
+ */
+input.dp-applied {
+	width: 140px;
+	float: left;
+}
+
+/*
+* DatePicker Imagebutton cursor
+*/
+.ui-datepicker-trigger{cursor:pointer}
+.off{display:none;}

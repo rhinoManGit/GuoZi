@@ -69,3 +69,6 @@ html,body{
 .top-btn:hover i{
     color: #FFF;
 }
+.frame-content{
+    height: 600px;
+}

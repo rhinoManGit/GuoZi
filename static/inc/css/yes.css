@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.bx_eventwrap {margin:0px 0;}
+.bx_event {position:relative; margin:20 0 0 0; padding:0;width:696px;height:162px; border:2px solid #d3d3d3; background:#fbfbfb url('http://tkfile.yes24.com/img/common/bx_eventbg.gif') 0 0 repeat-x;}
+.bx_event .flag {position:absolute; top:0; left:0; width:65px; height:56px;}
+.bx_event .econ {position:absolute; top:15px; left:40px; width:500px; height:145px; }
+.bx_event .econ dl {display:bolck; width:100%; color:#3c3c3c; font-size:12px;}
+.bx_event .econ dl dt {padding: 5px 0 5px 10px; font-size:14px; font-weight:bold; line-height:14px;}
+.bx_event .econ dl dd {padding: 5px 0 5px 10px;  color:#888;}
+.bx_event .econ dl dd.info {border-left:2px solid #3c3c3c; padding:2px 0 0 8px; line-height:16px;font-weight:bold; }
+.bx_event .econ dl dd.info span {color:#3c3c3c; font-size:11px; font-weight:normal; padding-right:5px;}
+.bx_event .eposter {float:right; }
+.bx_event .eposter img {width:130px; height:162px;}
+
+
+/* 이벤트 영역 댓글 기능 */
+.e_reply {text-align:center;}
+.e_reply div {margin:0 auto;}
+.e_reply .t_area {text-align:left; padding:5px 15px;}
+textarea.form_text {resize: none; }
+.form_text {width: 600px;height: 55px;overflow-y: auto;vertical-align: top;font-size: 12px; margin-bottom:10px;}
+.e_reply .bor_txt {font-size:11px;padding:5px 0;}
+.e_reply .bor_txt em {color:#4c7cce; text-decoration:underline;}
+.e_reply .re_list {font: 13px 맑은 고딕;color: #666;margin-top: 15px;}
+.e_reply .re_list ul li {list-style: none;border-bottom: 1px solid #d3d3d3;padding: 10px 15px;word-break: break-all;text-align: left; margin: 0 auto;line-height: 15px;}
+.e_reply .re_list ul li span {display: inline-block;}
+.e_reply .re_list ul li .id {padding: 0 10px 0 0;color: #4772be;margin-bottom: 5px;}
+.e_reply .re_list ul li p.img {margin:15px 0;}
+.e_reply .paging {padding:20px 0;}

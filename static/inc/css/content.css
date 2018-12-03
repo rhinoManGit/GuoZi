@@ -1,0 +1,717 @@
+@charset "utf-8";
+/*@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);*/
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal !important;
+  font-weight: 600;
+  src: url(/inc/font/NotoSansCJKkr-Bold.otf);
+  src: url(/inc/font/NotoSansCJKkr-Bold.eot?#iefix) format('embedded-opentype'),
+       url(/inc/font/NotoSansCJKkr-Bold.woff2) format('woff2'),
+       url(/inc/font/NotoSansCJKkr-Bold.woff) format('woff'),
+       url(/inc/font/NotoSansCJKkr-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal !important;
+  font-weight: 400;
+  src: url(/inc/font/NanumGothic.otf);
+  src: url(/inc/font/NanumGothic.eot?#iefix) format('embedded-opentype'),
+       url(/inc/font/NanumGothic.woff2) format('woff2'),
+       url(/inc/font/NanumGothic.woff) format('woff'),
+       url(/inc/font/NanumGothicBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal !important;
+  font-weight: 600;
+  src: url(/inc/font/NanumGothicBold.otf);
+  src: url(/inc/font/NanumGothicBold.eot?#iefix) format('embedded-opentype'),
+       url(/inc/font/NanumGothicBold.woff2) format('woff2'),
+       url(/inc/font/NanumGothicBold.woff) format('woff'),
+       url(/inc/font/NanumGothicBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal !important;
+  font-weight: 700;
+  src: url(/inc/font/NanumGothicExtraBold.otf);
+  src: url(/inc/font/NanumGothicExtraBold.eot?#iefix) format('embedded-opentype'),
+       url(/inc/font/NanumGothicExtraBold.woff2) format('woff2'),
+       url(/inc/font/NanumGothicExtraBold.woff) format('woff'),
+       url(/inc/font/NanumGothicExtraBold.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'yesB';
+	src:url('http://tkfile.yes24.com/entimg/font/yes24/Yes24B.eot');
+	src:url('http://tkfile.yes24.com/entimg/font/yes24/Yes24B.eot?#iefix') format('embedded-opentype'),url('http://tkfile.yes24.com/entimg/font/yes24/Yes24B.woff') format('woff'),url('http://tkfile.yes24.com/entimg/font/yes24/Yes24B.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+/* 상세페이지 */
+.detail{ display:block; /*height:580px;*/ }
+.information{clear: both;display:inline-block;  margin-bottom:51px; position: relative;}
+.infor_section{display:inline-block; }
+.detail ul.banner {;}
+.detail ul.banner li {display:inline; float:left;margin-bottom:15px}
+.detail ul.banner li.bn2 {float:right;}
+
+.information div.pic{ width:258px; margin-right:22px; float:left;}
+.information div.pic div.poster{ background:url(http://tkfile.yes24.com/img/common/bg_pos.gif) no-repeat; width:245px; height:363px; padding:7px; margin-bottom:10px;}
+.information div.pic div.poster p{ margin-bottom:15px;}
+.information div.pic div.poster ul{ margin-left:-1px;}
+.information div.pic div.poster ul li{ float:left;}
+.information div.pic p.zoom{ text-align:center; margin-bottom:10px; _margin-bottom:20px;}
+.information div.pic p.zoom a{ margin-left:-6px;}
+.information div.pic p.fan{text-align:center; margin-bottom:12px;}
+.information div.pic p.fan.reserv{ margin-left:20px;}
+.information div.pic p.fan.reserv{ background:url(http://tkfile.yes24.com/img/common/bg_reserv.gif) no-repeat 35px 0; height:26px; margin-top:-5px;}
+.information div.pic p.fan.reserv span{ background:url(http://tkfile.yes24.com/img/common/bg_reserv02.gif) no-repeat right; height:26px; display:block; float:left; left:119px; position:relative; padding:0 20px 0 5px; font:bold 11px 돋움; line-height:25px;}
+
+.information div.pic div.sns{ border-top:1px solid #dedede;  border-bottom:1px solid #dedede; height:18px; padding:8px 7px 5px 10px;}
+.information div.pic div.sns ul{}
+.information div.pic div.sns ul li.lett{padding-right:7px;}
+.information div.pic div.sns ul li{ float:left; padding-right:3px;}
+.information div.pic div.sns .pake{ float:right; font-size:11px; letter-spacing:-1px; width:75px;}
+
+.information div.cont_det {width:680px; _width:676px; float:left; position:relative; }
+.information div.cont_det2 {position: relative;}
+.information div.cont_det h3{ padding: 0px 10px 6px 0px; border-bottom:2px solid #888888; color:#3d3c3c; }
+.information div.cont_det h3 a{ margin-top:-3px;}
+.information div.cont_det h3 span{margin-top:8px;font-size:14px; display:block; /*width:435px;*/ overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis; vertical-align:top; }
+.information div.cont_det h3 div img {margin:-4px 0 -5px -2px;}
+.information div.cont_det dl{ font-size:11px; padding:13px 0 10px 0;  margin-bottom:19px; width:420px; border-bottom:1px dotted #d3d3d3;}
+.information div.cont_det dt{ float:left; padding:0 5px 6px 5px; display:inline-block; width:60px; color:#888888; letter-spacing:1px;}
+.information div.cont_det dd{font-size:12px; padding-left:13px;  padding-bottom:6px; letter-spacing:0px; color:#666666}
+.information div.cont_det dd a{ _margin-bottom:5px; _display:inline-block; _vertical-align:top;}
+.information div.cont_det dt.etc{padding:7px 0 6px 0; padding-left:5px; margin-top:6px; background:url(http://tkfile.yes24.com/img/common/ic_line.gif) no-repeat right; width:50px; border-top:1px solid #d3d3d3; border-bottom:1px solid #d3d3d3;background-color:#fbfbfb;}
+.information div.cont_det dd.etc{border-top:1px solid #d3d3d3; border-bottom:1px solid #d3d3d3; padding:7px 10px 2px 70px; *padding:7px 10px 2px 10px; margin-top:6px; background-color:#fbfbfb; height:20px; }
+.information div.cont_det dd.etc span{ margin-top:-2px; *margin-top:-18px; _margin-top:-21px;}
+.information div.cont_det div.opt{  margin-bottom:10px; border:1px solid #d3d3d3; border-top:1px solid #2b241e; width:417px; height:166px;}
+.information div.cont_det div.opt h4{ padding-top:9px; padding-left:6px; background-color:#f3f3f5; border-bottom:1px solid #d3d3d3; height:25px;}
+.information div.cont_det div.opt h4 img{ float:left; margin-left:3px }
+.information div.cont_det div.opt div{ float:left; width:171px; padding:8px 10px 10px 15px; margin-right:5px;}
+.information div.cont_det div.opt div select{ margin-left:5px; margin-bottom:10px; width:170px;}
+.information div.cont_det div.opt div h5{ padding:5px 5px 5px 5px; color:#666666;} 
+.information div.cont_det div.opt div ul{ border:1px solid #CCC; height:70px; overflow-y:auto; overflow-x:hidden; padding:5px;}
+.information div.cont_det div.opt div ul li{ line-height:18px; color:#666666;}
+.information div.cont_det div.opt div ul li span.bold{ width:100px; display:inline-block; }
+.information div.cont_det div.btn{ margin-top:12px; padding-top:12px; border-top:1px dotted #d3d3d3; width:430px;}
+.information div.cont_det div.btn a{ padding-right:3px;}
+.information div.cont_det div.btn a.b_btn{ background:url(http://tkfile.yes24.com/img/common/btn_reserv03.gif) no-repeat; display:block; float:left; width:214px; height:44px; margin-right:6px;}
+.information div.cont_det div.btn a.b_btn span{ font-weight:bold; color:#FFFFFF; display:block; text-align:center; padding-top:14px;}
+
+.information div.cont_det div.opt a.btn_poss{ background:url(http://tkfile.yes24.com/img/common/btn_opt01.gif) no-repeat; display:block; width:90px; float:left; margin:-2px 3px;}
+.information div.cont_det div.opt a.btn_poss span{ font-size:11px !important; font-weight:normal !important; letter-spacing:-1px; display:block; width:90px; text-align:center; padding:3px 0; color:#4c7cce;}
+.information div.cont_det div.opt a.btn_shipping{ background:url(http://tkfile.yes24.com/img/common/btn_opt02.gif) no-repeat; width:100px; float:left; margin:0 3px;}
+.information div.cont_det div.opt a.btn_shipping span{ font-size:11px !important; font-weight:normal !important; letter-spacing:-1px; letter-spacing:-1px; display:block; width:100px; text-align:center; padding:2px 0; color:#4c7cce;}
+
+/* 상세상단 신규 20151201 */
+
+.cont_section .detail {width:960px;float:left; position:relative;z-index:1; border-bottom:1px solid #d3d3d3; margin-bottom:30px; }
+.cont_section .detail .cont_tit h3{ padding: 0px 10px 0px 0px; border-bottom:2px solid #666; color:#3c3c3c;/* height:50px;*/ padding:13px 0;  }
+.cont_section .detail .cont_tit h3 span{overflow:hidden; /*font-size:14px;  white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;*/ line-height:22px; font-family: '맑은 고딕','Malgun Gothic'; font-weight:700; font-size:20px;vertical-align:middle; }
+.cont_section .detail .cont_tit h3 div img {margin:0px 0 -5px -2px; }
+.cont_section .detail .cont_tit h3 div img {margin:0px 0 -5px -2px; }
+.information2 {display: inline-block; background:url('http://tkfile.yes24.com/img/common/con_hline.gif') repeat-y 0 0; }
+.information2 .pic{ width:247px; margin-right:30px; float:left; margin-top:20px; position: relative;}
+.information2 .pic .poster {width:247px; height:370px}
+.information2 .pic .poster p img {border:1px solid #d3d3d3}
+.information2 .pic .poster ul {margin-top:2px}
+.information2 .pic .poster ul li{ float:left;}
+.information2 .pic .sns{ border-top:1px solid #d3d3d3;  border-bottom:1px solid #dedede; height:28px; padding:1px 8px;}
+.information2 .pic .sns ul li {float:left; padding-right:0px;}
+.information2 .pic .sns ul li.pake {float:left;display:inline; font-size:11px; letter-spacing:-1px; width:160px; padding:7px 0 0 10px; text-align:right}
+.information2 .pic .sns ul li.pake span {margin-left:10px}
+.information2 .info {float:left; display:block; width:438px; min-height:415px; /*border-right:1px solid #d3d3d3*/; padding:20px 0; font: 12px '돋움', sans-serif; color:#333}
+.information2 .info .pricewrap {position:relative; z-index:100}
+.information2 .info .pricewrap .price_pop {position:absolute; left:80px; top:0; border:1px solid #333}
+.information2 .info dl {width:410px}
+.information2 .info dt {float:left; display: table-cell;width:95px; min-height: 22px;line-height:22px}
+.information2 .info dd {display: table-cell;min-height:22px; line-height:22px}
+.information2 .info dd a { color:#333; }
+.information2 .info dd a:hover {text-decoration:underline;}
+.information2 .info .point {display:block;min-height:40px; *min-height:45px}
+.information2 .info .point span {display:block}
+.information2 .info .point span:nth-last-child(2) {display:inline}
+
+.btn_arr {background:url('http://tkfile.yes24.com/img/common/ic_bluearr.gif') no-repeat 0 3px; overflow: hidden;}
+.btn_arr2 {background:url('http://tkfile.yes24.com/img/common/ic_bluearr2.gif') no-repeat 0 4px; overflow: hidden;}
+.information2 .info .tb_nor {border-top:solid 1px #d3d3d3;border-bottom:solid 1px #d3d3d3; width:405px ; margin:0px; padding:0px ;border-spacing:0; margin:10px 0;  font: 12px '돋움', sans-serif; color:#333 }
+.information2 .info .tb_nor th {background:#fcf4f4; border-bottom:1px dotted #d3d3d3; text-align:center}
+.information2 .info .tb_nor th span img.pimg {}
+.information2 .info .tb_nor td {border-bottom:1px dotted #d3d3d3; padding:10px 15px }
+.information2 .info .tb_nor tr:last-child th:first-child {border:none;}
+.information2 .info .tb_nor tr:last-child td:last-child {border:none;}
+
+.information2 .info .tb_nor td div span {display:block; line-height:20px}
+.information2 .info  em {color:#ea4955;}
+.information2 .info .ptxt {font-size:11px; color:#888}
+.btn_bx {display:inline-block; border:1px solid #d3d3d3; height:20px;width:98px; text-align:center; color:#666; margin-right:3px;}
+.btn_bx em.blue {color:#4c7cce; font-weight:bold}
+.information2 .info .event {padding-top:5px;}
+.information2 .info .event a {width:98px; }
+.information2 .info .event a:link, .information2 .info .event a:hover {color:#666; font-size:11px; text-decoration:none; }
+.information2 .info a.mpoint {display:block; width:315px}
+/* live 그래드 추가 */
+.live {margin:8px 0}
+.live .ic_btn {cursor:pointer}
+.Graph{ white-space:nowrap; line-height:normal;}
+.Graph .gBar{ display:inline-block; width:250px; height:8px; margin:5px 5px 0 0; border-radius:6px; background:#e5e5e5; font-size:11px;}
+.Graph .gAction{ display:inline-block; height:8px; border-radius:6px; background:#ea4955; }
+.Graph .gPercent{ font:bold 15px 'yesB', sans-serif; color:#ea4955;}
+.ly_Graph {width:250px; border:1px solid #ccc; background:#fff; padding:5px 10px; margin-top:5px; }
+.ly_Graph span {font:normal 12px '맑은고딕'}
+
+.pimg  {margin-top:2px;display:block; margin-left:10px}
+.pimg2 {margin-top:-2px;}
+.information2 .cont_step {float:right; width:219px; position:relative; padding:20px 13px 13px 13px; /*border-left:1px solid #d3d3d3*/}
+.information2 .cont_step .noData {border:1px solid #d3d3d3; height:320px; width:219px; }
+.information2 .cont_step .noData span {display:block;color:#666; text-align:center; padding-top:150px}
+.information2 .cont_step h3 {color:#333; font-weight:bold}
+.information2 .cont_step .btn_poss {position:absolute; right:13px; top:20px}
+.information2 .cont_step .btn_poss{ background:url(http://tkfile.yes24.com/img/common/btn_opt01.gif) no-repeat; display:block; width:90px; ; margin:-2px 3px;}
+.information2 .cont_step .btn_poss span{ font-size:11px !important; font-weight:normal !important; letter-spacing:-1px; display:block; width:90px; text-align:center; padding:3px 0; color:#4c7cce;}
+.information2 .cont_step .btn_shipping{ background:url(http://tkfile.yes24.com/img/common/btn_opt02.gif) no-repeat; width:100px; float:left; margin:0 3px;}
+.information2 .cont_step .btn_shipping span{ font-size:11px !important; font-weight:normal !important; letter-spacing:-1px; letter-spacing:-1px; display:block; width:100px; text-align:center; padding:2px 0; color:#4c7cce;}
+.information2 .cont_step .calTop {text-align:center; margin:10px 0 0px 0}
+.information2 .cont_step .calTop .cal_arr {display:inline-block; background:url('http://tkfile.yes24.com/img/common/btn_arr.png') no-repeat 0 0;  line-height:999;*line-height:0;overflow:hidden;width:10px; height:15px;}
+.information2 .cont_step .calTop .btn {display:inline-block; margin:8px 5px; width:10px; height:15px;vertical-align:top; }
+.information2 .cont_step .calTop .btn_lft .cal_arr {background-position: 0px -15px;width:10px; height:15px;}
+.information2 .cont_step .calTop .btn_rgt .cal_arr {background-position: -10px -15px;width:10px; height:15px;}
+.information2 .cont_step .calTop .btn_lft_dim .cal_arr {background-position: 0px 0px;width:10px; height:15px;}
+.information2 .cont_step .calTop .btn_rgt_dim .cal_arr {background-position: -10px 0px;width:10px; height:15px;}
+.information2 .cont_step .calTop .cal_date {font:normal 20px 'Noto Sans KR', sans-serif;color:#666}
+.information2 .cont_step .calendar ul {width:210px; margin: 0 3px;}
+.information2 .cont_step .calendar li {float: left; width:30px; height:22px; line-height: 22px; margin:0; padding:0; text-align:center; color:#666; }
+.information2 .cont_step .calendar li.tp_dayT {border-top:1px solid #d3d3d3; border-bottom:1px solid #d3d3d3; height:16px; line-height: 18px; color:#999; font-size:11px; margin-bottom:10px}
+.information2 .cont_step .calendar li.tp_dayN {font:normal 11px '돋움', sans-serif; height:22px; line-height: 24px; }
+.tickP {background:#f3f3f3;}
+.tickP a { font-weight:bold; color:#333;}
+.chkOn {background:#ec2a32}
+.chkOn a { font-weight:bold; color:#fff;}
+.txC_dGrey {color:#333 !important}
+.txC_mGrey {color:#666 !important}
+.txC_hGray {color:#d3d3d3 !important}
+.txC_dBlue {color:#4c7cce !important}
+.txC_red {color:#ec2a32 !important}
+
+.information2 .cont_step .rTime select.selTp01	{ padding:.2em 30px .2em 2px;width:217px;height:25px;font-size:13px;white-space:nowrap;text-overflow:ellipsis;font-weight:bold;color:#666;vertical-align:middle;
+border:solid 1px #cccccc;background:url('http://tkfile.yes24.com/img/common/btn_arr2.png') no-repeat top right; border-radius:0px;appearance:none; -webkit-border-radius:0px;-webkit-appearance:none;-moz-appearance:none;background-color:#fff;  .background : none;
+margin:15px 0; ()background:none;}
+html>body .selTp01 {background:none ; padding-right:2px !important}
+.information2 .cont_step .rTime select.selTp01:disabled	{ background-color:#f2f2f2;}
+.information2 .cont_step .rTime select.selTp01 option:selected { opacity:0.4;background-color:#f2f2f2;}
+.information2 .cont_step .rTime select::-ms-expand {display: none;} 
+/*select::-ms-expand {display: none;} */ 
+.information2 .cont_step .rTime select.selTp01:focus{outline : none; background-color:transparent}
+.information2 .cont_step .rTime select.selTp01:focus::-ms-value {background-color: transparent;color:#888;}
+.information2 .cont_step .rSeat ul{ border:1px solid #ccc; height:70px; overflow-y:auto; overflow-x:hidden; padding:6px; width:205px; margin:5px 0}
+.information2 .cont_step .rSeat ul li{ line-height:18px; color:#666666;}
+.information2 .cont_step .rSeat ul li span.grade{  display:inline-block;margin-right:5px }
+.information2 .cont_step .reserve {display:block; margin:12px 0 0}
+.information2 .cont_step .reserve .rbtn {display:block; background:url('http://tkfile.yes24.com/img/common/btn_reserve.png') no-repeat 0 0; margin-top:5px; line-height:999; overflow:hidden}
+.information2 .cont_step .reserve .rbtn2 {display:block; background:#6699cc; margin-top:5px;text-align:center; padding:12px 0; }
+.information2 .cont_step .reserve .rbtn2.end {background:#666;}
+.information2 .cont_step .reserve .rbtn2 em {font:bold 15px  'Noto Sans KR', sans-serif; color:#fff; text-align:center;  line-height:16px;text-shadow: 0px -1px 0  rgba(0,0,0,0.5); overflow:hidden}
+.information2 .cont_step .reserve .rbt_reserve {display:block; width:219px; height:54px; background-position:0 0}
+.information2 .cont_step .reserve .rbt_eng {display:block; width:219px; height:40px; background-position: 0 -54px}
+.information2 .cont_step .reserve .rbt_fan {display:block; width:219px; height:40px; background-position: 0 -94px}
+.information2 .cont_step .reserve .rbt_open {display:block; width:219px; height:40px; background-position: 0 -134px}
+.information2 .cont_step .reserve .rbt_finish {display:block; width:219px; height:54px; background-position: 0 -174px}
+.c_banner {width:960px;  float: left;  padding: 0 0 10px 0;}
+.c_banner li {display: inline; float: left;}
+.c_banner li.bn2 {display: inline; text-align:right; width:260px}
+.infor_section {clear:both; margin-top:20px}
+.rewardflag {position:absolute; right:246px; top:33px;  }
+
+/*package*/
+.pkg {width:415px; margin:-15px 0 10px 0;}
+.pkg p.tit {padding:8px 0 2px 5px;color:#666; font-weight:bold;}
+.pkg .caution li {color:#888; font-size:11px; }
+.pkg .caution li em {display:block; padding-left:10px;}
+/*package 20151201*/
+.pack .step {margin:12px 0;  text-align:center; width:219px}
+.pack .step .step1 {background:#6a92d6; padding:10px 0; }
+.pack .step  span {font-weight:bold; color:#fff; line-height:16px}
+.pack .step .step2 {background:#4c7cce; padding:10px 0;  }
+.pack .cau {margin: 20px 0 0}
+.pack li {padding-left:10px; padding-top:5px;}
+.pack li em {margin-left:-10px; margin-right:5px}
+
+.information div.cont_sale{ position:absolute; z-index:1; right:5px; /*top:48px;*/ width:228px; border:1px solid #d3d3d3;}
+.information div.cont_sale {float:right; margin-top:10px;}
+.information div.cont_sale.icon {top:60px;}
+.information div.cont_sale div.grade{ padding:8px 8px 9px 8px;}
+.information div.cont_sale div.grade h3{ padding-bottom:3px; padding-left:5px; border-bottom:1px solid #CCc;}
+.information div.cont_sale div.grade ul{margin-top: 10px; /*margin-bottom: 4px;*/ padding: 0px 0px 0px 3px; border-bottom: none; min-height: 90px; max-height: 152px; overflow-y: auto;}
+.information div.cont_sale div.grade ul li {/* height:15px;*/ padding:0 0 3px 0; border:none; font-size:12px; color:#3d3c3c;}
+.information div.cont_sale div.grade ul li span{ font-weight:bold; vertical-align:top; margin-left:0;line-height: 14px;*float:left;}
+.information div.cont_sale div.grade ul li span.won{ line-height: 11px; *line-height:13px;font-family: "tahoma"; float: right; text-align:right}
+.information div.cont_sale div.grade ul li span.grade00{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat0.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade01{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat1.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade02{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat2.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade03{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat3.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade04{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat4.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade05{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat5.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade06{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat6.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade07{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat7.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade08{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat8.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade09{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat9.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade10{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat10.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade11{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat11.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade12{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat12.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade13{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat13.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade14{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat14.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade15{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat15.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade16{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat16.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade17{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat17.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade18{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat18.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade19{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat19.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade20{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat20.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade21{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat21.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade22{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat22.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade23{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat23.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade24{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat24.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade25{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat25.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade26{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat26.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade27{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat27.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade28{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat28.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade29{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat29.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade30{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat30.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade31{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat31.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade32{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat32.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade33{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat33.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade34{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat34.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade35{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat35.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.grade36{ background:url(http://tkfile.yes24.com/images/ticket_new/ic_seat36.gif) no-repeat; padding-left:15px; margin-left:0; color:#888888; width:110px;}
+.information div.cont_sale div.grade ul li span.won{ font-family:"tahoma"; float:right; /**margin-top:-19px;*/ *line-height:15px;}
+
+.information div.cont_sale div.grade ul.list{ padding:12px 10px 8px 6px;  border-bottom:1px dotted #CCc; height:100px;}
+.information div.cont_sale div.grade ul.list li{ display:inline-block; padding:0 0 9px 0; *padding-bottom:0px; border:none; font-size:12px; color:#3d3c3c;}
+.information div.cont_sale div.grade ul.list li em{ float:left;  line-height:14px; width:105px; color:#888888; font-weight:bold;}
+.information div.cont_sale div.grade ul.list li span{ font-weight:bold; float:right; font-family:Tahoma;}
+.information div.cont_sale div.grade_bt {border-top: 1px solid #d3d3d3; color:#3d3d3d; overflow-y:auto;}
+.information div.cont_sale div.grade_bt img{ vertical-align: middle; margin:0px 2px 1px 2px;}
+.information div.cont_sale div.grade_bt ul {min-height:15px !important; max-height:60px; max-height:57px\9;overflow-y: auto;}
+.information div.cont_sale div.grade_bt h3 span {float:right; margin:-2px -10px 0 0;}
+/*.information div.cont_sale div.grade_bt h3 span img {margin-left:44px; margin-top:-2px;}*/
+.information div.cont_sale div.grade_bt ul.point li span {display: inline-block;  line-height:16px;}
+.information div.cont_sale div.grade_bt ul.point li span.pleft {width:145px; color:#888; vertical-align:middle;}
+.information div.cont_sale div.grade_bt ul.point li span.per {font-family: "tahoma"; float: right;color:#ea4955;/* *margin-top:-18px; */line-height:12px;*line-height:13px; text-align:right; padding-right:5px;}
+.information div.cont_sale div.grade_bt span.sp {float:right;font-size:11px; color:#888; text-align:right; width:200px; }
+
+.information div.cont_sale h4.now{ height:22px; background:url(http://tkfile.yes24.com/img/common/ic_now.gif) no-repeat 8px 8px; padding-left:50px; padding-top:10px; background-color:#f3f3f5;  border-top:1px solid #d3d3d3; padding-bottom:2px; color:#3d3d3d;}
+.information div.cont_sale ul{ padding:2px 8px 20px 8px;}
+.information div.cont_sale ul li{border-bottom:1px dotted #d3d3d3; padding:9px 3px 7px; font-size:11px; /*height:26px;*/}
+.information div.cont_sale ul li span.big{ font-size:15px; line-height:16px; font-weight:bold; color:#ea4955; letter-spacing:-1px; margin-bottom:7px; padding-top:3px; width:120px;}
+.information div.cont_sale ul li span{ display:inline-block; vertical-align:middle; line-height:12px;}
+.information div.cont_sale ul li span.bt{ float:right; *float:none;}
+.information div.cont_sale ul li span.bt_up{ float:right; margin-top:-10px; *margin-top:-15px;}
+.information div.cont_sale ul li.ticket{ background:url('http://tkfile.yes24.com/img/common/images_sale.gif') no-repeat; width:228px; height:44px; padding:0; position:relative; left:-8px; top:-2px; }
+.information div.cont_sale ul li.ticket a{ float:right; margin:17px 10px 0 0;}
+
+.information div.cont_sale div.grade_dc {background:#f3f3f5; padding:0 7px 9px 7px;  }
+.information div.cont_sale div.grade_dc div.tb_dc {background:url('http://tkfile.yes24.com/img/common/now.gif') repeat-y 0 0; }
+.information div.cont_sale div.grade_dc div.tb_dc table {width:214px; margin:0; padding:0; border:0; word-break:break-all;border-collapse: collapse;}
+.information div.cont_sale div.grade_dc div.tb_dc table th {border-bottom:1px solid #c1cbdb; padding:2px 0 0 6px;text-align:left;}
+.information div.cont_sale div.grade_dc div.tb_dc table td {border-bottom:1px solid #d3d3d3; padding:10px 0 8px 6px; line-height:13px; }
+.information div.cont_sale div.grade_dc div.tb_dc table td em {display:block; margin-top:-2px; font-size:11px; } 
+.information div.cont_sale div.grade_dc div.tb_dc table td img {vertical-align: middle;margin:-2px 2px 1px 2px;}
+
+/* 플래그 포인트 */
+.detail div.flagwrap_point {position:absolute; z-index:2; left:0;top:0; width:63px; height:61px; border:1px solid #d3d3d3; background:#eb4956;}
+.detail div.flagwrap_point .point {display:inline-block;border:1px solid #bf1e2c;  width:61px; height:59px; text-align:center;}
+.detail div.flagwrap_point .point .per {margin:6px 0 2px 0;letter-spacing:-1px; height:35px}
+.detail div.flagwrap_point .point .per span.txt {vertical-align:middle; color:#fff; font-size:11px; }
+.detail div.flagwrap_point .point .per span.num {font:bold 28px "tahoma" ; color:#fff; }
+.detail div.flagwrap_point .point .per span.num em {font:bold 11px  "tahoma";}
+.detail div.flagwrap_point .point .won {margin:6px 0 8px 0;letter-spacing:-1px; height:43px;}
+.detail div.flagwrap_point .point .won span.txt {height:10px; padding-left:3px;display:block; color:#fff; font-size:11px; text-align:left;line-height:11px;}
+.detail div.flagwrap_point .point .won span.num {width:100%; padding-left:1px; font:bold 18px "tahoma"; color:#fff;/*line-height:19px;*/}
+.detail div.flagwrap_point .point .won span.num em {padding:1px;font:normal 11px "dotum";  vertical-align:middle;}
+.detail div.flagwrap_point .yespoint {position:absolute;left:0;top:43px;display:block;width:100%; height:17px; background:#bc3a45 url('http://tkfile.yes24.com/img/common/ic_yespoint.jpg') no-repeat 50% 50%;}
+.detail div.flagwrap_point .yespointM {background:#bc3a45 url('http://tkfile.yes24.com/img/common/ic_yespointM.jpg') no-repeat 50% 50%;}
+.detail div.flagwrap_point .btn_x {display:block;position:absolute; left:50px; top:3px; width:10px;height:10px;}
+.detail div.flagwrap_point .yespoint span, .detail div.flagwrap_point .point_won .yespoint span, .detail div.flagwrap_point .btn_x span {display:none;}
+
+
+.infor_section{ }
+.infor_section p.noti{ border-top:1px solid #CCC; border-bottom:1px solid #ccc; margin-bottom:33px; color:#666666; line-height:14px;}
+.infor_section p.bann{ margin-bottom:20px;}
+.infor_section p.noti span.tit{ background:url(http://tkfile.yes24.com/img/common/bg_tit.gif) no-repeat 0px -2px; width:70px; height:21px; font-weight:bold; color:#FFF; padding:10px 10px 0 15px;  display:inline-block;}
+.infor_section p.noti span.bold{  *margin-top:-22px; display:inline-block;}
+.infor_section p.noti span a:hover{ text-decoration:underline;}
+.infor_section div.box_infor{ border:1px solid #d3d3d3; margin-bottom:20px;}
+.infor_section div.box_infor h3{ padding:8px; padding-left:15px; border-bottom:1px dotted #d3d3d3; background-color:#f1f1f1; }
+.infor_section div.box_infor h3.tit{ color:#3d3c3c;}
+.infor_section div.box_infor ul{ padding:10px 10px 5px 10px ; }
+.infor_section div.box_infor ul li{ padding-bottom:6px;  width:670px; overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+.infor_section div.box_infor ul li em{ font-weight:bold; color:#4c7cce; background:url(http://tkfile.yes24.com/img/common/ic_selon.gif) no-repeat right; padding-right:5px; margin-right:5px;}
+.infor_section div.box_infor ul li span.bold{ color:#666666;}
+.infor_section div.box_infor h2{ padding:8px; padding-left:15px; border-bottom:1px solid #d3d3d3; background-color:#f1f1f1; font-size:16px; color:#333333;}
+.infor_section div.box_infor span.txt{ margin:13px 20px; display:inline-block;}
+.infor_section div.box_infor span.tel{margin:13px 20px 13px 400px; display:inline-block; background:url(http://tkfile.yes24.com/img/common/bg_th.gif) no-repeat; padding-left:8px; /*float:right;*/ }
+.infor_section div.box_infor div{ padding:20px;}
+
+#spanTheaterName a {font-size:12px; font-weight:normal; text-decoration:underline;}
+
+.cont_infor{width:700px; float:left;}
+
+/* 장르상세 */
+.not_cont{ margin-bottom:15px;}
+.not_cont.end{margin-bottom:30px; padding-bottom:15px; border-bottom:1px solid #d3d3d3;}
+.not_cont h4{ background:url(http://tkfile.yes24.com/img/common/bg_tit02.gif) repeat-x; padding:10px 10px 10px 20px; color:#3d3c3c;}
+.not_cont div ul{ margin-bottom:15px;}
+.not_cont div ul li{ height:16px; margin-bottom:4px;}
+.not_cont div ul li span{ display:inline;}
+.not_cont div{ padding:20px 20px 5px 20px;}
+/*.not_cont div span{ display:block; margin-bottom:10px;}
+.not_cont2 div span {margin-bottom:0;}*/
+.not_cont div span.bold{ color:#666666;}
+
+.notice_cont{ margin-bottom:30px;}
+.notice_cont h4{ padding-bottom:10px; background:url(http://tkfile.yes24.com/img/common/icon_dot.gif) no-repeat; padding-left:15px; border-bottom:2px solid #777777; position:relative;margin: 10px 0;}
+.notice_cont h4 .more{ top:-2px;}
+.notice_cont div.map{ width:100%; height:480px; background-color:#f1f1f1; text-align:center; }
+.notice_cont div ul{ margin:10px 0 0 20px;}
+.notice_cont div ul li{ float:left; margin-right:5px;}
+
+.notice_map{ margin-bottom:30px;}
+.notice_map h4{ padding-bottom:10px; background:url(http://tkfile.yes24.com/img/common/icon_dot.gif) no-repeat; padding-left:15px; border-bottom:2px solid #777777; position:relative;}
+.notice_map h4 .more{ top:-2px;}
+.notice_map div.daumMap{ width:100%; height:480px; background-color:#f1f1f1; text-align:center; }
+.notice_map div ul{ margin:10px 0 0 20px;}
+.notice_map div ul li{ float:left; margin-right:5px;}
+
+.recomm{ margin-bottom:40px; border:1px solid #d3d3d3; border-top:2px solid #777777;}
+.recomm h4{ padding:10px 10px 8px; background-color:#f1f1f1; border-bottom:1px solid #d3d3d3; color:#3d3c3c; }
+.recomm h4 strong{ font-size:14px; padding-right:6px; color:#4c7cce;}
+.recomm ul{ padding:15px 15px 15px 20px; height:170px;}
+.recomm ul li{ width:90px; float:left; padding:0 20px;}
+.recomm ul li img{ display:block; margin-bottom:5px; border:1px solid #dcdcdc;}
+.recomm ul li span{display:block; text-align:center; font-size:11px; padding:2px 8px 0px 8px;}
+.recomm ul li span.bold{color:#424248;height: 15px;overflow: hidden;width: 71px;}
+.recomm ul li span.bold a {color:#424248;}
+.recomm ul li span.bold a:hover{ text-decoration:underline;}
+/*상세정보 aside */
+.not_aside{float:left; margin-left:25px; width:230px;}
+
+.cont_t1{ border:1px solid #d3d3d3; margin-bottom:15px;}
+.cont_t1 h4{ padding:9px 8px 4px 4px; margin:0 8px;border-bottom:1px solid #d3d3d3; font-weight:bold; color:#666666;}
+.cont_t1 ul.invite{ padding:8px 10px 2px 10px; }
+.cont_t1 ul.invite li{margin-bottom:6px; height:75px auto;}
+.cont_t1 ul.invite li img{ float:left; margin:0 10px 6px 0;}
+.cont_t1 ul.invite li span {/*display:block;*/ display:inline; font-size:11px;}
+.cont_t1 ul.invite li span.tit{ padding-top:10px; font-weight:bold; color:#4c7cce; padding-left:4px;}
+.cont_t1 ul.invite li span a:hover{ text-decoration:underline;}
+.cont_t1 ul.recom{ padding:12px 10px 4px;}
+.cont_t1 ul.recom li{ margin-bottom:10px; height:65px;}
+.cont_t1 ul.recom li img{ float:left; margin-right:10px;  border:1px solid #dcdcdc; }
+.cont_t1 ul.recom li span{ display:block; font-size:11px;}
+.cont_t1 ul.recom li span.tit{ padding:7px 0 5px 0; font-size:12px; font-weight:bold; color: #3D3C3C;}
+.cont_t1 ul.recom li span.tit a{color:#3c3c3c;}
+.cont_t1 ul.recom li span.tit a:hover{ text-decoration:underline;}
+
+.cont_t2{ background-color:#f1f1f1; border-top:1px solid #2b241e; margin-bottom:16px; padding-bottom:5px; position:relative;}
+.cont_t2 p.more{ right:6px; top:8px;}
+.cont_t2 h4{color: #3D3C3C; padding:9px 10px 3px 12px;}
+.cont_t2 ul.rank{ background:url(http://tkfile.yes24.com/img/genre/bg_rank.gif) no-repeat -4px 0;  margin:0 5px; padding:10px 10px 10px 8px; padding-bottom:5px;}
+.cont_t2 ul.rank li{margin-bottom:3px; _height:15px;}
+.cont_t2 ul.rank li img{float:left; margin-right:24px; margin-left:2px; margin-top:3px;}
+.cont_t2 ul.rank li span{display:block; font-size:11px;}
+.cont_t2 ul.rank li span.tit{ font-weight:bold; color: #3D3C3C;}
+.cont_t2 ul.rank li.r01{ background:url(http://tkfile.yes24.com/img/common/ic_num01.gif) no-repeat 59px 5px; height:67px; }
+.infor_section .cont_t2 ul.rank li.r01 span {margin-left:78px}
+.cont_t2 ul.rank li.r01 span.tit{ padding-top:3px; line-height:14px;}
+.cont_t2 ul.rank li.r01 span.tit a{color:#3c3c3c;}
+.cont_t2 ul.rank li.r01 span.tit a:hover{text-decoration:underline;}
+.cont_t2 ul.rank li.r02{ background:url(http://tkfile.yes24.com/img/common/ic_num02.gif) no-repeat 2px 1px; *background-position:2px 2px; padding-left:18px; margin-top:12px;}
+.cont_t2 ul.rank li.r03{background:url(http://tkfile.yes24.com/img/common/ic_num03.gif) no-repeat 2px 1px;*background-postion:2px 2px;  padding-left:18px;}
+.cont_t2 ul.rank li.r04{background:url(http://tkfile.yes24.com/img/common/ic_num04.gif) no-repeat 2px 1px;*background-postion:2px 2px;  padding-left:18px;}
+.cont_t2 ul.rank li.r05{background:url(http://tkfile.yes24.com/img/common/ic_num05.gif) no-repeat 2px 1px;*background-postion:2px 2px;  padding-left:18px;}
+.cont_t2 ul.rank li.r02 a:hover{text-decoration:underline;}
+.cont_t2 ul.rank li.r03 a:hover{text-decoration:underline;}
+.cont_t2 ul.rank li.r04 a:hover{text-decoration:underline;}
+.cont_t2 ul.rank li.r05 a:hover{text-decoration:underline;}
+.cont_t2 ul.list{ background:#FFF; margin:0 5px; padding:10px; padding-bottom:5px;}
+.cont_t2 ul.list li{margin-bottom:4px;  font-size:11px; }
+.cont_t2 ul.list li a:hover{ text-decoration:underline;}
+.cont_t2 ul.list li.img{ margin-bottom:7px;}
+.cont_t2 ul.list li.end{ padding-bottom:5px; border-bottom:1px dotted #999999; margin-bottom:9px;}
+.cont_t2 ul.list li span.tit{ display:block; padding-top:7px; font-weight:bold; color: #3D3C3C; text-align:center;}
+.cont_t2 ul.list li span.tit a{ color:#3c3c3c;}
+.cont_t2 ul.list li span.tit:hover{ text-decoration:underline;}
+
+
+.gender{background-color:#f7f7f7; border:1px solid #d3d3d3; margin-bottom:15px;  position:relative; padding-top:2px}
+.gender h4{color: #3D3C3C; padding:10px 10px 8px 33px; background:url(http://tkfile.yes24.com/img/common/bg_gen.gif) no-repeat 10px 0;}
+.gender div.graph{ background:url(http://tkfile.yes24.com/img/common/bg_gen02.gif) no-repeat bottom; background-color:#f7f7f7; padding:0 13px 28px 12px;}
+.ratio dt{/*float:left*/ display:none;}
+.ratio dd.gra{ background:url(http://tkfile.yes24.com/img/common/bg_gra01.gif) no-repeat; margin-bottom:5px; margin-left:3px;}
+.ratio dt{margin-right:8px;font-weight:bold}
+.ratio p{width:200px;height:10px;font-size:0}
+.ratio span{display:block;height:10px;background:url(http://tkfile.yes24.com/img/common/bg_graarr.gif) no-repeat right;  font-size:0}
+.ratio dd{ font-size:11px;}
+.ratio dd.men { float:left;}
+.ratio dd.men strong{ color:#666666;}
+.ratio dd.men em{ color:#3681c7;  }
+.ratio dd.girl{ float:right;}
+.ratio dd.girl strong{ color:#666666;}
+.ratio dd.girl em{ color:#e62f82;}
+
+
+
+
+.gender div.age{ background-color:#FFFFFF; padding-bottom:4px;}
+.h_graph ul{margin:0 50px 0 46px;padding:1px 0 0 0;border-top:0;border-right:0;font-size:11px;font-family:Tahoma, Geneva, sans-serif;list-style:none}
+.h_graph li{position:relative;margin:5px 0 10px; *margin:5px 0 5px;vertical-align:top;white-space:nowrap; height:10px;}
+.h_graph .g_term{position:absolute;top:0;left:-50px;width:40px;font-weight:normal;color:#767676;line-height:15px;text-align:right; background:url(http://tkfile.yes24.com/img/common/th_l.gif) no-repeat 45px 2px; padding-right:7px;}
+.h_graph .g_bar{display:inline-block;position:relative;height:13px;/*border:1px solid #ccc;border-left:0;background:#e9e9e9*/ background:url(http://tkfile.yes24.com/img/common/bg_graarr02.gif) no-repeat right; margin-left:2px;}
+.h_graph .g_bar span{position:absolute;top:0;right:-50px;width:40px;color:#666666;line-height:15px; }
+
+
+
+/*하단 필독*/
+.enotice{ background:url(http://tkfile.yes24.com/img/common/bg_alert.gif) no-repeat; padding:50px 30px 0px 30px; _padding:50px 2px 0px 30px;  margin-bottom:35px;}
+.enotice h3{ font-size:12px; color:#333;  /*margin-left:40px;*/  position:relative; top:-25px;}
+.enotice div{ display:block; min-height:80px;}
+.enotice div p{ color:#666666; margin-bottom:5px;}
+.enotice span.end{background:url(http://tkfile.yes24.com/img/common/bg_alert02.gif) no-repeat; display:block; height:25px; width:700px;  margin-left:-30px;  }
+
+/* 장르 리스트 */
+.lnb{ width:210px; float:left; margin-bottom:30px; }
+.lmenu{background:url(http://tkfile.yes24.com/img/genre/bg_lend.gif) no-repeat bottom; padding-bottom:9px; margin-bottom:15px;}
+.lmenu ul li.sub{ margin-top:-3px;}
+.lmenu ul{ background:url(http://tkfile.yes24.com/img/genre/bg_l.gif) no-repeat; padding: 1px 6px; padding-bottom:10px;}
+.lmenu ul li.lbtn{ text-align:center; padding-top:10px;}
+.lmenu ul li.end{ }
+.lmenu ul li.rsub{}
+.lmenu ul li.rsub ul{ background:none; padding:5px 0 3px 0; *margin-top:-10px; }
+/*.lmenu ul li.rsub ul li{ padding-left:1px;}*/
+.lmenu ul li.rsub ul li:hover{ background-color:#fff;  }
+.lmenu ul li.rsub ul li.rsub01{  display:block; width:178px;  /*margin:5px 0 0 19px;*/ height:17px;}
+.lmenu ul li.rsub ul li.rsub01:hover{}
+.lmenu ul li.rsub ul li.rsub01 a{ display:block; float:left;  font-size:0; }
+
+.lmenu ul li.rsub ul li.rsub02{ display:block;  /* margin:5px 0 3px 19px;*/ }
+.lmenu ul li.rsub ul li.rsub02:hover{  }
+.lmenu ul li.rsub ul li.rsub02 a{ display:block; float:left;  font-size:0; }
+.lmenu ul li.down {padding-bottom:5px; margin-top:-5px;background:url('http://tkfile.yes24.com/img/magazine/lmenu_subline2.gif') no-repeat left bottom}
+
+.mania_lnb{ width:210px; float:left; margin-bottom:30px; }
+.mania_lmenu{background:url(http://tkfile.yes24.com/img/mania/bg_lend.gif) no-repeat bottom; padding-bottom:9px; margin-bottom:20px;}
+.mania_lmenu ul li.sub{ margin-top:-3px;}
+.mania_lmenu ul{ background:url(http://tkfile.yes24.com/img/mania/bg_l.gif) no-repeat; padding: 4px 6px; padding-bottom:10px;}
+.mania_lmenu ul li.end{ }
+
+
+.alignment{ position:relative; border:1px solid #d3d3d3; margin-bottom:12px; padding-bottom:10px; }
+.alignment h3{ padding:7px 10px 6px 5px; background-color:#f9f9fb;}
+.alignment p.more{ top:11px; right:9px;}
+.alignment h4{ padding:7px 8px 5px ;  border-top:1px solid #eaeaea; border-bottom:1px solid #eaeaea; color:#3c3c3c; clear:both; }
+.alignment h4 a{ margin-left:10px; vertical-align:bottom; position:relative; top:-9px; *top:-7px; height:10px; display:inline-block;}
+.alignment p.txt{ padding:5px 10px 22px 22px; background:url(http://tkfile.yes24.com/img/genre/icon_re.gif) no-repeat 9px 3px; line-height:16px; color:#d3d3d3; }
+.alignment p.txt a{font-size:11px;  color:#3c3c3c;}
+.alignment p.txt a:hover{ text-decoration:underline;}
+
+
+
+
+
+.list_theater{clear:left; padding:5px 8px 22px 13px; background:url(http://tkfile.yes24.com/img/genre/icon_re.gif) no-repeat 9px 3px; line-height:16px; color:#d3d3d3; display:inline-block;}
+.list_theater li { float:left; font-size:11px; padding:0 10px;   height:16px;   overflow:hidden; margin-bottom:1px;word-break:break-all; }
+*.list_theater li {display:inline; zoom:1;float:none;font-size:11px; padding:0 12px;   height:16px;   overflow:hidden; margin-bottom:1px;word-break:break-all;}
+.list_theater li.sec{ background:url(http://tkfile.yes24.com/img/common/bg_th2.gif) no-repeat right;  }
+.list_theater li a{color:#3c3c3c;}
+.list_theater li a:hover{text-decoration:underline;}
+
+
+.searchlist_theater{ padding:5px 8px 22px 13px; background:url(http://tkfile.yes24.com/img/genre/icon_re.gif) no-repeat 9px 3px; line-height:16px; color:#d3d3d3; display:inline-block;}
+.searchlist_theater li{ font-size:11px;  padding:0 10px;  height:16px; overflow:hidden; margin-bottom:1px; }
+.searchlist_theater li.sec{background:url(http://tkfile.yes24.com/img/common/bg_th2.gif) no-repeat right;  }
+.searchlist_theater li a{color:#3c3c3c;}
+.searchlist_theater li a:hover{text-decoration:underline;}
+
+
+
+
+.lnb div.banner{ position:relative;}
+.lnb div.banner ul.img{}
+.lnb div.banner ul.thum{ position:absolute; top:8px; right:8px;}
+.lnb div.banner ul.thum li.on{ background-position:-2px -2px;}
+.lnb div.banner ul.thum li{ background:url(http://tkfile.yes24.com/img/genre/img_select.png) no-repeat -14px -2px; width:12px; height:12px;  float:left; padding-left:2px; }
+.lnb div.banner ul.thum li a{ display:inline-block; width:12px; height:12px; }
+.lnb div.banner ul.thum li a span{ visibility:hidden;}
+
+.contain{ width:725px; float:right; position:relative; margin-bottom:80px; }
+.contain2{ width:730px; float:right; position:relative;  }
+.contain h2{ margin-left:4px; margin-top:-1px;}
+.contain h2.tit{ margin-top:10px;}
+.contain p.tit{ background:url(http://tkfile.yes24.com/img/genre/icon_bullet.gif) no-repeat 0 3px; padding-left:18px; margin:5px 0 10px 2px; color:#3d3d3d;}
+.contain p.tit img{ margin-left:10px}
+.contain div.step{ position:absolute; right:0; top:5px;}
+.contain div.step02{ position:absolute; right:0; top:-6px;}
+.contain div.step ul{ float:left; margin-left:10px; }
+.contain div.step ul li{ display:inline;}
+.contain div.step ul.list{ float:left; margin-left:7px; padding-top:3px; font-size:11px; }
+.contain div.step ul.list li{ display:inline; padding:0 3px;}
+.contain div.step ul.list li span.blu{ font-weight:bold;}
+.contain div.step select{ font-size:11px; height:15px; letter-spacing:-1px; margin:3px 5px 0px 15px;}
+
+.contain div.iimg{ border-top:2px solid #4c7cce; border-bottom:1px solid #4c7cce; margin-bottom:40px;}
+.contain div.iimg ul{ border-bottom:1px solid #d3d3d3; height:247px; padding-top:17px; padding-left:3px;}
+.contain div.iimg ul.gry{ background-color:#f9f9fb;}
+.contain div.iimg ul li{position:relative;width:180px; float:left; text-align:center; background:url(http://tkfile.yes24.com/img/genre/icon_dot.gif) no-repeat right;}
+.contain div.iimg ul li.end{ background:none; border:none;}
+.contain div.iimg ul li strong{ display:block; color:#424248; letter-spacing:-1px; padding:11px 0 5px 0;}
+.contain div.iimg ul li span{ display:block; font-size:11px;  padding:0px 0;}
+.contain div.iimg li span.flag {position:absolute; left:24px; top:0px;}
+.contain div.iimg ul li a:hover{ text-decoration:underline;}
+.contain div.ilist{ border-bottom:1px solid #4c7cce; margin-bottom:40px;}
+.contain div.ilist .table01{margin-bottom:0;}
+
+
+.lnb div.cal{ background:url(http://tkfile.yes24.com/img/notice/bg_cal.gif) no-repeat; height:122px; margin-bottom:10px;}
+.lnb div.cal h5{ float:right; margin:15px 18px 14px 0; _margin:15px  9px 14px 0;}
+.lnb div.cal span{ display:inline; font-size:25px; color:#333333; font-weight:bold; font-family:"Tahoma"; padding-left:22px; letter-spacing:0px; line-height:42px;}
+.lnb div.cal p{ text-align:center; margin-top:-2px;}
+
+.lnb div.optab{ margin-bottom:13px;}
+.lnb div.tbg{ background:url(http://tkfile.yes24.com/img/notice/bg_tbg.gif) no-repeat; margin-top:-5px; height:141px; position:relative;}
+.lnb div.tbg div{ position:absolute; margin-top:10px; left:95px; width:105px; height:100px; padding-top:15px;  top:15px;}
+.lnb div.tbg p{ font-size:11px; padding:7px 7px 8px 8px; *padding-top:5px; color:#3c3c3c;}
+.lnb div.tbg p a{ margin:0; /*height:22px;*/}
+.lnb div.tbg a{ /*float:left;*/ margin:7px 10px 10px 14px; display:inline-block;}
+.lnb div.tbg strong{ background:url(http://tkfile.yes24.com/img/common/ic_sel03.gif) no-repeat right; padding-right:5px;}
+.lnb div.tbg strong.tit{ display:block; background:none; color:#4c7cce; /*border-bottom:1px solid #4c7cce;*/text-decoration:underline; display:inline-block; margin-bottom:8px; letter-spacing:-1px; line-height:10px; *line-height:14px; width:100px;}
+.lnb div.tbg strong span{ border-bottom:1px solid #4c7cce; }
+.lnb div.tbg span.cont{display:inline-block; width:100px; color:#3c3c3c; position:relative; height:90px;}
+.lnb div.tbg span.cont span{}
+.lnb div.tbg span.cont span a{ margin:0; color:#3c3c3c;}
+.lnb div.tbg span.cont span a:hover{ text-decoration:underline;}
+.lnb div.tbg a.btn{ position:absolute; height:14px; margin:0 1px 4px 0; bottom:0; right:0;}
+
+.lnb p.banner{ margin-bottom:12px;}
+
+.contain div.slide{ position:relative; background:url(http://tkfile.yes24.com/img/notice/bg_slide.gif) no-repeat; height:292px; margin-bottom:28px;}
+.contain div.slide h2{ padding:5px 7px 7px 22px}
+.contain div.slide a.next{ position:absolute; top:125px; right:0px;}
+.contain div.slide a.pre{ position:absolute; top:125px; left:0}
+.contain div.slide ul{ margin:20px 25px 15px 25px;}
+.contain div.slide ul li:last-child{ background:none;}
+.contain div.slide ul li{ float:left; width:125px; height:220px; /*background:url(http://tkfile.yes24.com/img/notice/bt_line.gif) no-repeat right center;*/ margin:0 5px;}
+.contain div.slide ul li a{ position:relative; display:block;  }
+.contain div.slide ul li a span{ position:absolute; top:-2px; left:0px; cursor:pointer;}
+.contain div.slide ul li a span img{}
+.contain div.slide ul li.on img{ padding:4px; background-color:#4c7cce}
+.contain div.slide ul li.on  a span img{ background:none;}
+.contain div.slide ul li img{padding:4px; }
+.contain div.slide ul li strong{display:block; text-align:center; padding:7px 0 0 0; color:#3c3c3c;}
+.contain div.slide ul li strong a{color:#3c3c3c; text-align:center;}
+.contain div.slide ul li strong a:hover{ text-decoration:underline; text-align:center;}
+.contain div.slide ul li span{ display:block; text-align:center; font-size:11px; padding:2px 0 0 0;}
+.contain div.slide ul li.on span.blu{ margin:0 auto; width:110px;text-decoration:underline; text-align:center; cursor:pointer;}
+
+.contain div.notice{ position:relative; margin:15px 0 10px;}
+.contain div.notice p.tit{ margin-bottom:9px; background:url(http://tkfile.yes24.com/img/genre/icon_bullet.gif) no-repeat 0 1px;}
+.contain div.notice .step select{ font-size:11px; height:15px; letter-spacing:-1px; margin:0; margin-top:3px;}
+
+/* 상세페이지 달력 */
+.calender{ position:absolute; border:4px solid #cbcbcb; padding:7px 10px; width:150px; background-color:#fff; left:270px; top:15px;}
+.calender span{ font:bold 12px Verdana, Geneva, sans-serif; color:#3c3c3c; text-align:center; display:block; margin-bottom:5px;}
+.calender a.pre{ position:absolute; left:41px; top:9px;}
+.calender a.next{position:absolute; right:39px; top:9px;}
+
+/*공지사항상세*/
+.eve_contain p.ntit{ margin-top:0;}
+p.ntit{ padding:7px 15px 6px 10px; margin:13px 0 5px; border-top:2px solid #4c7cce; border-bottom:1px solid #d3d3d3; background-color:#f9f9fb; font-weight:bold;}
+p.ntit span{ padding:0 0 0 10px; vertical-align:bottom; color:#666666; letter-spacing:-1px;}
+p.ntit span b {vertical-align:bottom;}
+p.ntit em{ font:normal 12px 돋움; float:right; padding:1px 10px 5px 30px; background:url(http://tkfile.yes24.com/img/event/line01.gif) no-repeat left 4px; *margin-top:-22px;}
+	
+.ndetail{ padding:5px 0; border:1px solid #e8e8e8; min-height:50px; margin-bottom:10px;}
+.ndetail span.view{ float:right; font-size:11px; padding:0 15px; letter-spacing:1px;}
+.ndetail span.view span.num{ letter-spacing:0px; }
+.ndetail p.cont{ padding:25px 15px 20px 15px; line-height:16px; border-bottom:1px solid #e8e8e8;}
+.ndetail p.cont span{ color:#666666;}
+.ndetail_reserv{ padding:17px 10px 0 11px; }
+.ndetail_reserv div.poster{ background-color:#f3f3f5; border:1px solid #d4d4d6; width:192px; text-align:center; padding:6px 0 ;  float:left;}
+.ndetail_reserv a.sms{ margin-top:2px; margin-left:5px; display:inline-block;}
+.ndetail_reserv div.poster a{ margin:12px 10px 0px 12px; display:inline-block;}
+
+.ndetail_reserv p.noti{ border:1px solid #CCC; border-right:none; height:38px; display:inline-block; width:360px; float:left; margin:3px 5px 0px 12px; }
+.ndetail_reserv p.noti span{ color:#666666;}
+.ndetail_reserv p.bann{ margin-bottom:20px;}
+.ndetail_reserv p.noti { position:relative; }
+.ndetail_reserv p.noti span.tit{ background:url(http://tkfile.yes24.com/img/notice/bg_tit.gif) no-repeat; width:90px; height:29px; font-weight:bold; color:#FFF; padding:13px 10px 0 15px; display:inline-block;}
+.ndetail_reserv p.noti2 {width:485px;}
+.ndetail_reserv p.noti2 span.tit{ background:#ea6f85 !important; width:auto !important;  height:25px; padding-right:10px;}
+.ndetail_reserv p.noti2 span.title{padding-left:10px}
+.ndetail_reserv p.noti span.title{ color:#666666; display:inline-block; font-weight:bold; position:absolute; top:12px;}
+.ndetail_reserv div{ }
+.ndetail_reserv div.content{ /*margin:21px 10px 21px 215px;  _height:210px;*/min-height:300px; }
+.ndetail_reserv div.notic{margin:5px 10px 21px 215px; *margin:10px 10px 21px 15px;}
+.ndetail_reserv dl{ margin-left:210px; height:230px; *height:200px; margin-bottom:20px; margin-top:10px; width:450px; display:block;}
+.ndetail_reserv dt{ display:inline-block; font-weight:bold; color:#ea4955; margin-bottom:5px;}
+.ndetail_reserv dd{ margin-bottom:2px; margin-left:8px;}
+
+
+/* 공지사항쪽 메인 달력 */
+.ncalender{ border:4px solid #5a90cc; margin-bottom:1px; height:304px; background:url(http://tkfile.yes24.com/img/notice/bg_mcal.gif) no-repeat; position:absolute; z-index:500; left:0; width:952px;}
+.ncalender div.date{ position:relative; padding:12px 0 10px; *padding-bottom:0;}
+.ncalender div.date ul{ position:absolute; top:20px; left:40px;}
+.ncalender div.date ul li{ float:left; padding:0 3px; /*background:url(http://tkfile.yes24.com/img/common/ic_line.gif) no-repeat 0 2px;*/}
+.ncalender div.date ul li.fst{ background:none;}
+.ncalender div.date ul li.on{  font-weight:bold; background:url(http://tkfile.yes24.com/img/common/ic_sel03.gif) no-repeat 2px 4px!important; padding-left:8px;}
+.ncalender div.date ul li.on a{color:#4d7acb; border-bottom:1px solid #4c7cce; }
+.ncalender div.date ul li img{ margin:0 3px 0 3px}
+
+
+.ncalender div.date div{ margin-left:280px; position:relative; width:385px; margin-top:2px;}
+.ncalender div.date div a.pre{ position:absolute; top:3px; left:0px;}
+.ncalender div.date div a.next{ position:absolute; top:3px; right:0px;}
+.ncalender div.date div p{display:inline; font-size:25px;  font-weight:bold; font-family:"Tahoma";  padding-left:23px;  }
+.ncalender div.date div p span{color:#333333; *line-height:28px;}
+.ncalender div.date div p span span{ color:#4a7bd7;}
+.ncalender div.date a.cls{ position:absolute; top:2px; right:2px}
+.ncalender div.schedule{ padding:10px 30px 20px 40px; position:relative; *padding:10px 30px 0px 38px;}
+.ncalender div.schedule a.pre{ position:absolute; top:108px; left:11px; _left:-28px;}
+.ncalender div.schedule a.next{ position:absolute; top:108px; right:11px;*right:8px;}
+
+.table_sm{width:100%; table-layout:fixed; border-collapse:collapse; border-top:1px solid #d3d3d3; }
+.table_sm caption{display:none}
+.table_sm th{ color:#666;letter-spacing:-1px; background-color:#fafafb; font-size:11px; font-weight:normal; }
+.table_sm th{padding:7px 6px 7px 15px; border-bottom:1px solid #d3d3d3; border-left:1px solid #d3d3d3; border-right:1px solid #d3d3d3; text-align:left; }
+.table_sm th.le,.table_sm td.le{ border-left:none;}
+.table_sm th.ri,.table_sm td.ri{ border-right:none;}
+.table_sm td{padding:6px 5px; border-bottom:1px solid #d3d3d3; text-align:left; padding-left:14px; }
+.table_sm td{ border-left:1px solid #d3d3d3; border-right:1px solid #b6c1dd; font-size:11px; color:#666666; }
+
+.table_sm td table{ border-top:1px solid #666666; width:100%; margin:10px 0 20px;}
+.table_sm td table th{ font-size:12px; background-color:#f8f2f3; font-weight:bold; text-align:center; border-left:none; border-right:none;}
+.table_sm td table td{ text-align:center; border-left:none; border-right:none;}
+
+
+/* 상세페이지 엔젤티켓 */
+@font-face {
+ font-family: 'Nanum Gothic Square';
+ font-weight: 700;
+ src: url('http://tkfile.yes24.com/entimg/font/square/NanumSquareB.eot');
+ src: url('http://tkfile.yes24.com/entimg/font/square/NanumSquareB.eot?#iefix') format('embedded-opentype'),
+      url('http://tkfile.yes24.com/entimg/font/square/NanumSquareB.woff') format('woff'),
+      url('http://tkfile.yes24.com/entimg/font/square/NanumSquareB.ttf') format('truetype');
+}
+
+.bn_angel {width:700px; background:#6edbf2 url('http://tkfile.yes24.com/img/event/2017/0522/bn_bg.png') repeat 0 0;}
+.angel_con { position:relative;width:660px; min-height:240px;padding:30px 20px 15px 20px}
+.bn_angel .tit {width:100%; height:50px; display:inline-block;overflow:hidden; margin:0 auto; text-align:center;}
+.bn_angel .tit em {font:700 30px 'Nanum Gothic Square'; color:#133351; margin-left:15px; vertical-align:middle;letter-spacing:-0.02em}
+.bn_angel .dc {background:#ff347c; display:block; margin:40px 0 10px 0; color:#fff;font:700 26px 'Nanum Gothic Square'; padding:12px 10px 0 10px; text-align:center; line-height:75px; letter-spacing:-0.02em}
+.bn_angel .dc em, .bn_angel .angelLi em{font-weight:800; text-decoration:underline}
+.bn_angel .date {position:absolute; top:100px; left:50%; width:260px;margin-left:-130px;text-align:center; background:#133351; border-radius:30px; height:30px;padding-top:10px;  line-height:36px; color:#fff;font:700 20px 'Nanum Gothic Square'; }
+.bn_angel em.l_wing {position:absolute; top:-10px; left:-40px; width:60px; height:50px; background:url('http://tkfile.yes24.com/img/event/2017/0522/bn_wings.png') no-repeat 0 0;}
+.bn_angel em.r_wing {position:absolute; top:-10px; right:-40px; width:60px; height:50px; background:url('http://tkfile.yes24.com/img/event/2017/0522/bn_wings.png') no-repeat 0 -50px;}
+.bn_angel .deco {position:absolute; right:10px; top:77px; }
+.bn_angel .angelLi {width:100%; margin-top:5px;display: inline-block;}
+.bn_angel .angelLi li {font:normal 14px '맑은 고딕'; line-height:20px; color:#133351;letter-spacing:-0.05em;clear: left; }
+.angel_info {background:#133351; width:100%; padding:0; width:660px; padding:15px 20px 18px 20px; text-align:center; color:#fff;font:normal 14px '맑은 고딕'; line-height:20px;letter-spacing:-0.05em }

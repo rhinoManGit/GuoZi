@@ -28,6 +28,7 @@
     "nodemailer": "^4.6.8",
     "qiniu": "^7.2.1",
     "redis": "^2.8.0",
+    "request": "^2.88.0",
     "serve-favicon": "^2.5.0",
     "silly-datetime": "^0.1.2"
   }

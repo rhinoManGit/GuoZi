@@ -1,0 +1,350 @@
+@charset "utf-8";
+
+/* base */body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:1em}
+html{overflow-y:scroll;height:100%; }
+body{width:100%;height:100%;font-size:12px;  line-height:16px;  /*background:url(http://tkfile.yes24.com/img/common/bg_body.gif) repeat-x;*/ text-align:left !important;}
+body,input,textarea,select,button,table{font-family:'돋움',dotum,AppleGothic,Vendara;color:#888888}
+body.kbcard {background-position:0 116px;}
+body.hki {background-position:0 155px}
+
+
+ol,ul{list-style:none outside none}
+img,fieldset{border:0 none;vertical-align:middle/* cursor:pointer; */}
+em,address{font-style:normal}
+acronym{speak:normal}
+.btn{/* text-align:center; */}
+input,select{/* line-height: 21px; */letter-spacing:0; }
+button{vertical-align:middle}
+.carticle button span{display:none;visibility:hidden}
+.addr_pop button span{display:none;visibility:hidden}
+.hidden{visibility:hidden;}
+.displayN{display:none;}
+.last{border:0 none;background:none}
+input[type=radio]{width:13px;height:13px}
+input[type=text]{letter-spacing:0; height:22px; border:1px solid #CCC; vertical-align:top;}
+.btn_mt30 {float:right; margin-top:-30px;}
+.btn_mt20 {float:right; margin-top:-20px;}
+.im_m3 {margin:-4px 0 0 3px; border:none !important;}
+
+/* 숨김영역 */
+.blind,caption,legend{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+hr{clear:both;border:none;border-top:1px solid #e4e4e4}
+.red{color:#ea4955 !important}
+.org{color:#f2740f !important}
+.grn{color:#5eb289 !important}
+.blu{color:#4C7CCE !important}
+.blk{color:#3a3a3a !important}
+.bold{font-weight:bold!important}
+.bd_n {font-weight:normal !important}
+.sm{ font-size:11px;}
+.poster_line{ border:1px solid #dcdcdc }
+
+a.hover:hover{ text-decoration:underline;}
+
+/* 영문,숫자 */
+.e{font-size:11px}
+.e a:link{font-size:11px;color:#666;text-decoration:none}
+.e a:visited{font-size:11px;color:#666;text-decoration:none}
+.e a:active{font-size:11px;color:#666;text-decoration:none}
+.e a:hover{font-size:11px;color:#666;text-decoration:none}
+.scroll{scrollbar-face-color:#fff;scrollbar-shadow-color:#bcbcbc;scrollbar-highlight-color:#fff;scrollbar-3dlight-color:#bcbcbc;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#f6f6f6;scrollbar-arrow-color:#666}
+.scroll02{scrollbar-face-color:#fff;scrollbar-shadow-color:#bcbcbc;scrollbar-highlight-color:#fff;scrollbar-3dlight-color:#bcbcbc;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#f6f6f6;scrollbar-arrow-color:#666}
+a:link{color:#666666;text-decoration:none}
+a:visited{color:#666666;text-decoration:none}
+a:hover{color:#666666;text-decoration:none}
+
+.btn{/*margin-top:-35px;*/ margin-bottom:25px; height:28px; }
+.btn a{*display:inline-block; *height:28px;}
+.pbtn{/*margin-top:-35px;*/ margin-bottom:35px; height:28px;}
+.tc{text-align:center}
+.fr{float:right !important}
+.fl{float:left}
+.tr{text-align:right}
+.more{ position:absolute; right:8px; top:6px;}
+.btn .right{ float:right; margin-top:-30px;}
+.over {overflow:hidden;}
+.mgt5 {margin-top:5px !important;}
+
+/* 대체택스트 */
+.altText{display:none;visibility:hidden}
+#gnbwrap {width:100%; margin:0 auto; background:url(http://tkfile.yes24.com/img/common/bg_body2.gif) repeat-x 0 -3px; margin-top:10px; min-width: 960px; }
+#warp{ width:960px; margin:0 auto;}
+#header,#container,#footer{ position:relative;}
+/*header*/
+#header{z-index:10; width:960px; margin:0 auto; }
+.toolmenu{ height:22px; *height:32px; z-index:10; }
+.toolmenu ul.hd_left{ margin-left:-8px; *display:inine; *zoom:1;  *margin-left:-7px; margin-top:10px; *margin-top:8px;  z-index:10;  }
+.toolmenu ul.hd_left li{ float:left; padding-left:8px; margin-right:8px; margin-top:-2px; *margin-top:0px;-webkit-margin-before:-4px; background:url(http://tkfile.yes24.com/img/common/ic_line.gif) no-repeat 0 2px;  *background:url(http://tkfile.yes24.com/img/common/ic_line.gif) no-repeat 0 2px;}
+.toolmenu ul.hd_left li.fst{ background:none;}
+.toolmenu ul.hd_left li a.on{ padding-bottom:0px; *padding-bottom: 4px;}
+.toolmenu ul.hd_log{ float:right; margin-right:8px; _margin-right:5px;   margin-top:-2px;  *margin-top:-17px; _margin-top:-14px;  *display:inine; *zoom:1; }
+.toolmenu ul.hd_log li{ display:inline; padding:0 0 0 9px; background:url(http://tkfile.yes24.com/img/common/ic_line03.gif) no-repeat 0 4px;}
+.toolmenu ul.hd_log li.fst{ background:none;}
+.hd_left li{ position:relative; z-index:10;  }
+.hd_left li ul{ position:absolute; top:15px; left:5px;  z-index:10;  }
+.hd_left li ul{ padding:5px 0px;/*background:url(http://tkfile.yes24.com/img/common/bg_header.png) no-repeat;*/ border:2px solid #a6cdef;background:#fff; width:68px; /*height:160px;*/}
+.hd_left li ul li{ height:18px;*height:15px; margin-bottom:2px; margin-right:0!important; padding-left:0!important; background:none!important;}
+
+
+.ci{ height:54px; margin-bottom:10px;}
+.ci h1{ position:absolute; left:34px; top:9px; *top:9px;}
+.ci ul.gnb{ position:absolute; top:18px; left:244px; *top:18px;}
+.ci ul.gnb li.fst{ background:none;}
+.ci ul.gnb li{ float:left; background:url(http://tkfile.yes24.com/img/common/ic_mline.gif) no-repeat 0 2px; padding:0 14px 0 15px;}
+.ci ul.gnb li a.on,.ci ul.gnb li a:hover{ padding-top:11px; height:15px; background:url(http://tkfile.yes24.com/img/common/ic_msel.gif) no-repeat center 0; *display:inine; *zoom:1; *margin-top:-10px;}
+.ci ul.gnb_rank{ float:right; margin-top:20px; *margin-top:18px;}
+.ci ul.gnb_rank li{ float:left; padding:0 7px; /*background:url(http://tkfile.yes24.com/img/common/ic_line.gif) no-repeat right;*/}
+/*.ci ul.gnb_rank li.nbg01{ background:none; margin-right:1px;}
+.ci ul.gnb_rank li.nbg02{ background:none; margin-right:-3px; padding-left:10px; }
+.ci ul.gnb_rank li.nbg03{ background:none; margin-right:1px;}*/
+
+
+.hd_search{ height:24px; margin-bottom:25px; }
+.hd_search p.popular{color:#FFF; width:220px; margin-left:3px; height:16px;}
+.hd_search p.popular em{ font-size:11px; font-weight:bold; color:#fff997; background:url(http://tkfile.yes24.com/img/common/bg_fov.gif) no-repeat right 3px; letter-spacing:-1px; padding-right:8px; margin-right:5px;}
+.hd_search p.popular span{ padding:0 2px; }
+.hd_search p.popular span a{ color:#fff;}
+.hd_search p.popular span a:hover{ text-decoration:underline;}
+.search{ position:absolute; top:41px; left:234px; background:url(http://tkfile.yes24.com/img/common/bg_search.gif) no-repeat; width:397px; /*height:47px;*/ *top:41px; z-index:1; }
+.search{ padding:12px}
+.search input[type=text]{ border:none; padding-left:5px;}
+.search a.srch{ position:absolute; top:2px; right:0;display:inline-block; width:65px; height:40px; font-size:0;}
+.search_arr {z-index: 100; left: 568px; position: absolute; top:56px;*top:56px;}
+.search_bx {position: absolute;top:113px;*top:113px;left:310px; z-index:2000;font-size:11px;}
+.gnb_guide{ float:right; margin-top:-16px;}
+.gnb_guide li{ float:left;padding:0 0 0 16px; font-size:11px; }
+.gnb_guide li a{color:#FFFFFF; _color:#FFFFFF !important;}
+.gnb_guide li img{ margin-top:-2px;}
+.gnb_guide li.end{ padding:0 8px 0 23px;  _height:22px; _padding-top:2px;}
+.searchwrap {display:none;position:absolute;top:-26px; /*left:70*/;z-index:1000; border:1px solid #3a85c7; width:280px; height:220px; background:#fff; margin:0 auto;}
+.searchwrap .con_search {clear:both; width:280px;margin:0;height:20px;}
+.searchwrap table {font-size:11px}
+.searchwrap dt {float:left; width:180px;}
+
+.searchwrap .t1 {margin:0; float:left; width:180px;padding:5px 0 0 7px; color:#7F9DB9; font-size:11px; background:#f3f4f4;  height:18px;}
+.searchwrap .t2 {margin:0; background:#f3f4f4; text-align:right; padding:3px 3px 3px 0; *padding:3px 3px 2px 0; height:18px;}
+.searchwrap .poster {margin:10px 5px;width:70px; height:87px;}
+.searchwrap dt.name {padding:7px 0 0 8px; color:#555; font-size:11px;width:250px;}
+
+/*aside_l*/
+#LeftBanner{ position:absolute; margin-left:-6px; z-index:3; *left:0px}
+#LeftBanner2 {position:absolute;  z-index: 3;left:-95px; top:0; width:85px;}
+#LeftBanner2 p {position:absolute;left: -15px;top:-40px;}
+#LeftBanner2 div.angel {width:74px; margin:0 auto; margin-bottom:15px;margin-left:5px; border-bottom:2px solid #056bac; padding-bottom:5px;}
+#LeftBanner2 ul.angel_bn {height:160px; margin-left:1px;/*margin-left:-15px;*/}
+#LeftBanner2 ul.angel_bn li {/*margin-left:9px;*/padding-top:2px;}
+#LeftBanner2 ul.angel_sort { line-height:0; margin:0; padding:0; font-size:0px; border:0; text-align:center;}
+#LeftBanner2 ul.angel_sort li {display:inline;}
+#LeftBanner_Super {position: absolute;}
+#wel_wingSuper .wingSuper {width:80px !important; left:0px !important;top:0px !important; border-radius:3px;text-align:center !important; padding-top:5px;}
+#LeftBanner2 div.angel2 {width:80px;height:175px;_width:82px;_height:177px;overflow:hidden;text-align:center;border:solid 1px #d8d8d8;border-radius:3px;background-color:#fff;margin-bottom:10px}
+#LeftBanner2 .angel2.top {margin-top:48px;}
+#LeftBanner2 .bigimg {width:80px;    height: 120px;}
+#LeftBanner2 .ic_arr {position:absolute;  z-index: 3;right:-20px;top:77px; display:block }
+/*aside_r*/
+#RightBanner{position:absolute; left:970px;}
+#RightBanner p.TopRightBanner{ position:absolute; top:-100px; right:-110px; _top:-104px; _right:-45px;}
+.RightBanner{ position:fixed; width:80px;}
+.RightBanner a.loca.on { background:url(http://tkfile.yes24.com/img/common/img_loca.gif) no-repeat 0 0; height:21px; display:block; font-size:0; margin-bottom:5px;}
+.RightBanner a.loca.off{ background:url(http://tkfile.yes24.com/img/common/img_loca.gif) no-repeat 0 -21px;; height:21px; display:block; font-size:0;  margin-bottom:5px;}
+.RightBanner ul.quick{margin-bottom:8px;}
+.RightBanner ul.quick li{ border:1px solid #d4d4d4; /*height:94px;*/ margin-bottom:5px;}
+.RightBanner ul.quick li a{}
+.RightBanner ul.quick li a span{ font-size:11px; color:#FFFFFF; padding:1px 4px; padding-top:3px; display:block; *width:70px; margin-top:-20px;}
+.RightBanner div.angel2 {width:78px;height:160px;_width:80px;_height:162px;overflow:hidden;text-align:center;border:1px solid #d4d4d4;background-color:#fff;margin-bottom:7px}
+.RightBanner ul.angel_bn {height:145px !important;}
+.RightBanner ul.angel_bn li {/*margin-left:9px;*/padding-top:2px;}
+.RightBanner ul.angel_sort { line-height:0; margin:0; padding:0; font-size:0px; border:0; text-align:center;}
+.RightBanner ul.angel_sort li {display:inline;}
+.qu_type01{ border:1px solid #d4d4d4; position:relative;  margin-bottom:7px;}
+.qu_type01 h3{background:url(http://tkfile.yes24.com/img/common/bg_qu01.gif) no-repeat; text-align:center; padding-top:6px; height:16px;}
+.qu_type01 ul{ margin-top:3px;}
+.qu_type01 ul li{ text-align:center; position:relative; margin-bottom:5px;}
+.qu_type01 ul li a{}
+.qu_type01 ul li span{ position:absolute; right:6px;}
+.qu_type01 p.counter{ text-align:center; background:url(http://tkfile.yes24.com/img/common/bg_qcount.gif) no-repeat; padding-top:5px; height:17px;font:normal 10px Verdana; margin-top:1px;}
+.qu_type01 p.counter span{ padding:0px 1px;}
+.qu_type01 p.counter span.bold{ color:#3c3c3c; }
+
+.qu_type02{ border:1px solid #d4d4d4; position:relative;}
+.qu_type02 h3{background:url(http://tkfile.yes24.com/img/common/bg_qu02.gif) no-repeat; text-align:center; padding-top:6px; height:32px;}
+.qu_type02 span.more{ position:absolute; top:20px; left:23px;}
+.qu_type02 ul{ margin-top:8px;}
+.qu_type02 ul li{ text-align:center; position:relative; margin-bottom:8px;}
+.qu_type02 ul li a{}
+.qu_type02 ul li span{ position:absolute; right:6px;}
+.qu_type02 ul li img {border:1px solid #d3d3d3;}
+
+.ev_bn {width:78px;}
+.ev_sort {width:78px;text-align:center;  padding:0;font-size: 0px;border: 0;line-height:0; margin:5px 0 }
+.ev_sort li {display:inline;text-align:center}
+
+/*container*/
+#container{ min-height:500px; *z-index:2; }
+
+
+/*footer*/
+#footer{ clear:both; height:105px; margin-bottom:15px;}
+#footer div.policy{ position:relative;z-index:1; background:url(http://tkfile.yes24.com/img/common/bg_policy.gif) no-repeat 0 1px; height:30px; margin-bottom:10px;}
+#footer div.policy ul{ padding-top:7px; height:20px; /*margin-left:16px;*/}
+#footer div.policy ul li{ float:left; margin-left:15px;}
+#footer div.policy ul li.grn{margin-left:14px;}
+#footer div.policy ul li.rss{margin-left:13px;}
+#footer div.policy p{ position:absolute; right:10px; top:8px;}
+/* 글로벌푸터 추가 */
+#footer div.policy ul li.famLnk	{ float:right;margin:-1px 60px 0 0px;width:88px; }
+#footer div.policy ul li.famLnk dl { position:relative;z-index:2;width:88px;height:17px;overflow:visible; }
+#footer div.policy ul li.famLnk dt { padding:0px 0 2px 5px;width:83px;_width:88px;height:15px;_height:17px;text-align:left;cursor:pointer;font-size:11px;font-family:Tahoma;color:#444;background:url('http://image.yes24.com/sysimage/common/bg/bg_footerSel.gif') no-repeat left top; }
+#footer div.policy ul li.famLnk dd { position:absolute;z-index:1;left:0;top:16px;padding:2px 0 0 0;width:86px;border:solid 1px #c9c9c9;background-color:#FFF; }
+#footer div.policy ul li.famLnk dd em { display:block;cursor:pointer;font-size:11px;font-family:Tahoma;text-align:left; }
+#footer div.policy ul li.famLnk dd em a { display:block;padding:1px 0 0 4px;width:82px;_width:86px;height:16px;_height:17px;color:#444444; }
+#footer div.policy ul li.famLnk dd em a:hover { background-color:#f2f2f2;text-decoration:none;color:#000000; }
+#footer div.policy ul li.famLnk dd em a:visited { background-color:#fff;text-decoration:none;color:#444444; }
+
+#footer h1{ float:left; margin:0 21px 0 28px; _margin-left:10px;}
+#footer address{ float:left; margin:0 0 0 6px; position:relative;z-index:0;}
+#footer address a{ display:block; width:80px; height:13px; position:absolute; top:32px; left:138px; background:url(http://tkfile.yes24.com/img/common/btn_work.gif) no-repeat;}
+#footer address a span{  visibility:hidden; font-size:10px; }
+#footer p.consumer{ float:left;  position:relative; top:-3px; right:-4px;z-index:0;}
+#footer p.consumer a{ display:block; width:80px; height:13px; position:absolute; top:51px; left:123px; background:url(http://tkfile.yes24.com/img/common/btn_consumer.gif) no-repeat;}
+#footer p.consumer a span{  visibility:hidden; font-size:10px; }
+
+
+
+/* cont_section */
+.cont_section{ width:100%; margin-bottom:20px; /*min-height:760px;*/ }
+
+
+/*SideBanner*/
+.SideBanner{ position:relative; z-index:11;}
+.SideBanner.top .angel2 {margin-top:48px;}
+
+
+
+
+
+/* UI Object */
+.select.big{ *margin-right:5px;}
+.select{ display:inline-block; *display:inline; position:relative; background:#fff; line-height:normal; vertical-align:middle; *zoom:1; margin-left:5px; }
+.select *{ margin:0; padding:0; font-size:12px; font-family:Tahoma, Sans-serif; cursor:pointer}
+.select .my_value{ overflow:visible; position:relative; top:0; left:0; z-index:2; border:1px solid #bababa; background:transparent; color:#666; text-align:left; line-height:19px; _line-height:normal}
+.select .my_value.selected{ font-weight:bold}
+.select.open .my_value,
+.select .my_value.outLine{ border:1px solid #999}
+.select button.my_value{ width:100%; height:21px; *padding-left:5px; text-indent:5px; *text-indent:0; font-size:11px;}
+.select div.my_value{ height:19px; text-indent:8px}
+.select .ctrl{ position:absolute; top:0; right:0; width:18px; height:19px; border:1px solid #bababa; border-left:1px solid #eaeaea; background:#fff}
+.select .arrow{ position:absolute; width:0; height:0; top:9px; right:6px; border-top:3px solid #999; border-left:3px solid #fff; border-right:3px solid #fff; font-size:0; line-height:0}
+.select ul{ overflow:hidden; position:absolute; top:20px; left:0; width:100%; border:0; border-top:1px solid #bababa; border-bottom:1px solid #bababa; background:#fff; list-style:none}
+.select ul.a_list{ display:none}
+.select.open ul.a_list{ display:block}
+.select ul.i_list{ left:-2000%}
+.select.open ul.i_list{ left:0}
+.select li{ overflow:hidden; position:relative; height:18px; border-left:1px solid #bababa; border-right:1px solid #bababa; white-space:nowrap}
+.select li input.option{ position:absolute; width:100%; height:20px; line-height:20px}
+.select li label{ position:absolute; top:0; left:0; width:100%; height:18px; background:#fff; color:#767676; line-height:18px; text-indent:8px; *text-indent:6px}
+.select li a{ display:block; height:18px; background:#fff; color:#767676; line-height:18px; text-indent:8px; *text-indent:6px; text-decoration:none; font-size:11px;}
+.select li.hover *{ background:#999; color:#fff}
+.select_go{ overflow:visible; height:21px; width:28px; *margin:-1px 0 -1px 4px; padding:0; border:1px solid #bababa; background:#eee; font:bold 11px Tahoma; color:#767676; line-height:19px; _line-height:normal; vertical-align:middle; cursor:pointer}
+/* //UI Object */
+
+
+
+.stylish-select ul.newList { left:-9999px; }
+
+.newListSelected {display: block; vertical-align:middle; color:#666; background:url(http://tkfile.yes24.com/img/common/bbs-select-bg.gif) right top no-repeat; float:left; margin-left:3px; font-size:11px}
+.selectedTxt {display: block; height: 16px; padding: 3px 25px 0 5px; background:url(http://tkfile.yes24.com/img/common/bbs-select-bg-l.gif) left top no-repeat; overflow: hidden; letter-spacing:0;}
+
+
+ul.newList * { margin: 0; padding: 0;  }
+ul.newList a { display: block; color: #666; text-decoration: none; }
+
+ul.newList { 
+	position: absolute; left: 0; top: 31px;
+	z-index: 9999;
+	list-style: none;
+	border:1px solid #d4d4d4; 
+	border-left:none;
+	border-top:none;
+	margin-top:-2px;
+	margin-right:-1px;
+	padding-bottom:1px;
+}
+
+ul.borderTop { border: 1px solid #77a4d5; }
+ul.newList li { text-align:left; background: #fafafa url(http://tkfile.yes24.com/img/common/bbs-select-list-bg.gif) top left no-repeat !important; padding:0px 0; font-size:12px;}
+ul.newList li a { display: block; font-weight: normal; margin-left:2px; padding: 0 9px 1px 3px;}
+ul.newList li a:focus {-moz-outline-style: none;}
+
+.hiLite {color:#666666 !important;}
+.hiLite a {color:#666666 !important;}
+.newListHover {color:#666666 !important; cursor:default;}
+
+.newListSelected.b_srch{display: block; vertical-align:middle; color:#666; background:url(http://tkfile.yes24.com/img/common/bbs-s-select-bg.gif) right top no-repeat; float:left; margin-left:3px; font-size:11px}
+.b_srch div.selectedTxt {display: block; height: 21px; padding: 5px 35px 0 6px; background:url(http://tkfile.yes24.com/img/common/bbs-s-selectTit-bg-l.gif) left top no-repeat !important; overflow: hidden; letter-spacing:0; font-size:12px; }
+.b_srch ul.newList{background-color:#fff;}
+.b_srch ul.newList li{}
+
+.newListSelected.s_srch{display: block; vertical-align:middle; color:#666; background:url(http://tkfile.yes24.com/img/common/bbs-select-bg.gif) right top no-repeat; float:left; margin-left:3px; font-size:11px}
+.s_srch div.selectedTxt {display: block; height: 21px; padding: 3px 35px 0 6px; background:url(http://tkfile.yes24.com/img/common/bbs-selectTit-bg-l.gif) left top no-repeat !important; overflow: hidden; letter-spacing:0; font-size:11px; }
+.s_srch ul.newList{ border:1px solid #CCC; background-color:#fff; border-top: none; left:-10px !important; top:22px !important; }
+.s_srch ul.newList li{ font-size:11px; background-color:#fff;}
+
+
+.newListSelected.top_srch{display: block; vertical-align:middle; color:#666; background:url(http://tkfile.yes24.com/img/common/bbs-t-select-bg.gif) right top no-repeat; float:left; margin-left:3px; font-size:11px; margin-left:-9px; margin-top:-6px;}
+.top_srch div.selectedTxt {display: block; height: 31px; padding: 9px 35px 0 11px; background:url(http://tkfile.yes24.com/img/common/bbs-t-selectTit-bg-l.gif) left top no-repeat !important; overflow: hidden; letter-spacing:0; font-size:12px; width:45px; }
+.top_srch ul.newList{ top:32px !important; left:-1px !important; z-index:1000; background-color:#fff;}
+.top_srch ul.newList li{}
+
+
+
+
+ul.list_img{}
+ul.list_img li{ float:left; margin-right:3px; display:block; width:20px; height:20px;}
+ul.list_img li a{ display:block; width:20px; height:20px;}
+ul.list_img li span{ visibility:hidden;}
+ul.list_img li.img_list{ background:url(http://tkfile.yes24.com/img/genre/icon_img.gif) no-repeat; }
+ul.list_img li.txt_list{background:url(http://tkfile.yes24.com/img/genre/icon_list.gif) no-repeat; }
+ul.list_img li.img_list.on{ background:url(http://tkfile.yes24.com/img/genre/icon_img_on.gif) no-repeat; }
+ul.list_img li.txt_list.on{background:url(http://tkfile.yes24.com/img/genre/icon_list_on.gif) no-repeat; }
+
+
+#yesFooter { clear: both !important; }
+
+/* 와이드 확장배너 */
+.widewrap {width:100%; margin:0 auto; }
+.widewrap .bigimg {position:absolute; width:1px;z-index:2002; top:136px; text-align:center}
+.widewrap .bigimg img { margin:0 auto; }
+.widewrap .bigimg .btn_close {width:960px; position:absolute; float:right; right:15px; top:15px}
+area { blr:expression(this.onFocus=this.blur()); outline:0px }
+#LeftBanner2 .ic_arr  {
+		  animation: aniTopBotFrames linear 1s;
+		  animation-iteration-count: infinite;
+		  transform-origin: 50% 50%;
+		  -webkit-animation: aniTopBotFrames linear 1s;
+		  -webkit-animation-iteration-count: infinite;
+		  -webkit-transform-origin: 50% 50%;
+		  -moz-animation: aniTopBotFrames linear 1s;
+		  -moz-animation-iteration-count: infinite;
+		  -moz-transform-origin: 50% 50%;
+		}
+
+		@keyframes aniTopBotFrames{
+		  0%	{ -webkit-transform:translate(0px,0px); }
+		  50%	{ -webkit-transform:translate(4px,0px); }
+		  100%  { -webkit-transform:translate(0px,0px); }
+		}
+
+		@-moz-keyframes aniTopBotFrames{
+		  0%	{ -webkit-transform:translate(0px,0px); }
+		  50%	{ -webkit-transform:translate(4px,0px); }
+		  100%  { -webkit-transform:translate(0px,0px); }
+		}
+
+		@-webkit-keyframes aniTopBotFrames {
+		  0%	{ -webkit-transform:translate(0px,0px); }
+		  50%	{ -webkit-transform:translate(4px,0px); }
+		  100%  { -webkit-transform:translate(0px,0px); }
+		}
+
