@@ -1,29 +1,35 @@
-html,body{
+html, body {
     padding: 0;
     margin: 0;
     height: 100%;
     /*background: #f1f2f7;*/
 }
-.left-content li,.left-content ul{
+
+.left-content li, .left-content ul {
     margin: 0;
     padding: 0;
 }
-#app,.left{
+
+#app, .left {
     height: 100%;
 }
-.content{
+
+.content {
     height: 100%;
- /*   background: #dddddd;*/
+    /*   background: #dddddd;*/
     color: #2d8cf0;
 }
-.content iframe{
+
+.content iframe {
     margin-left: 80px;
 }
-.content-left{
+
+.content-left {
     padding: 15px 80px;
     background: #f4f4f4;
 }
-.left-header>h3{
+
+.left-header > h3 {
     position: absolute;
     left: 89px;
     color: #FFF;
@@ -31,23 +37,26 @@ html,body{
     font-size: 22px;
     margin-top: 28px;
 }
-.right-content{
+
+.right-content {
     height: 100%;
     /*background: #f1f2f7;*/
     padding: 10px 0;
 }
-.left-content li{
+
+.left-content li {
     color: #aeb2b7;
     padding-left: 25px;
     list-style-type: none;
     border-bottom: 1px solid rgba(255, 255, 255, .05);
 }
 
-.left-content li i{
+.left-content li i {
 
     font-size: 12px;
 }
-.left-content li a{
+
+.left-content li a {
     color: #aeb2b7;
     text-decoration: none;
     padding: 18px 88px 18px 10px;
@@ -55,54 +64,68 @@ html,body{
     outline: 0;
     line-height: 54px;
 }
-.left-content li:hover{
+
+.left-content li:hover {
     color: #1abc9c;
 }
-.left-content li:hover a{
+
+.left-content li:hover a {
     color: #1abc9c;
 }
-.top-btn i{
+
+.top-btn i {
     margin-top: 12px;
     margin-left: 12px;
     cursor: pointer;
     color: #797979;
 }
-.top-btn:hover i{
+
+.top-btn:hover i {
     color: #FFF;
 }
-.frame-content{
+
+.frame-content {
     height: 600px;
     /*background: #ddd;*/
     padding: 15px 20px;
     border-top: 4px solid #ffffff;
 }
-.result_title{
+
+.result_title {
     padding: 5px 30px;
     color: rgb(3, 169, 244);
 }
-.result_title>ul>li{
+
+.result_title > ul > li {
     list-style: none;
     color: rgb(3, 169, 244);
     padding: 5px 5px;
 }
-.result_title>ul>li>span
-{padding: 0 5px}
-.result_title>ul>li>span.select{
+
+.result_title > ul > li > span {
+    padding: 0 5px
+}
+
+.result_title > ul > li > span.select {
     color: #FF5722;
 }
-.playtime{
+
+.playtime {
     padding: 5px 30px;
     color: rgb(3, 169, 244);
     width: 800px;
 }
-.fenge{
+
+.fenge {
     color: rgb(3, 169, 244);
     padding: 0 10px;
 }
-#selFlashTimeData{
+
+#selFlashTimeData {
     background: #dbdee0;
     color: #2196F3;
 }
+
 /*
 .frame-content{
     display: none;
@@ -111,82 +134,411 @@ html,body{
  座位图
 */
 
-.s0 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat0.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s1 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat1.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s2 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat2.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s3 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat3.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s4 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat4.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s5 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat5.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s6 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat6.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s7 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat7.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s8 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat8.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s9 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat9.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s10 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat10.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s11 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat11.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s12 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat12.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s13 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat13.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s14 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat14.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s15 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat15.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s16 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat16.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s17 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat17.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s18 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat18.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s19 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat19.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s20 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat20.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s21 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat21.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s22 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat22.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s23 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat23.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.s24 {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat24.gif') no-repeat; height:12px;width:11px; z-index:10;}
-.son {position:absolute; background:url('http://tkfile.yes24.com/images/ticket_new/ic_seat_on.gif') no-repeat; height:12px;width:11px; z-index:10;}
+.s0 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat0.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
 
-.bx_seatbg .seatarea .bx_con1 { position: relative; left: 0px; top: 0px; z-index: 0; overflow:auto; width:680; height:600px; background:#fff url('http://tkfile.yes24.com/images/ticket_new/bx2_seat2.jpg') no-repeat left bottom; text-align:center; }
-.raffer { position: absolute; left: 30px; top: 0px; z-index: 0; overflow:visible; }
-.csblkInfo { position:absolute; font-size:12px; color:#ffffff; border:#2080D0 solid 1px; background-color:#FF6600; top:0px; left:0px; z-index:200; padding:5px; } /*201402HTMLSEAT*/
-.bxdmap { font-size:12px; }
-.seatMap { position:absolute; top:57px; left:758px; z-index:11; filter:Alpha(Opacity=70); -moz-opacity:0.7; opacity:0.7; font-size:12px; overflow-x:auto; width:188px; height:200px; } /*201402HTMLSEAT*/
-.mapFocus { position:absolute; top:57px!important; left:757px!important; z-index:0; width:188px; height:203px; }
-.bx_seatbg .seatarea {float:left; width:746px;  background:#fff;}
-.bx_seatbg .seatarea, .bx_seatbg .seatinfo{ margin-top:20px;}
-.bigSeatMap { position:absolute; top:32px; left:0px; z-index:100; filter:Alpha(Opacity=70); -moz-opacity:0.7; opacity:0.7; width:745px; height:600px;  overflow:visible; text-align:center; } /*201402HTMLSEAT*/
-.bigmapFocus { position:absolute; top:32px!important; left:0px; z-index:90; height:600px; text-align:center; } /*201402HTMLSEAT -> 20140320HTMLSEAT*/
-.seatGroup   {position:absolute; z-index:1;} /*20140415HTMLSEAT*/
+.s1 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat1.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s2 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat2.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s3 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat3.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s4 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat4.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s5 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat5.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s6 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat6.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s7 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat7.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s8 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat8.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s9 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat9.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s10 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat10.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s11 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat11.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s12 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat12.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s13 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat13.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s14 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat14.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s15 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat15.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s16 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat16.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s17 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat17.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s18 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat18.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s19 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat19.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s20 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat20.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s21 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat21.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s22 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat22.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s23 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat23.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.s24 {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat24.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.son {
+    position: absolute;
+    background: url('http://tkfile.yes24.com/images/ticket_new/ic_seat_on.gif') no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}
+
+.bx_seatbg .seatarea .bx_con1 {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    overflow: auto;
+    width: 680;
+    height: 600px;
+    background: #f4f4f4 url(http://tkfile.yes24.com/images/ticket_new/bx2_seat2.jpg) no-repeat left bottom;
+    text-align: center;
+}
+
+.raffer {
+    position: absolute;
+    left: 30px;
+    top: 0px;
+    z-index: 0;
+    overflow: visible;
+}
+
+.csblkInfo {
+    position: absolute;
+    font-size: 12px;
+    color: #ffffff;
+    border: #2080D0 solid 1px;
+    background-color: #FF6600;
+    top: 0px;
+    left: 0px;
+    z-index: 200;
+    padding: 5px;
+}
+
+/*201402HTMLSEAT*/
+.bxdmap {
+    font-size: 12px;
+}
+
+.seatMap {
+    position: absolute;
+    top: 57px;
+    left: 758px;
+    z-index: 11;
+    filter: Alpha(Opacity=70);
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+    font-size: 12px;
+    overflow-x: auto;
+    width: 188px;
+    height: 200px;
+}
+
+/*201402HTMLSEAT*/
+.mapFocus {
+    position: absolute;
+    top: 57px !important;
+    left: 757px !important;
+    z-index: 0;
+    width: 188px;
+    height: 203px;
+}
+
+.bx_seatbg .seatarea {
+    float: left;
+    width: 746px;
+    background: #fff;
+}
+
+.bx_seatbg .seatarea, .bx_seatbg .seatinfo {
+    margin-top: 20px;
+}
+
+.bigSeatMap {
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    z-index: 100;
+    filter: Alpha(Opacity=70);
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+    width: 745px;
+    height: 600px;
+    overflow: visible;
+    text-align: center;
+}
+
+/*201402HTMLSEAT*/
+.bigmapFocus {
+    position: absolute;
+    top: 32px !important;
+    left: 0px;
+    z-index: 90;
+    height: 600px;
+    text-align: center;
+}
+
+/*201402HTMLSEAT -> 20140320HTMLSEAT*/
+.seatGroup {
+    position: absolute;
+    z-index: 1;
+}
+
+/*20140415HTMLSEAT*/
 
 /* 공연장 전체보기 관련 css */
-.minimap_m {margin-top:10px;}
-.minimap_m .btn_all {margin-bottom:10px;}
-.bx_seatbg .seatinfo ul li.bx3_wbg {  background: url('http://tkfile.yes24.com/images/ticket_new/bx3_minimap2.gif') repeat-y 0 0;}
-.bx_seatbg .seatinfo ul {width:203px;float:none;}
-.bx_seatbg .seatinfo ul li p.txt {color:#333;margin: 3px 5px;}
-.bx_seatbg .seatinfo ul li p.txt em {color:#6699cc; padding-left:2px}
-.bx_seatbg .seatinfo ul li p.txt.ov {background:#dde9f4; font-weight:bold; padding:4px 0 2px 0}
-.bx_seatbg .seatinfo .seat_layer {width:170px; padding:2px 8px; margin-bottom:0px}
-.bx_seatbg .seatinfo .seat_layer li {padding: 0 0 0 17px}
-.bx_seatbg .seatinfo ul li.bx3_wbg2 {min-height:100px}
-.bx_seatbg .seatinfo .btn {width:203px}
-/* 예매 단계 내 좌석 선점 시간 안내 */
-.t_info {position:absolute;z-index:100; left:757px; top:355px; background:#f2f2f2; border:1px solid #ccc; width:181px; padding:10px; text-align:center}
-.t_info span {font-size:11px}
+.minimap_m {
+    margin-top: 10px;
+}
 
-#selectSeatMap{
+.minimap_m .btn_all {
+    margin-bottom: 10px;
+}
+
+.bx_seatbg .seatinfo ul li.bx3_wbg {
+    background: url('http://tkfile.yes24.com/images/ticket_new/bx3_minimap2.gif') repeat-y 0 0;
+}
+
+.bx_seatbg .seatinfo ul {
+    width: 203px;
+    float: none;
+}
+
+.bx_seatbg .seatinfo ul li p.txt {
+    color: #333;
+    margin: 3px 5px;
+}
+
+.bx_seatbg .seatinfo ul li p.txt em {
+    color: #6699cc;
+    padding-left: 2px
+}
+
+.bx_seatbg .seatinfo ul li p.txt.ov {
+    background: #dde9f4;
+    font-weight: bold;
+    padding: 4px 0 2px 0
+}
+
+.bx_seatbg .seatinfo .seat_layer {
+    width: 170px;
+    padding: 2px 8px;
+    margin-bottom: 0px
+}
+
+.bx_seatbg .seatinfo .seat_layer li {
+    padding: 0 0 0 17px
+}
+
+.bx_seatbg .seatinfo ul li.bx3_wbg2 {
+    min-height: 100px
+}
+
+.bx_seatbg .seatinfo .btn {
+    width: 203px
+}
+
+/* 예매 단계 내 좌석 선점 시간 안내 */
+.t_info {
+    position: absolute;
+    z-index: 100;
+    left: 757px;
+    top: 355px;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    width: 181px;
+    padding: 10px;
+    text-align: center
+}
+
+.t_info span {
+    font-size: 11px
+}
+
+#selectSeatMap {
     width: 678px;
     height: 585px;
     background-image: url(http://tkfile.yes24.com/upload2/hallimg/8000/8491/8491b_0_0.jpg);
     background-repeat: no-repeat;
     background-position: 0px 0px;
 }
+
 .bx_seatbg .seatarea {
     float: left;
     width: 880px;
     background: #fff;
 }
-.date-btn{
+
+.date-btn {
     display: inline-block;
     color: #FF5722;
     margin-right: 15px;
 }
-.common-title{
+
+.common-title {
     padding: 0px 10px;
     color: #333;
 }
-.price-seat strong{
+
+.price-seat strong {
     padding: 0 5px;
 }

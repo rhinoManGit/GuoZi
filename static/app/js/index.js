@@ -3,24 +3,23 @@
  */
 $(function() {
 
-  var OSIFRootUrl = "";
-  var isLoadedSvg = false; //20140403HTMLSEAT
-  var IdHall = '8167';
-  var IdTime = '976620';
-  var Block = '0';
-  var StMax = parseInt('10');
-  var IdCustomer = '14444324';
-  var HCardAppOpt = '0';
-  var IdOrg = 1;
-  var layerWidth = 678;
-  var layerHeight = 585;
-  var _split = "@";
-  var _lines = "^";
-  var mapType = "0";
-  var ArBlockRemain = new Array();
+  var OSIFRootUrl     = '';
+  var isLoadedSvg     = false; //20140403HTMLSEAT
+  var IdHall          = '8167';
+  var IdTime          = '976620';
+  var Block           = '0';
+  var StMax           = parseInt('10');
+  var IdCustomer      = '14444324';
+  var HCardAppOpt     = '0';
+  var IdOrg           = 1;
+  var layerWidth      = 678;
+  var layerHeight     = 585;
+  var _split          = '@';
+  var _lines          = '^';
+  var mapType         = '0';
+  var ArBlockRemain   = new Array();
   var ArSectionRemain = new Array();
-  var ArBlockFile = new Array();
-
+  var ArBlockFile     = new Array();
 
   //판매가능 좌석맵핑
   function TicketMapping(ticketData) {
@@ -28,18 +27,19 @@ $(function() {
     for (var i = 0; i < tickets.length; i++) {
       var ticket = tickets[i].split(_split);
       if (ticket.length > 3) {
-        var objtk = document.getElementById("t" + ticket[0]);
-        objtk.title = ticket[3];
-        objtk.className = "s" + ticket[1];
+        var objtk       = document.getElementById('t' + ticket[0]);
+        objtk.title     = ticket[3];
+        objtk.className = 's' + ticket[1];
 
-        if (ticket[2] == "0") {
-          objtk.style.cursor = "hand";
-          objtk.onclick = ChoiceSeat;
-          $("#t" + ticket[0]).attr("grade", ticket[5]);
+        if (ticket[2] == '0') {
+          objtk.style.cursor = 'hand';
+          objtk.onclick      = ChoiceSeat;
+          $('#t' + ticket[0]).attr('grade', ticket[5]);
         }
       }
     }
   }
+
   //블럭별 잔여석 정보 셋팅
   function CreateRemainArgs(blocktickets) {
     ArBlockRemain = new Array();
@@ -51,24 +51,33 @@ $(function() {
       }
     }
   }
+
   function GetImgPath() {
 
-    HallRoot = parseInt((parseInt(IdHall, 10) / 1000), 10) * 1000
+    HallRoot = parseInt((parseInt(IdHall, 10) / 1000), 10) * 1000;
 
-    return "http://tkfile.yes24.com/upload2/hallimg/" + HallRoot + "/" + IdHall + "/";
+    return 'http://tkfile.yes24.com/upload2/hallimg/' + HallRoot + '/' +
+           IdHall + '/';
   }
+
   function ChoiceSeat() {
 
-    if ($(this).attr("className") == "son") {
-      $("#C" + $(this).attr("value")).remove();
-      $(this).attr("className", $(this).attr("oldclass"));
-    } else {
-      if ($("p[name=cseat]").length < StMax) {
-        $("#liSelSeat").append('<p id="C' + $(this).attr("value") + '" class="txt2" name="cseat" grade="' + $(this).attr("grade") + '">' + $(this).attr("title") + '</p>');
+    if ($(this).attr('className') == 'son') {
+      $('#C' + $(this).attr('value')).remove();
+      $(this).attr('className', $(this).attr('oldclass'));
+    }
+    else {
+      if ($('p[name=cseat]').length < StMax) {
+        $('#liSelSeat').
+            append('<p id="C' + $(this).attr('value') +
+                   '" class="txt2" name="cseat" grade="' +
+                   $(this).attr('grade') + '">' + $(this).attr('title') +
+                   '</p>');
 
-        $(this).attr("oldclass", $(this).attr("className"));
-        $(this).attr("className", "son");
-      } else {
+        $(this).attr('oldclass', $(this).attr('className'));
+        $(this).attr('className', 'son');
+      }
+      else {
         alert(StMax + '좌석 까지만 선택이 가능합니다.');
       }
     }
@@ -79,20 +88,27 @@ $(function() {
     var arbginfo = bgImginfo.split(_split);
 
     if (arbginfo.length > 1) {
-      if (arbginfo[0] != "") {
-        $("#divContainer").css("background-image", "url('" + GetImgPath() + arbginfo[0] + "')");
-        $("#divContainer").css("background-repeat", "no-repeat");
+      if (arbginfo[0] != '') {
+        $('#divContainer').
+            css('background-image', 'url(\'' + GetImgPath() + arbginfo[0] +
+                                    '\')');
+        $('#divContainer').css('background-repeat', 'no-repeat');
 
-        if (arbginfo[1] != "" && arbginfo[2] != "") {
-          $("#divContainer").css("background-position", arbginfo[1] + "px " + arbginfo[2] + "px");
-        } else {
-          $("#divContainer").css("background-position", "0px 0px");
+        if (arbginfo[1] != '' && arbginfo[2] != '') {
+          $('#divContainer').
+              css('background-position', arbginfo[1] + 'px ' + arbginfo[2] +
+                                         'px');
         }
-      } else {
-        $("#divContainer").css("background-image", "url('')");
+        else {
+          $('#divContainer').css('background-position', '0px 0px');
+        }
       }
-    } else {
-      $("#divContainer").css("background-image", "url('')");
+      else {
+        $('#divContainer').css('background-image', 'url(\'\')');
+      }
+    }
+    else {
+      $('#divContainer').css('background-image', 'url(\'\')');
     }
   }
 
@@ -104,72 +120,66 @@ $(function() {
    *
    */
   app = new Vue({
-    el: '#app',
-    data: {
-      iframeUrl:'/*http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001*/',
-      visible: false,
-      email:'',
-      address:'',
-      date:'',
-      detailId:'30851',///*http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001*/
-      user:'',
-      tel_1:'',
-      tel_2:'',
-      tel_3:'',
-      username:'',
-      ps:'',
+    el     : '#app',
+    data   : {
+      iframeUrl: '/*http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001*/',
+      visible  : false,
+      email    : '',
+      address  : '',
+      date     : '',
+      detailId : '30851',///*http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx?IdPerf=30851&Gcode=009_112_001*/
+      user     : '',
+      tel_1    : '',
+      tel_2    : '',
+      tel_3    : '',
+      username : '',
+      ps       : '',
       /**
        * 本月可选场次
        */
 
-      //selectDay: [],
-      Day:'',
-      dateStatus: false,
-      //sDateStatus:'待开始',
-      //resDate :'',
-      step3: '',
+      step3    : '',
 
       /**
        * 重要参数
        */
       // 本月有演唱会演出的日期
-      playDateList: [],
+      playDateList : [],
       // 选择的当前时间
-      selectDate:'',
+      selectDate   : '',
       // 当天的场次开播场次：{scene: '', sceneId:''}
-      playSceneList:[],
+      playSceneList: [],
       // 选择的场次
-      selectScene:'',
+      selectScene  : '',
       // 根据场次获取的坐席信息，展示类
-      seatInfoText:'',
+      seatInfoText : '',
 
-      block:'0',// todo 暂时写死
-      channel   : 1,// todo 暂时写死
-      idOrg    : 1,// todo 暂时写死
-      idCustomer: '14444324', // todo 用户id， 暂时写死
+      block          : '0',// todo 暂时写死
+      channel        : 1,// todo 暂时写死
+      idOrg          : 1,// todo 暂时写死
+      idCustomer     : '14444324', // todo 用户id， 暂时写死
       // 选择某一天之后，将当天的演出时间和对应的大厅号码存起来，就是 idTime和idHall
-      currentPlayInfo:[],
+      currentPlayInfo: [],
       // 获取某一天的演唱会详情（场次等等）
-      playInfoText:'',
+      playInfoText   : '',
       // 获取某一天的某一场次，或者某一集的价格和座位
-      seatInfo:''
+      seatInfo       : '',
 
 
       // 场次里面的坐席信息
-     // seatInfo: [],
+      // seatInfo: [],
     },
     methods: {
       running: function() {
         let that = this;
 
-        if (!this.date || !this.detailId) {
+        if (!this.detailId) {
           alert('请填写演唱会id和日期。');
           return;
         }
-        let date  = new Date(this.date);
-        let sDate = `${date.getFullYear()}-${date.getMonth() + 1}`;
 
-        // $('.frame-content').show();
+        let date  = new Date();
+        let sDate = `${date.getFullYear()}-${date.getMonth() + 1}`;
 
         /**
          * 返回值：
@@ -181,20 +191,12 @@ $(function() {
 
             that.playDateList = res;
 
-            /*res.forEach(v=>{
-              that.selectDay.push({
-                label:v,
-                value:v
-              })
-            })*/
-
             /**
              * 获取当天的演唱会的时间
              * todo 默认先取当前最近的一天
              */
             that.selectDate = that.playDateList[0];
             that.fetchDatePlayTime();
-
           },
         });
       },
@@ -213,17 +215,17 @@ $(function() {
         $.ajax({
           url    : `/index/fetchplaytime?id=${that.detailId}&date=${that.selectDate.replace(/-/g, '')}`,
           success: function(res) {
-            let list = $(res);
+            let list  = $(res);
             let aTime = [];
-            let i = 0;
+            let i     = 0;
 
-            if(list.length > 1) i=1;
+            if (list.length > 1) i = 1;
 
-            for(i; list[i]; i++){
+            for (i; list[i]; i++) {
               aTime.push({
-                scene: list[i].text,
+                scene  : list[i].text,
                 sceneId: list[i].getAttribute('value'),
-                select: false
+                select : false,
               });
             }
 
@@ -252,33 +254,14 @@ $(function() {
          * todo 默认先取当天的第一场
          * @type {string}
          */
-        let id   = that.playSceneList.length? that.playSceneList[0].sceneId : '';
+        let id = that.playSceneList.length ? that.playSceneList[0].sceneId : '';
         // 当前的演出场次状态为true
         that.playSceneList.length && (that.playSceneList[0].select = true);
-        that.playSceneList.length && (that.selectScene= that.playSceneList[0]);
+        that.playSceneList.length && (that.selectScene = that.playSceneList[0]);
 
         $.ajax({
           url    : `/index/remainseat?id=${id}`,
           success: function(res) {
-            //that.playTime = res;
-            /*console.log(res);
-            let list = $(res);
-            let aTime = [];
-            let i = 0;
-
-            if(list.length > 1) i=1;
-
-            for(i; list[i]; i++){
-              let item = list.eq(i);
-
-              let quyu = item.find('span').eq(0).text(); //R区
-              let count = item.find('span').eq(1).text(); // 座位数
-
-              aTime.push({quyu:quyu, count: count});
-            }
-
-            that.seatInfo = aTime;*/
-
             /**
              * 座位信息，说明
              * @type {*|void}
@@ -310,7 +293,8 @@ $(function() {
         let that = this;
 
         $.ajax({
-          url    : `/index/fetchplayinfo?id=${that.detailId}&date=${that.selectDate.replace(/-/g, '')}`,
+          url    : `/index/fetchplayinfo?id=${that.detailId}&date=${that.selectDate.replace(
+              /-/g, '')}`,
           success: function(res) {
 
             that.playInfoText = res;
@@ -318,7 +302,7 @@ $(function() {
             /**
              * 对数据进行序列化存储起来
              */
-            let $li = $('#ulTimeData li');
+            let $li = $(res).find('li');
             let len = $li.length;
 
             for (let i = 0; i < len; i++) {
@@ -333,7 +317,7 @@ $(function() {
                 timeinfo       : o.attr('timeinfo'),
                 YespointOption : o.attr('YespointOption'),
                 text           : o.text(),
-              })
+              });
             }
 
             /**
@@ -351,11 +335,9 @@ $(function() {
              var StMax = parseInt('10');
              var IdCustomer = '14444324'; todo 这个参数暂时写死//
              */
-            setTimeout(function() {
-              that.fetchSeatMap();
-            }, 500)
-          }
-        })
+            that.fetchSeatMap();
+          },
+        });
       },
 
       /**
@@ -380,8 +362,8 @@ $(function() {
              *  var IdCustomer = '14444324'; todo 这个参数暂时写死//
              *
              * */
-          }
-        })
+          },
+        });
       },
 
       /**
@@ -490,19 +472,17 @@ $(function() {
                 });*/
         let that = this;
 
-        //let id   = that.playTime.length? that.playTime[0].value : '';
-
         /**
          * todo 这里先获取第一场做演练
          * 后面做遍历
          */
         let param = {
-          "idHall"    : that.currentPlayInfo[0].idHall, // 大厅
-          "idTime"    : that.currentPlayInfo[0].idTime, // 时间 980360 详情页的选择时间之后的当天的那个场次的时间
-          "block"     : that.block,
-          "channel"   : that.channel,
-          "idCustomer": that.idCustomer,
-          "idOrg"     : that.idOrg
+          'idHall'    : that.currentPlayInfo[0].idHall, // 大厅
+          'idTime'    : that.currentPlayInfo[0].idTime, // 时间 980360 详情页的选择时间之后的当天的那个场次的时间
+          'block'     : that.block,
+          'channel'   : that.channel,
+          'idCustomer': that.idCustomer,
+          'idOrg'     : that.idOrg,
         };
 
         let _fetch = function(param) {
@@ -525,23 +505,22 @@ $(function() {
                   //var hallLayout = $(res).find("Layout").text();
 
                   //$('#divSeatArray').html(hallLayout);
-              var msg = res;
-              var timdid = $(msg).find("IdTime").text();
-              var blockid = $(msg).find("Block").text();
+              var msg     = res;
+              var timdid  = $(msg).find('IdTime').text();
+              var blockid = $(msg).find('Block').text();
 
               /*if ((timdid == IdTime && blockid == Block) == false) {
                return;
                }*/
 
-              var hallLayout = $(msg).find("Layout").text();
-              var background = $(msg).find("Background").text();
+              var hallLayout = $(msg).find('Layout').text();
+              var background = $(msg).find('Background').text();
               //            var regend = $(msg).find("Regend").text();
               //            var section = $(msg).find("Section").text();
-              var blockRemain = $(msg).find("BlockRemain").text();
-              var blockSeat = $(msg).find("BlockSeat").text();
+              var blockRemain = $(msg).find('BlockRemain').text();
+              var blockSeat   = $(msg).find('BlockSeat').text();
 
-
-              $("#divSeatArray").html(hallLayout);
+              $('#divSeatArray').html(hallLayout);
 
               /* begin 20140410HTMLSEAT*/
               /*if (isIe9over) {
@@ -559,35 +538,34 @@ $(function() {
               /*setTimeout(function() {
                window.open('http://ticket.yes24.com/Pages/Perf/Sale/PerfSaleProcess.aspx?IdPerf=30851&IdTime=976594')
                }, 1000)*/
-            }
-          })
-        }
+            },
+          });
+        };
 
         _fetch(param);
-
       },
-      show: function () {
+      show        : function() {
         this.visible = true;
-      }
-    }
-  })
+      },
+    },
+  });
 
   var opened = true;
   $('.top-btn').click(function() {
 
-    if(opened)
+    if (opened)
       $('.left-content').animate({
-        'width':'0px'
+        'width': '0px',
       }, 'speed', function() {
         opened = false;
       });
     else
       $('.left-content').animate({
-        'width':'187px'
+        'width': '187px',
       }, 'speed', function() {
         opened = true;
       });
 
   });
 
-})
+});

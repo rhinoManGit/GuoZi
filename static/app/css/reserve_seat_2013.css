@@ -1,6 +1,6 @@
 *{margin:0px; padding:0px;}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
-body,input,textarea,select,button,table{font-family:AppleGothic,'µ¸¿ò',Dotum,sans-serif;font-size:12px}
+body,input,textarea,select,button,table{font-family:AppleGothic,'ï¿½ï¿½ï¿½ï¿½',Dotum,sans-serif;font-size:12px}
 img,fieldset,button{border:0}
 ul,ol{list-style:none; }
 .bx_seatbg .seatarea .bx_con ul {background:#fff;height:150px;
@@ -14,9 +14,9 @@ scrollbar-darkshadow-color:#ffffff;
 scrollbar-base-color:#efefef;}
 
 #seat_wrap {float:left; width:906px; height:710px; background:#19578d; }
-.bxrnd {margin:0px;} /*2011ÆÐÅ°Áö*/
+.bxrnd {margin:0px;} /*2011ï¿½ï¿½Å°ï¿½ï¿½*/
 
-/*°ø¿¬ Á¤º¸*/
+/*ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 .bx_infobg {float:left; width:890px; height:70px; background:url('https://stkfile.yes24.com/images/ticket_new/bx_infobg.jpg') no-repeat 0 0; margin-bottom:8px;}
 .bx_infobg h1 {margin:16px 0 11px 19px; width:187px;}
 .bx_infobg .tit_info {position: absolute; left:230px; top:16px; width:660px; height:29px;}
@@ -35,11 +35,11 @@ scrollbar-base-color:#efefef;}
 .bx_infobg .seatdate_select dl dd span {position: absolute; padding:9px 5px 0 0; font-size:11px; height:20px; vertical-align:top;}
 .bx_infobg .seatdate_select dl dd select {margin:7px 0 0 48;}
 
-/*ÁÂ¼® Á¤º¸*/
+/*ï¿½Â¼ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 .bx_seatbg {clear:both; display:inline;  width:890px; height:615px;}
 .bx_seatbg .seatarea {float:left; width:680px;  background:#fff;}
 
-.bx_seatbg .seatarea .bx_top {background:#fff url('https://stkfile.yes24.com/images/ticket_new/bx2_seat1.jpg') no-repeat 0 0; height:15px;}
+.bx_seatbg .seatarea .bx_top {display:none;background:#fff url('https://stkfile.yes24.com/images/ticket_new/bx2_seat1.jpg') no-repeat 0 0; height:15px;}
 .bx_seatbg .seatarea .bx_con {height:600px; background:#fff url('https://stkfile.yes24.com/images/ticket_new/bx2_seat2.jpg') no-repeat left bottom; text-align:center;}
 
 .bx_seatbg .seatarea .bx_con ul {/*overflow:hidden;*/width:680px; height:525px; text-align:center; }
