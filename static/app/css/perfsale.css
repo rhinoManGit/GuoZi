@@ -1,0 +1,429 @@
+@charset "utf-8";
+/* base */body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:1em}
+html{overflow-y:scroll;height:100%; }
+body{width:100%;height:100%;font-size:75%;  line-height:16px;}
+body,input,textarea,select,button,table{font-family:'돋움',dotum,AppleGothic,Vendara;color:#888888}
+
+ol,ul{list-style:none outside none}
+img,fieldset{border:0 none;vertical-align:middle/* cursor:pointer; */}
+em,address{font-style:normal}
+acronym{speak:normal}
+.btn{ text-align:center;}
+input,select{letter-spacing:0; }
+button{vertical-align:middle}
+.carticle button span{display:none;visibility:hidden}
+.addr_pop button span{display:none;visibility:hidden}
+.hidden{visibility:hidden;}
+.displayN{display:none;}
+.last{border:0 none;background:none}
+input[type=radio],input[type=checkbox]{width:13px;height:13px; position:relative; top:2px;}
+input[type=text]{ border:1px solid #aaaaaa; padding:2px; }
+input[type="password"]{border:1px solid #aaaaaa; padding:2px;}
+.tr{ text-align:right;}
+
+/* 숨김영역 */
+.blind,caption,legend{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+hr{clear:both;border:none;border-top:1px solid #e4e4e4}
+.red{color:#ea4955}
+.org{color:#f2740f}
+.grn{color:#5eb289}
+.blu{color:#3a85c7}
+.blk{color:#3a3a3a}
+.bold{font-weight:bold!important}
+.sm{ font-size:11px;}
+.white{ color:#CCC;}
+
+a.hover:hover{ text-decoration:underline;}
+/* 영문,숫자 */
+.e{font-size:11px}
+.e a:link{font-size:11px;color:#666;text-decoration:none}
+.e a:visited{font-size:11px;color:#666;text-decoration:none}
+.e a:active{font-size:11px;color:#666;text-decoration:none}
+.e a:hover{font-size:11px;color:#666;text-decoration:none}
+/*.scroll{scrollbar-face-color:#fff;scrollbar-shadow-color:#bcbcbc;scrollbar-highlight-color:#fff;scrollbar-3dlight-color:#bcbcbc;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#f6f6f6;scrollbar-arrow-color:#666}*/
+.scroll{height:145px; overflow:scroll; overflow-x:hidden;}
+.receipt_scroll  {height:501px;/* overflow:auto; overflow-x:hidden;*/}
+.receipt_hsize {height:500px !important} 
+.scroll_pop{height:165px; overflow:auto; overflow-x:hidden;}  
+.scroll_pop2{height:178px; overflow:auto; overflow-x:hidden;}  
+a:link{color:#888888;text-decoration:none}
+a:visited{color:#888888;text-decoration:none}
+a:hover{color:#888888;text-decoration:none}
+
+.btn{ margin:15px 0; height:28px; }
+.btn span{ font-weight:bold;}
+.btn span input{width:13px;height:13px; display:block; float:left; margin:5px 4px 0 0; }
+.btn div.fr{ margin-right:5px;}
+.btn a{*display:inline-block; *height:28px;}
+.tc{text-align:center}
+.fr{float:right}
+.fl{float:left}
+.tr{text-align:right}
+.more{ position:absolute; right:8px; top:6px;}
+.btn .right{ float:right; margin-top:-30px;}
+
+.org{color:#fe8800;}
+.white{ color:#FFF;}
+.yellow{ color:#f1ec0c;}
+/* 버튼 관련 */
+.bx_btn {display:inline-block;  border:1px solid #c4c4c4;  border-radius:2px; background:linear-gradient(#fff, #f6f7fa); min-width:30px; text-align:center ;text-decoration:none}
+.bx_btn .bnTxt {display:inline-block; font:bold 12px ; padding:3px 15px;color:#666; line-height:15px; letter-spacing:-0.04em;text-decoration:none}
+.bx_btnR {display:inline-block;  border:1px solid #921017;  border-radius:2px; background:linear-gradient(#ea4955, #de2c3a); min-width:30px; text-align:center ;text-decoration:none}
+.bx_btnR .bnTxt {display:inline-block; font:bold 12px ; padding:3px 15px;color:#fff; line-height:15px; letter-spacing:-0.04em;text-decoration:none}
+
+/* 예매창 */
+#warp{ background:url(https://stkfile.yes24.com/img/perfsale/bg_warp.gif) repeat-y; width:970px; height:635px;}
+.header{ width:710px; height:60px;}
+.header h1{float:left;}
+.gnb{padding-top:8px; float:right;}
+.gnb li{float:left; background:url(https://stkfile.yes24.com/img/perfsale/img_gnb.gif) no-repeat; height:52px; width:120px; }
+.gnb li span{display: block;font-size: 11px; height: 11px; overflow-x: hidden;overflow-y: hidden;position: relative; z-index: -1;}
+
+.m01{background-position:0 0 !important;}
+.m02{background-position:-120px 0 !important;}
+.m03{background-position:-240px 0 !important;}
+.m04{background-position:-360px 0 !important;}
+.m05{background-position:-480px 0 !important;}
+
+.m01.on{background-position:0 -52px !important;}
+.m02.on{background-position:-120px -52px !important;}
+.m03.on{background-position:-240px -52px !important;}
+.m04.on{background-position:-360px -52px !important;}
+.m05.on{background-position:-480px -52px !important;}
+
+.container{ float:left; width:689px; height:555px; background-color:#FFFFFF; padding:10px;}
+.container h2{ padding:4px 4px 4px 12px; background:url(https://stkfile.yes24.com/img/perfsale/bg_tit.gif) repeat-x; border-bottom:1px solid #bebebe; display:block; height:17px; }
+.container h2 span{ float:right; margin-top:3px; *margin-top:-13px;}
+
+.step01_date{ width:265px; height:365px;  border:1px solid #bebebe; float:left; margin-bottom:20px;}
+.step01_time{ width:421px; height:365px;  border:1px solid #bebebe; float:left; margin-left:-1px;}
+.step02_promotion{ height:255px;  border:1px solid #bebebe;}
+.step02_receipt{ height:285px;  border:1px solid #bebebe;}
+.step02_coupon{ height:295px;  border:1px solid #bebebe;}
+.step03{ height:555px;  border:1px solid #bebebe;}
+
+
+/*달력*/
+.calendar{ width:248px; padding:10px;}
+.cal_selectDay{ position:relative;   height:15px; margin:25px 0 25px;}
+.cal_selectDay a.pre{ position:absolute; left:50px; top:7px;}
+.cal_selectDay a.next{ position:absolute; right:50px; top:7px;}
+.cal_selectDay span{ font:normal  20px Verdana; text-align:center; display:block; color:#333333; }
+.calendar table{text-align:center; border-collapse:collapse; margin:0 auto; margin-bottom:15px; width:238px; }
+.calendar table thead th{ height:25px; }
+.calendar table tbody{ padding-left:5px;}
+.calendar table tbody td{ border:1px solid #dcdcdc; padding:5px 0; height:20px; font:normal bold 12px 맑은 고딕; display:inline-block; width:32px; margin-top:-1px; margin-left:-1px; text-align:right; *text-align:center; }
+.calendar table tbody td a{ display:block; width:23px; height:20px;}
+.calendar table tbody td.select{ background-color:#7b8c93; }
+.calendar table tbody td.select a{color:#FFF}
+.calendar table tbody td.term{ background-color:#eb4956;}
+.calendar table tbody td.term a{color:#FFF}
+
+
+/*회차선택*/
+.choie_select{ padding:30px 20px;}
+.choie_select em.tit{ font:bold 11px 돋움; color:#000; margin-right:10px;}
+.select_day{ margin-bottom:30px;}
+.select_day span{ padding:8px 80px 8px 20px; background-color:#f9f9f9; font-weight:bold; color:#eb292f;  }
+.number{ width:140px;  float:left; margin-right:10px; }
+.number em{display:block; margin-bottom:7px;}
+.number ul{ height:140px; overflow:auto; overflow-x:hidden;  border:1px solid #dcdcdc; padding:5px;}
+.number ul li{margin-bottom:1px; font-size:11px; padding:4px 1px 0px 15px; background:url(https://stkfile.yes24.com/img/perfsale/img_select02.gif) no-repeat 0 0; height:18px; cursor:pointer;}
+.number ul li.on,.number ul li.on:hover{margin-bottom:1px; font-size:11px; padding:4px 1px 0px 15px; background:url(https://stkfile.yes24.com/img/perfsale/img_select02.gif) no-repeat 0 -20px; height:18px; color:#fff}
+.number ul li:hover{margin-bottom:1px; font-size:11px; padding:4px 1px 0px 15px; background:url(https://stkfile.yes24.com/img/perfsale/img_select02.gif) no-repeat 0 -43px; height:18px; color:#fff}
+.number ul li.on a,.number ul li:hover a{ color:#FFF;}
+.number ul li a{ display:block;  padding:1px 1px 1px 8px;}
+.number .point {margin:10px 0;;}
+.number .point img { margin:0px 5px 1px 0px;}
+.number .point span {font-size:11px; color:#666; }
+.number .point span em {color:#ea4955; display:inline; }
+.seat{width:230px; float:left;}
+.seat em{display:block; margin-bottom:7px;}
+.seat ul{ border:1px solid #dcdcdc; padding:5px; height:85px; overflow:auto; overflow-x:hidden; margin-bottom:15px;}
+.seat ul.hi{ height:140px;}
+.seat ul li{ font-size:11px ; background:url(https://stkfile.yes24.com/img/perfsale/icon_dot.gif) no-repeat 6px 12px; background-color:#f3f3f3; margin:2px 0px 6px 2px; padding:5px 7px 5px 15px;}
+.seat ul li strong{ margin-right:3px;}
+.seat ul li.grade{ background:none;  background-color:#f3f3f3; padding:15px 10px;}
+.seat ul li.grade div{ display:inline-block; position:relative; margin-bottom:5px; min-height:35px; width:178px;}
+.seat ul li.grade span{ margin-left:15px;  }
+.seat ul li.grade strong{ font-weight:bold; display:inline-block; width:107px; vertical-align:top; }
+.seat ul li.grade select{ position:absolute; top:17px; right:0;}
+.buying{ float:left; margin-bottom:15px;}
+.buying em{ display:block; margin-bottom:7px;}
+
+/* 공지사항 */
+.step01_notice{ clear:both; border:1px solid #dddddd; }
+.step01_notice h3{ float:left;}
+.step01_notice div{height:132px; overflow:auto; overflow-x:hidden; padding:10px 20px; font-size:11px; letter-spacing:-1px; line-height:18px; }
+
+
+/*회차선택*/
+.disc_select{ padding:20px 20px 30px;}
+.disc_select em.tit{ font:bold 11px 돋움; color:#000; margin-right:10px;}
+.select_seat{ margin-bottom:10px;}
+.select_seat span{ padding:8px 10px 8px 20px; width:520px; font-size:11px; letter-spacing:-1px; display:inline-block; background-color:#fdeeea;  }
+.select_seat span.date { padding:8px 0px 8px 20px; font-size:11px; display:inline !important; background:none !important; }
+.select_seat span.date span{ background:none !important; color:#3c3c3c !important; letter-spacing:0px !important; width:auto !important }
+.select_seat span input[type="radio"]{ margin:0 3px }
+.select_seat span label{ margin:0 20px 0 1px;}
+.select_seat span label.red{ font-weight:bold; color:#ea5e69;}
+.select_seat span.date{ background-color:#7c8c94; padding:3px 5px;; display:inline; color:#fff;  }
+.select_seat span.date img{ margin-right:5px;}
+.select_seat span.date span{ padding:0; background-color:#7c8c94; font-size:11px; color:#fff; letter-spacing:-1px; width:90px;}
+
+table.sale_table{ text-align:center; border-collapse:collapse; width:100%; margin-bottom:5px; }
+table.sale_table thead th{ height:28px; font-size:11px; font-weight:normal; background-color:#efefef; }
+table.sale_table tbody{ }
+table.sale_table tbody{ padding-left:5px;}
+table.sale_table tbody td{ border-bottom:1px solid #dcdcdc; padding:5px; height:15px; font:normal 11px 돋움; text-align:center; }
+table.sale_table tbody td.l{ text-align:left; padding-left:20px; font-weight:bold;}
+table.sale_table tbody td.l span{ font-weight:normal; margin:0 3px; }
+table.sale_table tbody td.select{ background-color:#7b8c93; }
+table.sale_table tbody td.select a{color:#FFF}
+
+
+/* 쿠폰선택 */
+.sale_select{ padding:20px 20px 30px;}
+.sale_select em.tit{ font:bold 11px 돋움; color:#000; margin-right:10px;}
+.select_coupon{ margin-bottom:20px;}
+.select_coupon input{ border:1px solid #dcdcdc; border-left:none; margin-left:-4px; background-color:#fdeeea; height:25px; width:300px; font-size:11px; font-weight:bold; color:#000000; vertical-align:middle;}
+.sale_select p{ margin:15px 0 0 8px; font-size:11px;}
+
+
+/* 결과창 */
+.result{ float:right; width:260px; _width:250px; height:600px; margin-top:-55px;}
+.result div.btn{ margin:5px 0;}
+
+.srch_box{ border:1px solid #CCC; padding:8px; margin:5px 10px; display:inline-block; position:relative;}
+.srch_box p{ display:inline-block; margin-bottom:7px;}
+.srch_box input[type='text']{ background:url(https://stkfile.yes24.com/img/perfsale/bg_srch.gif) no-repeat; padding:8px 8px 0 8px; border:none; float:left; width:175px;}
+.srch_box a{float:left;}
+.srch_result{ border:1px solid #CCC; background-color:#fff; display:inline-block; position:absolute; top:50px; left:9px; width:215px;}
+.srch_result ul li{ font-size:11px;}
+.srch_result ul li a{ padding:3px; color:#333;}
+.srch_result ul li:hover a{ background-color:#fdeeea; width:209px;}
+
+
+
+.title{ padding:10px; padding-bottom:20px; background:url(https://stkfile.yes24.com/img/perfsale/bg_result01.gif) no-repeat bottom; height:88px;}
+.title p{ background:url(https://stkfile.yes24.com/img/perfsale/bg_noimg.gif) no-repeat; width:79px; height:98px; float:left; margin-right:15px;}
+.title span{display:block;}
+.title span.tit{ font:bold 12px 돋움; color:#FFFFFF;  margin-bottom:10px;}
+.title span.date{ letter-spacing:-1px; font-size:11px; }
+
+
+/*선택내역*/
+.select_infor{padding: 10px 15px 5px 15px;padding-bottom: 50px;_padding-bottom:30px;  background:url(https://stkfile.yes24.com/img/perfsale/bg_result01.gif) no-repeat bottom;}
+.select_infor h3{ margin-bottom:10px;}
+.select_infor ul{}
+.select_infor ul li{ margin-bottom:4px; font-size:11px; color:#FFF; height:16px;}
+.select_infor ul li em{float:left; margin-right:8px;letter-spacing: -0.05em;width: 30px;}
+.select_infor ul li div{overflow: auto;overflow-x: hidden;height: 60px;width: 190px;_width: 170px;float: left; line-height: 1.4em;}
+.select_infor ul li div span{ display:block;}
+.select_infor ul li span{ }
+
+/*결제내역*/
+.pay_infor{ padding:10px 15px 5px 15px; background:url(https://stkfile.yes24.com/img/perfsale/bg_result01.gif) no-repeat bottom;}
+.pay_infor .link01{ background:url(https://stkfile.yes24.com/img/perfsale/bg_result02.gif) no-repeat bottom; padding-bottom:5px;}
+.pay_infor .link02{ margin-top:10px;}
+.pay_infor h3{ margin-bottom:10px;}
+.pay_infor ul{}
+.pay_infor ul li{ margin-bottom:4px; font-size:11px; color:#FFF; height:13px; *margin-bottom:0;}
+.pay_infor ul li em{float:left; margin-right:8px;}
+.pay_infor ul li div{ overflow:scroll; overflow-x:hidden; height:60px; width:200px; float:left;}
+.pay_infor ul li div span{ display:block;}
+.pay_infor ul li span{ float:right;}
+
+.t_result{ background:url(https://stkfile.yes24.com/img/perfsale/bg_total2.gif) no-repeat; display:block; margin:7px 0 0 10px; padding:5px 20px 9px 0; text-align:right; color:#fff; font:bold 18px Verdana;}
+.t_result span{ font:normal 12px 돋움; margin-left:5px; vertical-align:middle;}
+.t_result_p {background: url(https://stkfile.yes24.com/img/perfsale/r_tit19.gif) no-repeat;display: block;margin: 5px 0 0 12px;padding: 0px 20px 9px 0px;text-align: right;color: #ea4955;font: bold 12px Verdana;}
+.t_result_p span {font: normal 12px 돋움;padding-left:3px;}
+
+/* 수령방법 */
+.receipt_select{ padding:20px 20px 10px 20px; overflow:auto; overflow-x:hidden; min-height:510px;}
+.receipt_pt0 {padding-top:0px !important}
+.receipt_select em.tit{ font:bold 11px 돋움; color:#000; margin-right:10px; vertical-align:top;}
+.receipt_select h4{ border-bottom:1px solid #e3e3e3; font:bold 11px 돋움; color:#000; padding-bottom:5px; margin-top:30px;}
+.receipt_select .add_info {position:relative}
+.receipt_select .add_info h4 {line-height:25px}
+.receipt_select .add_info h4 span {position:absolute; left:90px; top:0px; font-weight:normal;line-height:13px; color:#888}
+.receipt_select ul{ margin-top:10px; margin-left:5px; margin-bottom:25px;}
+.receipt_select ul.mb{ margin-bottom:0px !important;}
+.receipt_select ul.mb.scroll{ overflow:auto; overflow-x:hidden; height:330px;}
+.receipt_select ul li{ margin-bottom:5px;  font-size:11px;     vertical-align: text-top;}
+.receipt_select ul li em{ width:85px;  margin-top:5px; display:block; float:left; vertical-align:middle; }
+.receipt_select ul li em.red{ font-weight:bold;}
+.receipt_select ul li select, .receipt_select ul li a{ vertical-align:top;}
+.receipt_select ul li label{ margin:0 5px 0 2px;}
+.receipt_select ul li span{ margin-left:8px; /*vertical-align:bottom;*/}
+.receipt_select ul li span.con{ margin-left:18px;}
+.receipt_select ul li span.cont{ width:150px; text-align:right; display:inline-block;}
+.receipt_select ul li span.cont.card{ width:450px; text-align:left; margin-left:17px;}
+.receipt_select ul li span.ticket.fst{ margin-top:3px;}
+.receipt_select ul li span.ticket{ display:block; border:1px solid #7c8c94; background-color:#f7f7f8; padding:3px 10px 1px; width:360px; margin-top:-1px; margin-left:102px;}
+.receipt_select ul li a{ margin:0 3px; }
+.receipt_select ul li.d_line{ background:url(https://stkfile.yes24.com/img/perfsale/bg_dot.gif) no-repeat bottom; padding-bottom:5px;}
+.receipt_select ul li div.con{/*background-color:#fdeeea;padding:15px 20px 10px ;*/  margin-left:102px; position:relative;}
+.receipt_select ul li div.conpd {padding:3px !important ;}
+.receipt_select ul li div.con ul{ margin:0; }
+.receipt_select ul li div.con ul li { display:inline;padding-right:10px; }
+.receipt_select ul li div.con a.more{ position:absolute; top:8px; right:6px;}
+.receipt_select ul li.d_line div.scroll{ height:50px; overflow:auto; overflow-x:hidden; margin-top:8px; width:404px; margin-left:100px;}
+.receipt_select ul li.d_line div.scroll span{ margin-left:0;} 
+
+.chkbox{ float:right; vertical-align:middle;   margin-right: 20px; }
+.chkbox label{ font-size:11px; margin-left:3px;}
+
+
+/* 주의사항 */
+.caution{ border:1px solid #dddddd; padding:5px 7px 0px 7px; background-color:#f7f7f8; margin-bottom:3px;}
+.caution h5{ font:bold 11px 돋움; margin-bottom:8px;}
+.caution ul{ margin:0;}
+.caution ul li {line-height:1.3em;padding:0 !important;}
+.caution span.red {margin-left:0 !important;}
+.caution p{ font-size:11px;}
+.caution div.box{ padding:4px 8px 2px; border:1px solid #dddddd; background-color:#f4f4f4; margin-bottom:5px; width:320px; font:bold 12px 돋움;}
+.caution.bgbrn {border:none !important;background:none !important }
+
+/* 결제완료 */
+.success{ border:4px solid #0076a3; width:780px; height:540px; background-color:#FFF; margin:0 auto; position:relative; top:50px; }
+.suc_tit{ background:url(https://stkfile.yes24.com/img/perfsale/bg_suc.gif) repeat-x; padding:15px; margin-bottom:6px;}
+.succ{ float:left; width:285px; margin-left:15px;}
+.succ h4{ background:url(https://stkfile.yes24.com/img/perfsale/bg_suc02.gif) no-repeat bottom; padding-bottom:6px;}
+.succ h4 span{ background:url(https://stkfile.yes24.com/img/perfsale/icon_dot2.gif) no-repeat 0 0; padding-left:14px; font-size:11px; color:#333;}
+.succ ul{ margin-top:10px; margin-left:10px; margin-bottom:15px;}
+.succ ul li{ margin-bottom:5px;  font-size:11px;}
+.succ ul li.txt {letter-spacing:-0.05em;}
+.succ ul li em{ width:80px;  display:block; float:left; vertical-align:middle; }
+.succ ul li span{ display:inline-block; width:190px; }
+.succ ul li span strong{ margin-right:3px;}
+.succ ul li span strong.big{ font-size:14px;}
+.succ ul li div{ display:inline-block; width:180px; height:65px; background-color:#f6f6f8; overflow:scroll; overflow-x:hidden; padding:5px; border:1px solid #b4b4b4; }
+
+.succ ul.pay{ margin-top:10px; margin-left:10px; margin-bottom:25px;}
+.succ ul.pay li.gry{ background-color:#f3f5f6; padding:3px;}
+.succ ul.pay li{ margin-bottom:2px;  font-size:11px;}
+.succ ul.pay li em{ width:85px;  display:block; float:left; vertical-align:middle; }
+.succ ul.pay li span{ display:inline-block; text-align:right; width:180px; }
+.succ ul.pay li span strong{ margin-right:3px; letter-spacing:-1px;}
+.succ ul.pay li.total{ background-color:#0076a3; padding:5px; margin:5px 0;}
+.succ ul.pay li.total em{ vertical-align:middle; margin-top:5px;}
+.succ ul.pay li.total em,.succ ul.pay li.total span{ color:#FFF;}
+.succ ul.pay li.total strong{font:normal  20px Verdana; font-weight:bold;}
+.succ ul.pay li.total_p {margin-bottom:10px;padding:2px 8px 2px 2px; height:20px; background:#f3f3f5;display: block;text-align: right;color: #ea4955;font: normal 12px Verdana;}
+.succ ul.pay li.total_p em {padding:4px 0 1px 22px;*padding-bottom:5px;width:140px;color:#666;font: normal 11px 돋움;letter-spacing:-0.04em;background:url('https://stkfile.yes24.com/img/common/ic_p.gif') no-repeat 2px 2px; text-align:left;}
+.succ ul.pay li.total_p span {width:100px; display: inline-block;text-align: right; padding-top:2px;}
+.im_m3 {margin:-4px 0 0 3px;}
+.no_banner{ margin-left:85px;}
+.banner{ float:left; margin-left:15px;}
+.banner iframe{ width:143px; height:361px;}
+
+
+/* 팝업관련 */
+.popup{border:1px solid #292929; position:relative;}
+.popup h1{}
+.popup h1.tit{ background:url(https://stkfile.yes24.com/img/perfsale/bg_pop.gif) repeat-x; height:20px; padding:8px 20px 5px 8px; color:#ffffff}
+.popup a.cls{ position:absolute; top:8px; right:5px;}
+.popup div.cont{ padding:10px;}
+.popup div.cont strong.tit{ margin:5px 0 10px; display:block;}
+.popup div.cont p{ display:block; margin-bottom:8px}
+.popup div.cashbox em{ font-weight:bold;}
+.popup div.cashbox{ border:1px solid #CCC;  margin: 8px 0; padding:12px 15px; background-color:#fff; }
+.popup div.cashbox select{ margin-bottom:5px;}
+.popup div.cinfor{ border:1px solid #939393; padding:15px; margin:10px 0; margin-bottom:20px;}
+.popup div.cinfor h3{ padding-left:15px; margin-bottom:5px;}
+.popup div.cinfor ul{}
+.popup div.cinfor ul li{ padding:3px 2px;}
+.popup div.addres{ background-color:#f2f1ef; padding:5px;  border: 1px solid #CCCCCC;}
+.popup div.addres ul{ background-color: #fff; overflow: scroll; overflow-x:hidden; padding:7px; height:100px;}
+.popup div.addres ul li{ margin-bottom:2px;}
+.popup div.addres ul li em{ margin-right:8px; color:#333333; }
+.popup div.addres span{ display: block; padding: 1px 0 1px 5px; line-height:15px;}
+.popup div.id_chk{ text-align:center; padding-bottom:20px;}
+.popup div.id_chk p {line-height: 18px;padding: 5px 0;}
+.popup div.id_chk p span{ font-weight:bold; color:orange; padding-left:5px;}
+.popup div hr{ border:none; border-bottom: 1px dotted #7f7f7f;margin: 5px 0 10px 0; position: relative; visibility: visible; width: 370px;}
+.use_cash.umb{ margin-bottom:15px;}
+.use_cash{ height:30px; padding:12px 3px 0px 3px; margin-bottom:5px; background-color:#ebf2f8;}
+.use_cash li{ float:left; margin-left:20px;}
+.use_cash li em{ font:bold 11px 돋움; color:#000; margin-right:15px;}
+.use_cash li span{  text-align:right;}
+.use_cash li span input{ vertical-align:middle; height:13px;}
+.use_cashback{ padding:15px 2px 10px; margin-bottom:5px; border:1px solid #dddddd;}
+.use_cashback li{margin-left:20px; margin-bottom:5px; font-size:11px;}
+.use_cashback li em{ font:bold 11px 돋움; color:#000; margin-right:15px; margin-bottom:3px; display:block;}
+.use_cashback li span{ padding-left:15px; display:block;}
+.use_cashback li span input{ vertical-align:middle; height:13px; margin-bottom:5px;}
+.pop_notice{}
+.pop_notice ul{ margin-top:5px;}
+.pop_notice ul li{ background:url(https://stkfile.yes24.com/img/perfsale/icon_bullet.gif) no-repeat 3px 5px; padding-left:10px; font:normal 11px 돋움; margin-bottom:5px;}
+
+
+/*결제완료 취소수수료 자세히 보기 팝업 */
+.popup table.pink {table-layout: fixed; border: 0;border-collapse: collapse;border-spacing: 0;font-size: 11px; text-align:center; margin:10px;}
+.popup table.pink  th {height: 23px;background: #f8f2f3;border-top: 1px solid #666;border-bottom: 1px solid #d3d3d3;color: #666;}
+.popup table.pink  td {padding:6px 0 4px 0;line-height: 14px;border-bottom: 1px solid #d3d3d3;color: #888;}
+.cancel_txt {color:#a0a0a0; font-size:11px;padding:0 15px; line-height:1.5em}
+.cancel_txt em {padding-left:7px; display:block}
+
+.yes_point{ background:url(https://stkfile.yes24.com/img/perfsale/img_yespoint.gif) no-repeat; width:361px; height:52px; margin-top:8px; padding-top:48px; }
+.yes_point div{ float:left; width:175px; text-align:center;} 
+.yes_point div strong{ display:block; margin-bottom:3px; }
+.yes_point div strong.red{ margin-top:12px;}
+
+.log_list{ border-bottom:1px solid #CCC; padding-bottom:10px; margin-bottom:-10px; padding-top:20px; height:69px;}
+.log_list li{ margin-bottom:5px;}
+.log_list li em{ width:60px; margin-right:10px; display:inline-block; font-weight:bold; color:#333; font-size:11px;}
+.log_list li span{ margin-right:3px;}
+
+.point_list{ border-bottom:1px solid #CCC; padding-bottom:10px; margin-bottom:-10px; height:89px;}
+.point_list li{ margin-bottom:5px;}
+.point_list li em{ width:60px; margin-right:10px; display:inline-block; font-weight:bold; color:#333; font-size:11px;}
+.point_list li span{ margin-right:3px;}
+
+
+/* 좌석배치 */
+.seat_arrange{height: 635px; width: 970px; background-color:#FFFFFF;}
+.f_header{ position:absolute; top:0; left:0; background:url(https://stkfile.yes24.com/img/perfsale/bg_seat.gif) repeat-x; width:746px; height:33px;}
+.f_header ul{ padding:6px 0;}
+.f_header ul li{ float:left; margin:0 12px 0 25px;}
+
+
+.confirm{ clear:both;}
+
+
+
+/*20130411 추가*/
+.sub_tit{ background:url(https://stkfile.yes24.com/img/perfsale/bg_subtit.gif) no-repeat; padding:4px 17px; font-size:11px; margin:20px 0 5px; display:inline-block; font-weight:bold; color:#FFF; }
+
+
+/************************************* 
+	예매 좌석 위치보기
+**************************************/
+.seat_chk {width:746px; margin:0 auto; overflow:auto }
+.chk_header {width:746px; background: url(https://stkfile.yes24.com/img/perfsale/bg_seat.gif) repeat-x; height:33px}
+.chk_header h3 {text-align:center;padding-top:8px;}
+.chk_wrap {padding:10px; }
+.chk_wrap li {width:720px; clear:both;padding-bottom:5px;min-height:32px}
+.chk_wrap li span {float:left; }
+.chk_wrap li div {display:inline-block; width:600px;}
+.chk_wrap li div.info {padding-left:10px; padding-top:8px; font-weight:bold; color:#555; word-break:break-all;}
+.chk_wrap li div.seatmap {padding-left:5px}
+.chk_area {position:relative;z-index:2000;width:726px; height:600px; text-align:center; overflow:auto}
+.chk_area div.map {margin:0 auto; width:680px;}
+.chk_area .arrtop {display:block; position:absolute; left:150px; top:0px; z-index:2002; }
+.chk_area .seatmap {position:absolute; left:40px; top:13px; z-index:2001; width:620px; height:500px; border:5px solid #7b7b7b; background:#fff; padding-top:10px;}
+.chk_area .seatmap img {cursor:pointer }
+
+
+/**** 자동주문방지 *****/
+.rc-anchor-normal .rc-anchor-content {height:45px  !important;}
+.rc-anchor-normal-footer {height:45px  !important;}
+.rc-anchor-normal .rc-anchor-pt {left:50px !important; top:40px !important; text-align:left !important;}
+
+#recaptcha_div a {margin:0px !important;}
+#recaptcha_div input {border: 1px solid #aaaaaa !important; width:120px !important;}
+#recaptcha_div .recaptcha_input_area {text-align:left}
+#recaptcha_div .recaptcha_txt {color:#888  !important}
+#recaptcha_div .recaptchatable {width:480px  !important}

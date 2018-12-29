@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+
 var app = require('./app');
 var debug = require('debug')('Kylin:server');
 var http = require('http');
@@ -26,9 +27,6 @@ debug.enabled = true;
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-
-
-
 
 /**
  * Normalize a port into a number, string, or false.

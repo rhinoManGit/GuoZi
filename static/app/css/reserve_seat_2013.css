@@ -1,0 +1,77 @@
+*{margin:0px; padding:0px;}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:AppleGothic,'돋움',Dotum,sans-serif;font-size:12px}
+img,fieldset,button{border:0}
+ul,ol{list-style:none; }
+.bx_seatbg .seatarea .bx_con ul {background:#fff;height:150px;
+overflow-y:hidden; overflow-x:auto; scrollbar-face-color:#ffffff;
+scrollbar-highlight-color:#cccccc;
+scrollbar-shadow-color:#cccccc;
+scrollbar-3dlight-color:#ffffff;
+scrollbar-arrow-color:#5e5e5e;
+scrollbar-track-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-base-color:#efefef;}
+
+#seat_wrap {float:left; width:906px; height:710px; background:#19578d; }
+.bxrnd {margin:0px;} /*2011패키지*/
+
+/*공연 정보*/
+.bx_infobg {float:left; width:890px; height:70px; background:url('https://stkfile.yes24.com/images/ticket_new/bx_infobg.jpg') no-repeat 0 0; margin-bottom:8px;}
+.bx_infobg h1 {margin:16px 0 11px 19px; width:187px;}
+.bx_infobg .tit_info {position: absolute; left:230px; top:16px; width:660px; height:29px;}
+.bx_infobg .tit_info dl { width:660px; height:29px; background:url('https://stkfile.yes24.com/images/ticket_new/bx_info2.jpg') repeat-x 0 0;}
+.bx_infobg .tit_info dl dt {display:inline-block; padding:6px 5px 0 5px; width:392px; vertical-align:top;}
+*html .bx_infobg .tit_info dl dt {display:inline; padding:6px 5px 0 5px; width:405px;height:29px; vertical-align:top;}
+.bx_infobg .tit_info dl span {color:#555;}
+.bx_infobg .tit_info dl dd {display:inline; height:29px;}
+.bx_infobg .tit_info dl dd.tplace {display:inline-block; padding:6px 5px 0 5px; width:224px; vertical-align:top;}
+*html .bx_infobg .tit_info dl dd.tplace {display:inline; padding:6px 5px 0 5px; width:243px; vertical-align:top;}
+.bar_line {margin:1px 10px 4px 0; vertical-align:middle;}
+.bx_infobg .seatdate_select {position: absolute; left:230px; top:45px; width:660px; height:29px;}
+.bx_infobg .seatdate_select dl {display:inline; width:630px;}
+.bx_infobg .seatdate_select dl dt {display:inline;width:160px;}
+.bx_infobg .seatdate_select dl dd {display:inline; width:220px; height:29px; padding:0 0 0 10px; vertical-align:top;}
+.bx_infobg .seatdate_select dl dd span {position: absolute; padding:9px 5px 0 0; font-size:11px; height:20px; vertical-align:top;}
+.bx_infobg .seatdate_select dl dd select {margin:7px 0 0 48;}
+
+/*좌석 정보*/
+.bx_seatbg {clear:both; display:inline;  width:890px; height:615px;}
+.bx_seatbg .seatarea {float:left; width:680px;  background:#fff;}
+
+.bx_seatbg .seatarea .bx_top {background:#fff url('https://stkfile.yes24.com/images/ticket_new/bx2_seat1.jpg') no-repeat 0 0; height:15px;}
+.bx_seatbg .seatarea .bx_con {height:600px; background:#fff url('https://stkfile.yes24.com/images/ticket_new/bx2_seat2.jpg') no-repeat left bottom; text-align:center;}
+
+.bx_seatbg .seatarea .bx_con ul {/*overflow:hidden;*/width:680px; height:525px; text-align:center; }
+.bx_seatbg .seatarea .bx_con ul li {display:block; float:left; position:relative; margin-bottom:2px; width:9px; height:10px; font-size:0; line-height:1px;}
+.bx_seatbg .seatarea .bx_con ul li.blink {display:inline; width:20px;}
+.bx_seatbg .seatarea .bx_con ul li.br {display:block; }
+
+
+.bx_seatbg .seatinfo {float:right; margin-top:0 !important; width:223px; height:636px;  font-size:12px; border-left:1px solid #f1f1f1}
+
+.bx_seatbg .seatinfo img.tit {margin:8px 0 4px 0;}
+.bx_seatbg .seatinfo ul {overflow:hidden; float:left; width:190px; margin-bottom:8px;}
+.bx_seatbg .seatinfo ul li {overflow:hidden;display:block; font-size:12px; line-height:17px;}
+.bx_seatbg .seatinfo ul li.list_no {font-size:0; line-height:0px;}
+.bx_seatbg .seatinfo ul li span {height:20px;font-size:12px; line-height:17px;}
+.bx_seatbg .seatinfo ul li p.txt {margin:0 5px 3px 5px;font-size:12px; line-height:17px;}
+.bx_seatbg .seatinfo ul li p.txt img {margin:0 5px 1px; vertical-align:middle;}
+.bx_seatbg .seatinfo ul li p.txt2 {margin:0 8px;font-size:12px; line-height:17px;}
+.bx_seatbg .seatinfo img.tit {margin:8px 0 4px 0;}
+.bx_seatbg .seatinfo ul li.bx3_wbg {background:url('https://stkfile.yes24.com/images/ticket_new/bx3_minimap2.jpg') repeat-y 0 0;}
+.bx_seatbg .seatinfo ul li.bx3_wbg0 {background:url('https://stkfile.yes24.com/images/ticket_new/bx3_minimap1.jpg') no-repeat 0 0;}
+.bx_seatbg .seatinfo ul li.bx3_wbg00 {background:url('https://stkfile.yes24.com/images/ticket_new/bx3_minimap3.jpg') no-repeat 0 100%;} 
+.bx_seatbg .seatinfo ul li.bx3_wbg1 {height:170px;}
+.bx_seatbg .seatinfo ul li.bx3_wbg2 {height:100px; overflow-y:auto;}
+.bx_seatbg .seatinfo ul li.bx3_wbg3 {height:78px; overflow-y:auto;}
+.bx_seatbg .seatinfo .btn {width:190px; text-align:center;}
+.bx_seatbg .seatinfo .btn p img {margin:8px 1 0;}
+.bx_seatbg .seatinfo .btn p img.booking {margin:7px 0 0;}
+
+
+.minimap_m {margin:0 10px; margin-top:7px;}
+.fw_b {font-weight:bold;}
+.input_s {margin:6px 5px 0 0; width:150px;height:21px; border:1px solid #c8c8c8; vertical-align:top;}
+.sel_form {overflow: auto; margin:6px 5px 0 0; width:150px;height:21px; border:1px solid #c8c8c8; vertical-align:top;}
+.scroll {overflow-y:auto; }
