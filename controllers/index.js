@@ -280,8 +280,7 @@ class Index {
     // todo 必须要有cookie
     request.post({
       url: url, form: param, headers: {
-        /*'Cookie': 'ServiceCookies=MTQ0NDQzMjRgZmVpc2U1MTQ3YFpIT1UgWUlOR2AwYDA1YHNoaWJhYGAxNDQ0NDMyNGAzMWBNTS9sU21DOVlKVXZQbnBpNmRJa2hzSkZtY3RpU2xBQk9MaER3dWNtcVpNZUN1aGk3NS9WNjhVRHF4ZG43Y291eW5jRTJLQlFDaEQxL2VyVlRFcEVVZz09YGNoL3R2U3U5d1JYZ0dMQy85aiszSWZKcHJGWll1L2NOSVJ6TnlsTmFNS3RRVkRlTnNBSmRwcTdFZFBkZ2JIRWxjYUl0Qm5NOHI4SGUwZW1rMjhGaUE2N3BuNktqQVg0UXp6Nmtvd0hScjBwTGJNVmhaMG5Qa1lRYm9UcW1tdWw3c2Fabm9XK2UrcmtjdGUyQ1pKeWROc0J2MWVQVVR2TlkrbSt0NUVmV2JZTT1gNDJpSjRwbkRPbE1iVkthZko1NG5SZz09;'
-         */
+        'Cookie': 'ServiceCookies=MTQ0NDQzMjRgZmVpc2U1MTQ3YFpIT1UgWUlOR2AwYDA1YHNoaWJhYGAxNDQ0NDMyNGAzMWBNTS9sU21DOVlKVXZQbnBpNmRJa2hzSkZtY3RpU2xBQk9MaER3dWNtcVpNZUN1aGk3NS9WNjhVRHF4ZG43Y291eW5jRTJLQlFDaEQxL2VyVlRFcEVVZz09YGNoL3R2U3U5d1JYZ0dMQy85aiszSWZKcHJGWll1L2NOSVJ6TnlsTmFNS3RRVkRlTnNBSmRwcTdFZFBkZ2JIRWxjYUl0Qm5NOHI4SGUwZW1rMjhGaUE2N3BuNktqQVg0UXp6Nmtvd0hScjBwTGJNVmhaMG5Qa1lRYm9UcW1tdWw3c2Fabm9XK2UrcmtjdGUyQ1pKeWROc0J2MWVQVVR2TlkrbSt0NUVmV2JZTT1gNDJpSjRwbkRPbE1iVkthZko1NG5SZz09;'
       },
     }, function(error, response, body) {
       console.log('ssssssssss', body);
@@ -296,21 +295,68 @@ class Index {
     });
   }
 
-  test(req, res, next) {
-
-    let url   = 'http://gny.ly.com/dujia/fetch/commentVote';
-    let param = {"dpGuid":"2ccc15e3-e706-4c2e-8565-17ff123",
-    "t": "1545969549565"}
+  /**
+   * todo 这个接口是依赖于cookie的
+   * @param req
+   * @param res
+   * @param next
+   */
+  fetchblock(req, res, next){
+   // pIdTime: 984382
+    let url   = 'http://ticket.yes24.com/Pages/Perf/Sale/Ajax/Perf/TimeFlashBlock.aspx';
+    let param = {
+      'pIdTime'    : '984382'||req.query.pIdTime,
+    };
 
     // todo 必须要有cookie
     request.post({
       url: url, form: param, headers: {
-        referer:"gny.ly.com",
-        'Cookie':'dujiaUserToken=4e290a2f-eded-4321-ac05-a15aecf265ad; myStr=lrFOk3eoDHdXmpLo1RNvRDvvDv1Sh7Zz; nus=userid=130839352&nickName=%e5%90%8c%e7%a8%8b%e5%b0%8fT&level=1; _ga=GA1.2.315035221.1542610534; abtkey=96cdb12a-46a8-499a-a435-bd5eacc130d9; Hm_lvt_64941895c0a12a3bdeb5b07863a52466=1542943454,1543292148,1545106323; dj-koalaman=aebf33b72a2fb698c99042e9fed4ce5a; gny_city_info=%7B%22CityId%22%3A226%2C%22CityArea%22%3A%22%E5%8D%8E%E4%B8%9C%22%2C%22CityName%22%3A%22%E8%8B%8F%E5%B7%9E%22%2C%22FullPinyinName%22%3A%22suzhou%22%2C%22FirstZiMu%22%3A%22S%22%2C%22ProvinceId%22%3A16%2C%22ProvinceName%22%3A%22%E6%B1%9F%E8%8B%8F%22%2C%22ShortPy%22%3A%22sz%22%2C%22TcShortPy%22%3A%22sz%22%7D; CNSEInfo=RefId=10758821&tcbdkeyid=&SEFrom=&SEKeyWords=&RefUrl=; 17uCNRefId=10758821; NewProvinceId=16; NCid=226; NewProvinceName=%E6%B1%9F%E8%8B%8F; NCName=%E8%8B%8F%E5%B7%9E; __tctmu=144323752.0.0; __tctmz=144323752.1545899276276.9.1.utmccn=(direct)|utmcsr=(direct)|utmcmd=(none); longKey=1545106366928872; __tctrack=0; route=9610b5dab50088b9440314c1488559b1; qdid=-9999; Hm_lvt_c6a93e2a75a5b1ef9fb5d4553a2226e5=1544493904,1545012085,1545127994,1545967893; __tctma=144323752.1545106366928872.1545106366975.1545899276276.1545967939325.10; cnUser=userid=130839352&token=069220158164240130232187098219047143155091199213210248210059195077103131181117013028226227109182196098217217135190245130200000168201157246110055111083038069241074131186165121047197056079141075189020151169064070205038&loginType=passport; us=userid=130839352&nickName=%e5%90%8c%e7%a8%8b%e5%b0%8fT&level=1&isUpgrade=true; passport_login_state=pageurl=https%3a%2f%2fbus.ly.com%2f; line165098=1S160500; udc_feedback=%7B%22url%22%3A%20%22https%3A%2F%2Fgny.ly.com%2F%22%2C%22platform%22%3A%20%22PC%22%2C%22channel%22%3A%20%22%E5%9B%BD%E5%86%85%E6%B8%B8%22%2C%22page%22%3A%20%22%E5%9B%BD%E5%86%85%E8%AF%A6%E6%83%85%E9%A1%B5%22%7D; Hm_lpvt_c6a93e2a75a5b1ef9fb5d4553a2226e5=1545969472; __tctmc=144323752.256295517; __tctmd=144323752.737325; __tctmb=144323752.930169446535415.1545969031475.1545969031475.14; _gat=1'
+        'Content-Type': 'text/html; charset=utf-8',
+
         /*'Cookie': 'ServiceCookies=MTQ0NDQzMjRgZmVpc2U1MTQ3YFpIT1UgWUlOR2AwYDA1YHNoaWJhYGAxNDQ0NDMyNGAzMWBNTS9sU21DOVlKVXZQbnBpNmRJa2hzSkZtY3RpU2xBQk9MaER3dWNtcVpNZUN1aGk3NS9WNjhVRHF4ZG43Y291eW5jRTJLQlFDaEQxL2VyVlRFcEVVZz09YGNoL3R2U3U5d1JYZ0dMQy85aiszSWZKcHJGWll1L2NOSVJ6TnlsTmFNS3RRVkRlTnNBSmRwcTdFZFBkZ2JIRWxjYUl0Qm5NOHI4SGUwZW1rMjhGaUE2N3BuNktqQVg0UXp6Nmtvd0hScjBwTGJNVmhaMG5Qa1lRYm9UcW1tdWw3c2Fabm9XK2UrcmtjdGUyQ1pKeWROc0J2MWVQVVR2TlkrbSt0NUVmV2JZTT1gNDJpSjRwbkRPbE1iVkthZko1NG5SZz09;'
          */
+        'Cookie': 'PCID=15412575754544845754324; __utmz=186092716.1543761346.9.3.utmcsr=10.102.42.86:1302|utmccn=(referral)|utmcmd=referral|utmcct=/; ASP.NET_SessionId=2cezhhvcncsyd1tkuqqiv5du; __utmc=186092716; RecentViewGoods=; __utma=12748607.1899395315.1541259374.1541842300.1546615669.4; __utmc=12748607; __utmz=12748607.1546615669.4.4.utmcsr=ticket.yes24.com|utmccn=(referral)|utmcmd=referral|utmcct=/Pages/Perf/Detail/Detail.aspx; HTTP_REFERER=https://www.yes24.com/Templates/FTLogin.aspx?ReturnURL=http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx&&ReturnParams=IdPerf=32050`Gcode=009_112_001; AT_LOGIN=AT_MID=meilan1&AT_SID=31617DC7FADC961F0F5960AD07D91B90&AT_PID=0x572F1A06ACE3D962AA6DBFDF02F2F490AFD632F5&AT_LDTS=201901050035; ClientIPAddress=; ServerIPAddress=; MEM_NO=; MEM_ID=; MEM_NM=; FAMILY_PAY_NO=; MEM_GB=; NICK_NM=; BLOG_URL=; CART_NO=; MEM_AGE=; NEW_PID=; ServiceCookies=MTQ0NDE1OTBgbWVpbGFuMWBMSSBLT05HYDBgMDVgxOFgYDE0NDQxNTkwYDQwYDRhV2hna0lFSEorRnBnczlwc0NwY05reHExanlkLzNONFEvRloxOC9OdVdEbG9CN0lrbTJ4VzlNMEZJNjBESFpgY2gvdHZTdTl3UlhnR0xDLzlqKzNJZkpwckZaWXUvY05JUnpOeWxOYU1LdFFWRGVOc0FKZHBxN0VkUGRnYkhFbGNhSXRCbk04cjhIZTBlbWsyOEZpQTY3cG42S2pBWDRReno2a293SFJyMHBMYk1WaFowblBrWVFib1RxbW11bDdzYVpub1crZStya2N0ZTJDWkp5ZE5zQnYxZVBVVHZOWSttK3Q1RWZXYllNPWBtbjg5ZE9FdmJtMmZCbnR5ckVlRit3PT0=; Mallinmall_CKMN=14441590; Mallinmall_CKMI=meilan1; Mallinmall_CKMNM=LI+KONG; Mallinmall_CKMAG=40; Yes24LoginID=meilan1; EntLoginInfo=bWVpbGFuMXwyMDE5LTAxLTA1IL/AwPwgMTI6MzU6MzU=; RecentViewInfo=NotCookie%3DY%26Interval%3D5%26ReloadTime%3DFri%2C%2004%20Jan%202019%2015%3A35%3A35%20GMT%26First%3Dtrue; YesTicket=UserNO=188,245,80,36,225,67,30,48,1,226,126,212,222,58,235,168&UserID=99,234,69,255,226,231,191,185&UserName=13,227,113,214,49,206,191,105&UserNickName=164,80,231,199,85,14,246,109&Email=50,7,127,115,196,36,63,201,58,103,19,12,172,140,46,27,187,143,247,158,65,238,42,0&ManiaLevel=185,175,224,130,94,14,207,79&MemberStatus=245,54,43,158,39,91,228,116&UserIdentiNumber=186,219,219,185,232,25,153,61,215,6,226,217,129,93,201,98&StarLevel=245,54,43,158,39,91,228,116&PromotionCode=245,54,43,158,39,91,228,116&MemberGB=100,254,24,90,225,175,0,66&UserAge=18,183,46,181,134,149,118,19&ORD_PATH_GB=195,31,27,161,165,198,213,175&ZipCode=255,150,156,169,164,205,217,43&Address=29,144,253,142,54,202,36,187&Addr1=245,54,43,158,39,91,228,116&Addr2=245,54,43,158,39,91,228,116&Addr3=245,54,43,158,39,91,228,116&Addr4=245,54,43,158,39,91,228,116&Phone=48,70,225,17,96,140,199,186,95,2,35,151,126,204,152,122&Mobile=48,70,225,17,96,140,199,186,95,2,35,151,126,204,152,122&OrgID=13,101,187,16,10,24,135,131&Channel=13,101,187,16,10,24,135,131; __utma=186092716.778539359.1541257578.1546612005.1546616414.22; TVPERF=9,205,148,67,207,154,165,152,149,37,174,14,127,99,168,116,138,110,246,241,108,29,141,70'
       },
     }, function(error, response, body) {
+      console.log('ssssssssss', body);
+
+      if (error) {
+        return next(error);
+      }
+
+      if (response.statusCode == 200) {
+        res.send(body);
+      }
+    });
+  }
+  /**
+   *
+   * @param req
+   * @param res
+   * @param next
+   * 这个的前一步是获取 演唱会的block，这个参数
+   *
+   */
+  fetchseatmaphtml(req, res, next) {
+
+    let idHall = 8167 || req.query.idHall;
+    let idTime = 984380 || req.query.idTime;
+
+    /*idTime: 984380
+    idHall: 8167*/
+
+    let url   = `http://ticket.yes24.com/Pages/Perf/Sale/PerfSaleHtmlSeat`
+        +`.aspx?idTime=${idTime}&idHall=${idHall}&block=0&stMax=10&pHCardAppOpt=0`;
+    url = 'http://ticket.yes24.com/Pages/Perf/Sale/PerfSaleHtmlSeat.aspx?idTime=984380&idHall=8167&block=0&stMax=10&pHCardAppOpt=0'
+
+    // todo 必须要有cookie
+   // req.pipe(request(url)).pipe(res);
+    request({
+      method: 'GET',
+      url: url,
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+      'Cookie': "PCID=15412575754544845754324; __utmz=186092716.1543761346.9.3.utmcsr=10.102.42.86:1302|utmccn=(referral)|utmcmd=referral|utmcct=/; __utma=12748607.1899395315.1541259374.1541842300.1546615669.4; __utmz=12748607.1546615669.4.4.utmcsr=ticket.yes24.com|utmccn=(referral)|utmcmd=referral|utmcct=/Pages/Perf/Detail/Detail.aspx; AT_LOGIN=AT_MID=meilan1&AT_SID=31617DC7FADC961F0F5960AD07D91B90&AT_PID=0x572F1A06ACE3D962AA6DBFDF02F2F490AFD632F5&AT_LDTS=201901050035; ServiceCookies=MTQ0NDE1OTBgbWVpbGFuMWBMSSBLT05HYDBgMDVgxOFgYDE0NDQxNTkwYDQwYDRhV2hna0lFSEorRnBnczlwc0NwY05reHExanlkLzNONFEvRloxOC9OdVdEbG9CN0lrbTJ4VzlNMEZJNjBESFpgY2gvdHZTdTl3UlhnR0xDLzlqKzNJZkpwckZaWXUvY05JUnpOeWxOYU1LdFFWRGVOc0FKZHBxN0VkUGRnYkhFbGNhSXRCbk04cjhIZTBlbWsyOEZpQTY3cG42S2pBWDRReno2a293SFJyMHBMYk1WaFowblBrWVFib1RxbW11bDdzYVpub1crZStya2N0ZTJDWkp5ZE5zQnYxZVBVVHZOWSttK3Q1RWZXYllNPWBtbjg5ZE9FdmJtMmZCbnR5ckVlRit3PT0=; Yes24LoginID=meilan1; __utma=186092716.778539359.1541257578.1546612005.1546616414.22; YesTicket=UserNO=188,245,80,36,225,67,30,48,1,226,126,212,222,58,235,168&UserID=99,234,69,255,226,231,191,185&UserName=13,227,113,214,49,206,191,105&UserNickName=164,80,231,199,85,14,246,109&Email=50,7,127,115,196,36,63,201,58,103,19,12,172,140,46,27,187,143,247,158,65,238,42,0&ManiaLevel=185,175,224,130,94,14,207,79&MemberStatus=245,54,43,158,39,91,228,116&UserIdentiNumber=186,219,219,185,232,25,153,61,215,6,226,217,129,93,201,98&StarLevel=245,54,43,158,39,91,228,116&PromotionCode=245,54,43,158,39,91,228,116&MemberGB=100,254,24,90,225,175,0,66&UserAge=18,183,46,181,134,149,118,19&ORD_PATH_GB=195,31,27,161,165,198,213,175&ZipCode=255,150,156,169,164,205,217,43&Address=29,144,253,142,54,202,36,187&Addr1=245,54,43,158,39,91,228,116&Addr2=245,54,43,158,39,91,228,116&Addr3=245,54,43,158,39,91,228,116&Addr4=245,54,43,158,39,91,228,116&Phone=48,70,225,17,96,140,199,186,95,2,35,151,126,204,152,122&Mobile=48,70,225,17,96,140,199,186,95,2,35,151,126,204,152,122&OrgID=13,101,187,16,10,24,135,131&Channel=13,101,187,16,10,24,135,131"}}, function(error, response, body) {
       console.log('ssssssssss', body);
 
       if (error) {

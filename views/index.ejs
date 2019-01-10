@@ -61,7 +61,7 @@
             <!-- 日期列表 -->
             <div class="frame-content">
                 <div v-show="playDateList.length">
-                    <h3 class="common-title">当前演唱会【本月】演出场次时间：</h3>
+                    <h3 class="common-title">【本月】演唱会演出时间：</h3>
                     <div class="playtime">
                         <ul>
                             <li v-for="item in playDateList" class="date-btn">
@@ -123,11 +123,27 @@
                         <div class="seatarea">
                             <div class="bx_top"></div>
                             <div id="divGuide" class="bx_con1">
-                                <div id="divContainer" class="raffer" style="width: 678px;height: 585px;/* background-image: url(&quot;http://tkfile.yes24.com/upload2/hallimg/8000/8491/8491b_0_0.jpg&quot;); */background-repeat: no-repeat;background-position: 0px 0px;">
+                                <div id="divContainer" class="raffer"
+                                     style="width: 678px;height: 585px;
+                                     background-repeat: no-repeat;background-position: 0px 0px;">
                                     <div id="divSeatArray"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- 选择优惠码 -->
+                    <h3 class="common-title">选择优惠券：... 当前优惠券：</h3>
+                    <div class="result_title">
+
+                    </div>
+                    <div v-show="playInfoText" style="padding: 5px 1px;color: #ed1b1b;font-size: 18px;">..
+                        ..........................................
+                        ............. 自动填写订单，开始占位，下单
+                        ................................................</div>
+
+                    <h3 class="common-title">填写订单信息... </h3>
+                    <div class="result_title">
                     </div>
 
                     <!--<div id="selectSeatMap">

@@ -154,7 +154,7 @@ $(function() {
       // 根据场次获取的坐席信息，展示类
       seatInfoText : '',
 
-      block          : '0',// todo 暂时写死
+      block          : '0',// todo 暂时写死 后面改为调用接口
       channel        : 1,// todo 暂时写死
       idOrg          : 1,// todo 暂时写死
       idCustomer     : '14444324', // todo 用户id， 暂时写死
@@ -164,6 +164,7 @@ $(function() {
       playInfoText   : '',
       // 获取某一天的某一场次，或者某一集的价格和座位
       seatInfo       : '',
+      // 选择最佳位置
 
 
       // 场次里面的坐席信息
@@ -178,8 +179,14 @@ $(function() {
           return;
         }
 
-        let date  = new Date();
-        let sDate = `${date.getFullYear()}-${date.getMonth() + 1}`;
+        let date  = that.date;
+        let month = date.getMonth() + 1;
+
+        if(month < 10){
+          month = '0' + month;
+        }
+
+        let sDate = `${date.getFullYear()}-${month}`;
 
         /**
          * 返回值：
@@ -195,7 +202,7 @@ $(function() {
              * 获取当天的演唱会的时间
              * todo 默认先取当前最近的一天
              */
-            that.selectDate = that.playDateList[0];
+            that.selectDate = that.playDateList[1];
             that.fetchDatePlayTime();
           },
         });
@@ -335,7 +342,9 @@ $(function() {
              var StMax = parseInt('10');
              var IdCustomer = '14444324'; todo 这个参数暂时写死//
              */
-            that.fetchSeatMap();
+            //that.fetchSeatMap();
+            that.fetchBlock();
+            //that.fetchSeatMapHtml();
           },
         });
       },
@@ -522,6 +531,11 @@ $(function() {
 
               $('#divSeatArray').html(hallLayout);
 
+              /**
+               * 选择最佳位置
+               */
+
+
               /* begin 20140410HTMLSEAT*/
               /*if (isIe9over) {
                jQuery("div").css("filter", "");
@@ -543,6 +557,157 @@ $(function() {
         };
 
         _fetch(param);
+      },
+
+      fetchBlock: function() {
+        let that = this;
+
+        $.ajax({
+          url    : `/index/fetchblock`,
+          data   : {pIdTime: that.currentPlayInfo[0].idTime},
+          success: function(res) {
+            console.log(res);
+            that.block = res + '';
+            that.fetchSeatMap();
+            //that.fetchSeatMapHtml();
+          }
+      })
+      },
+
+      /**
+       * todo （废弃）对于获取座位图的逻辑重新整理
+       * 上面的是走的接口，但是会有问题，(还是走上面的，这个存在跨域等问题)
+       * 我直接把这个iframe的地址获取到之后，直接爬取整个html, 因为对于任何的不同的演唱会的
+       * 座位图都是不一样的，所以座位的背景图都是动态的，直接获取这个html比较靠谱
+       * http://ticket.yes24.com/Pages/Perf/Sale/
+       * PerfSaleHtmlSeat.aspx?idTime=984380&
+       * idHall=8167&block=0&stMax=10&pHCardAppOpt=0
+       *
+       * 获取到座位的html，然后通过正则匹配出里面的座位图，然后再结合我们的js下单
+       *
+       * 这个的前一步是获取 演唱会的block，这个参数
+       * 源代码：
+       * function fax_GetTimeBlock(jpIdTime, jpIdHall, jpCardOpt) {
+          $j.ajax({
+              async: true,
+              type: "POST",
+              url: "/Pages/Perf/Sale/Ajax/Perf/TimeFlashBlock.aspx",
+              data: { pIdTime: $j.trim(jpIdTime) },
+              dataType: "text",
+              success: function (data, textStatus) {
+                  if (data != "") {
+                      var jvFrame = "";
+                      var jvSeatViewFile = "";
+
+                      if (jgSeatViewMode == jcHTML) jvSeatViewFile = "PerfSaleHtmlSeat.aspx";
+                      else jvSeatViewFile = "PerfSaleSeat.aspx";
+
+                      jvFrame += "<iframe name='ifrmSeatFrame' src='/Pages/Perf/Sale/" + jvSeatViewFile;
+                      jvFrame += "?idTime=" + jpIdTime;
+                      jvFrame += "&idHall=" + jpIdHall;
+                      jvFrame += "&block=" + data;
+                      jvFrame += "&stMax=" + jgSeatSelectMax;
+                      jvFrame += "&pHCardAppOpt=" + jpCardOpt;
+                      jvFrame += "' width=970 height=636 frameborder=0
+                       marginheight=0 marginwidth=0 scrolling=no></iframe>";
+
+       *
+       *
+       */
+
+      fetchSeatMapHtml: function() {
+
+        let that = this;
+
+        /**
+         * todo 这里先获取第一场做演练
+         * 后面做遍历
+         */
+        let param = {
+          'idHall'    : that.currentPlayInfo[0].idHall, // 大厅
+          'idTime'    : that.currentPlayInfo[0].idTime, // 时间 980360 详情页的选择时间之后的当天的那个场次的时间
+          'block'     : that.block,
+          stMax       : 10,
+          pHCardAppOpt: 0,
+        };
+        /*idTime: 984380
+        idHall: 8167
+        block: 0
+        stMax: 10 //看源代码是写死的 var StMax = parseInt('10');
+        pHCardAppOpt: 0*/
+
+        let url = `/index/fetchseatmaphtml?idHall`+
+                  `=${param.idHall}&idTime=${param.idTime}&block=${that.block}&stMax=10&pHCardAppOpt=0`
+
+        $('#J-seatMap')[0].src = url;
+
+        /*let _fetch = function(param) {
+
+          $.ajax({
+            url    : `/index/fetchseatmaphtml`,
+            data   : param,
+            dataType:'html',
+            success: function(res) {
+              console.log(res);
+
+              /!**
+               * todo 获取座位图 这里面的一个参数暂时写死
+               *  var IdHall = '8491';
+               var IdTime = '980360';
+               var Block = '0';
+               var StMax = parseInt('10');
+               var IdCustomer = '14444324'; todo 这个参数暂时写死//
+               *
+               * *!/
+                  //var hallLayout = $(res).find("Layout").text();
+
+                  //$('#divSeatArray').html(hallLayout);
+              var msg     = res;
+              /!*var timdid  = $(msg).find('IdTime').text();
+              var blockid = $(msg).find('Block').text();
+
+              /!*if ((timdid == IdTime && blockid == Block) == false) {
+               return;
+               }*!/
+
+              var hallLayout = $(msg).find('Layout').text();
+              var background = $(msg).find('Background').text();
+              //            var regend = $(msg).find("Regend").text();
+              //            var section = $(msg).find("Section").text();
+              var blockRemain = $(msg).find('BlockRemain').text();
+              var blockSeat   = $(msg).find('BlockSeat').text();
+
+              $('#divSeatArray').html(hallLayout);*!/
+              window.$temp = $(msg);
+              $('#divGuide').html($temp.find('#divGuide'));
+              //$('#J-seatMap').html(msg);
+
+              /!**
+               * 选择最佳位置
+               *!/
+
+
+              /!* begin 20140410HTMLSEAT*!/
+              /!*if (isIe9over) {
+               jQuery("div").css("filter", "");
+               }*!/
+              /!* end 20140410HTMLSEAT*!/
+
+              /!*CreateHallBgImg(background);
+              //          CreateLegend(regend);
+              //          CreateSection(section);
+              CreateRemainArgs(blockRemain);
+              TicketMapping(blockSeat);*!/
+
+              //////////////
+              /!*setTimeout(function() {
+               window.open('http://ticket.yes24.com/Pages/Perf/Sale/PerfSaleProcess.aspx?IdPerf=30851&IdTime=976594')
+               }, 1000)*!/
+            },
+          });
+        };
+
+        _fetch(param);*/
       },
       show        : function() {
         this.visible = true;
