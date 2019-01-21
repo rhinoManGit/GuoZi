@@ -542,3 +542,10 @@ html, body {
 .price-seat strong {
     padding: 0 5px;
 }
+son {
+    position: absolute;
+    background: url(http://tkfile.yes24.com/images/ticket_new/ic_seat_on.gif) no-repeat;
+    height: 12px;
+    width: 11px;
+    z-index: 10;
+}

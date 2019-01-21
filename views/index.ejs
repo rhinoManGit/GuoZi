@@ -16,6 +16,7 @@
         <div id=sales-chart style="height: 250px;"></div>
     </div>
     <div id=app>
+        <input type="hidden" value="" id="IdTime">
         <div class="content">
             <div class="content-left">
                 <template>
@@ -52,7 +53,15 @@
                 <template>
                     邮箱：<i-input v-model="email" placeholder="输入邮箱" style="width: 130px" />
                 </template>
-                <br />
+                <template>
+                    坐席张数：<i-input v-model="count" placeholder="输入邮箱" style="width: 130px" />
+                </template>
+                <template>
+                    是否联席：<i-Select v-model="isLianXi" style="width:200px">
+                        <i-Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-Option>
+                    </i-Select>
+                </template>
+                <br/>
                 <template>
                     <i-button type="primary" style="margin-top: 10px" @click="running">开始抢票</i-button>
                 </template>
@@ -131,6 +140,28 @@
                             </div>
                         </div>
                     </div>
+                    <!--当前选择的座位列表-->
+                    <h3 class="common-title">选择座位：...</h3>
+                    当前选择的座位
+                    <div id="liSelSeat" style="    width: 200px;
+    padding: 11px 10px;
+    border: 1px solid #DDD;
+    margin-top: 5px;
+    overflow: hidden;">
+
+                    </div>
+
+                    <h3 class="common-title">进入占位环节，锁定坐席：...</h3>
+
+                    <div id="step01_time" class="step01_time" style="display: block;">
+                        <ul id="ulSeatSpace" class="hi" style="background: #b5d2cf;"></ul>
+                    </div>
+
+
+                    <div id="StepCtrlBtn01" style="display: none;">
+                        <a class="dcursor" onclick="fdc_VerifySelSeatNumber();">
+                            <img src="http://tkfile.yes24.com/img/perfsale/btn_next04.gif" alt="다음단계"></a>
+                    </div>
 
                     <!-- 选择优惠码 -->
                     <h3 class="common-title">选择优惠券：... 当前优惠券：</h3>
@@ -162,8 +193,13 @@
         </div>
     </div>
     <script src="/app/assets/js/jquery-1.10.2.min.js"></script>
+<!--
+    <script src="http://ticket.yes24.com/inc/js/jquery-1.7.2.js"></script>
+-->
     <script src="/app/assets/js/vue.min.js"></script>
     <script src="/app/assets/js/iview.min.js"></script>
+    <script src="/app/js/chooseSeat.js"></script>
+    <script src="/app/js/book.js"></script>
     <script src="/app/js/index.js"></script>
     </body>
 </html>

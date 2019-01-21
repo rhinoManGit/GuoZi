@@ -22,7 +22,7 @@ $(function() {
   var ArBlockFile     = new Array();
 
   //판매가능 좌석맵핑
-  function TicketMapping(ticketData) {
+  /*function TicketMapping(ticketData) {
     var tickets = ticketData.split(_lines);
     for (var i = 0; i < tickets.length; i++) {
       var ticket = tickets[i].split(_split);
@@ -38,7 +38,7 @@ $(function() {
         }
       }
     }
-  }
+  }*/
 
   //블럭별 잔여석 정보 셋팅
   function CreateRemainArgs(blocktickets) {
@@ -139,6 +139,25 @@ $(function() {
        */
 
       step3    : '',
+      /*
+        坐席张数
+       */
+      count    :'',
+      /**
+       * 是否联席
+       *
+       */
+      isLianXi: '1',
+      cityList: [
+        {
+          value: '1',
+          label: '联席'
+        },
+        {
+          value: '0',
+          label: '不联席'
+        }
+        ],
 
       /**
        * 重要参数
@@ -202,7 +221,7 @@ $(function() {
              * 获取当天的演唱会的时间
              * todo 默认先取当前最近的一天
              */
-            that.selectDate = that.playDateList[1];
+            that.selectDate = that.playDateList[6];
             that.fetchDatePlayTime();
           },
         });
@@ -481,6 +500,7 @@ $(function() {
                 });*/
         let that = this;
 
+        $('#IdTime').val(that.currentPlayInfo[0].idTime);
         /**
          * todo 这里先获取第一场做演练
          * 后面做遍历
@@ -548,6 +568,17 @@ $(function() {
               CreateRemainArgs(blockRemain);
               TicketMapping(blockSeat);
 
+              /**
+               * todo 等待渲染完成以后 执行 autoSelect
+               * 选择座位以后的操作
+               *
+               */
+
+              setTimeout(function() {
+                that.autoSelect();
+              }, 500);
+              //ChoiceEndNew();
+
               //////////////
               /*setTimeout(function() {
                window.open('http://ticket.yes24.com/Pages/Perf/Sale/PerfSaleProcess.aspx?IdPerf=30851&IdTime=976594')
@@ -572,6 +603,150 @@ $(function() {
             //that.fetchSeatMapHtml();
           }
       })
+      },
+
+      /**
+       * 自动选择一个座位
+       */
+      autoSelect: function() {
+
+
+        let that = this;
+        /**
+         * todo 等待渲染完成以后 执行 chooseEnd
+         * 选择座位以后的操作
+         *
+         */
+        setTimeout(function() {
+          $('#divSeatArray').find('.s6').eq(3).trigger('click');
+
+          // todo 选择座位以后的操作
+          that.ChoiceEndNew();
+        }, 1000)
+      },
+
+      ChoiceEndNew:function() {
+
+        /*
+         每当选择一个座位以后就会生成一个这样的p标签
+         <p id="C1500029" class="txt2" name="cseat" grade="R석">1층 K열 019번</p>
+         */
+        var selSeatCnt = $("p[name=cseat]").length;
+
+        if (selSeatCnt == 0) {
+          alert('좌석을 선택해주세요.');
+          return;
+        }
+
+        if (IdTime == "875463" || IdTime == "877498" || IdTime == "877530" ||
+            IdTime == "877531" || IdTime == "877657" || IdTime == "877658" ||
+            IdTime == "877623" || IdTime == "877659" || IdTime == "877660" ||
+            IdTime == "877624" || IdTime == "877661" || IdTime == "877662" ||
+            IdTime == "906865" || IdTime == "906965" || IdTime == "906966" ||
+            IdTime == "906792" || IdTime == "906794" || IdTime == "906795" ||
+            IdTime == "906652" || IdTime == "906643" || IdTime == "906653" ||
+            IdTime == "968211" || IdTime == "968263")
+        { //나훈아티켓 서울/부산/대구
+          //연석 체크  首尔/釜山/大邱
+          //联席格子
+          if (!ChkSequenceSeat()) {
+            //alert("연속된 좌석을 선택해 주세요.");
+            //return;
+            // 未选择连接的座位。您要继续吗
+            if (!confirm("연속된 좌석이 선택되지 않았습니다. 계속하시겠습니까?")) {
+              ChoiceReset();
+              return;
+            }
+          }
+        }
+
+        var token = "";
+        var tokenClass = "";
+
+
+        jQuery.each($("p[name=cseat]"), function () {
+
+          //0616수정
+          var idThis = $(this).attr("id");
+
+          if (token != "") {
+            token += "," + idThis.replace('C', '');
+          } else {
+            token += idThis.replace('C', '');
+          }
+
+
+          if (tokenClass != "") {
+            tokenClass += "," + $(this).attr("grade");
+          } else {
+            tokenClass += $(this).attr("grade");
+          }
+        });
+
+
+
+        if (token == "" || tokenClass == "") {
+          alert('좌석 선택정보가 올바르지 않습니다.'); //您的座位选择信息不正确
+          return;
+        }
+
+        if (HCardAppOpt == "1") {
+
+          if ((selSeatCnt > 2) && (tokenClass.indexOf('G1석') != -1 || tokenClass.indexOf('G2석') != -1)) {
+            alert('현대카드 앱카드 30%할인은\nG3~C석에 한해 2매만 선택 가능합니다.');
+            return;
+          }
+
+          if (selSeatCnt > 2) {
+            alert('현대카드 앱카드 30%할인은\n1인 2매 할인 가능합니다.');
+            return;
+          }
+
+          if (tokenClass.indexOf('G1석') != -1 || tokenClass.indexOf('G2석') != -1) {
+            alert('현대카드 앱카드 30%할인은\nG3~C석에 한해 할인 가능합니다.\n(G1석,G2석은 일반예매로만 가능)');
+            return;
+          }
+        }
+
+        if (IdTime == '720503' || IdTime == '720504' || IdTime == '720505' || IdTime == '720506' || IdTime == '720507' ||
+            IdTime == '720508' || IdTime == '720512' || IdTime == '720513' || IdTime == '720514' || IdTime == '720516' ||
+            IdTime == '720517' || IdTime == '720518' || IdTime == '720519' || IdTime == '720520' || IdTime == '720515' ||
+            IdTime == "718882" || IdTime == '718875' || IdTime == '718879' || IdTime == '718880' || IdTime == '718881' || IdTime == '718882' ||
+            IdTime == '718883') {
+
+          var classinfo = tokenClass.split(",");
+          var nVipCnt = 0;
+
+          for (var i = 0; i < classinfo.length; i++) {
+            if (classinfo[i] == "VIP(1인1매)석") {
+              nVipCnt += 1;
+            }
+          }
+
+          if (nVipCnt > 1) {
+            alert('예매 가능한 매수가 초과되었습니다.\n예매중인 회차의 VIP(1인1매)석은 1매만 예매가 가능합니다.');
+            return;
+          }
+        }
+
+        let that = this;
+        /**
+         * 进入占位环节
+         */
+        $.ajax({
+          type: "post",
+          url: '/index/lockseat',
+          data: { "name": that.idCustomer,
+            "idTime": that.currentPlayInfo[0].idTime, "token": token, "Block": that.block},
+          dataType: "xml",
+          async: true,
+          success: function (msg) {
+            ChoiceEnd_CallBack(msg, token, tokenClass);
+          },
+          error: function (msg) {
+            errormsg(msg.responseText);
+          }
+        });
       },
 
       /**
@@ -709,6 +884,25 @@ $(function() {
 
         _fetch(param);*/
       },
+
+      /**
+       * 选座位
+       * 每个座位的ID就是这个value，所有的选座都是取这个div然后从这个里面读取对应的id来完成的下单
+       * 选择座位以后，调用下单的时候调用的就是这个方法 ChoiceEnd
+       * <div class="son" id="t1500029"
+       * style="LEFT: 391px; TOP: 298px" name="tk" value="1500029" title="1층 K열 019번" grade="R석" oldclass="s6"></div>
+       */
+      book:function() {
+
+        ChoiceEndNew();
+      },
+      /**
+       * 选择座位
+       */
+      choosieZuowei: function() {
+
+      },
+
       show        : function() {
         this.visible = true;
       },
