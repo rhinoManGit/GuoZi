@@ -1,205 +1,228 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=utf-8>
-        <title>SpaceLab</title>
-        <link rel=stylesheet href=/app/assets/css/magic.css>
-        <link rel=stylesheet href=/app/assets/css/iview.css>
-        <link rel=stylesheet href=/app/css/index.css>
+<head>
+    <meta charset=utf-8>
+    <title>SpaceLab</title>
+    <link rel=stylesheet href=/app/assets/css/magic.css>
+    <link rel=stylesheet href=/app/assets/css/iview.css>
+    <link rel=stylesheet href=/app/css/index.css>
 
-        <link rel=stylesheet href=/app/css/perfsale.css>
-        <link rel=stylesheet href=/app/css/reserve_seat_2013.css>
+    <link rel=stylesheet href=/app/css/perfsale.css>
+    <link rel=stylesheet href=/app/css/reserve_seat_2013.css>
 
-    </head>
-    <body>
-    <div class=panel-body style="display: none">
-        <div id=sales-chart style="height: 250px;"></div>
-    </div>
-    <div id=app>
-        <input type="hidden" value="" id="IdTime">
-        <div class="content">
-            <div class="content-left">
-                <template>
-                    用户：<i-input v-model="username" placeholder="用户名" style="width: 200px" />
-                </template>
-                <template>
-                    密码：<i-input v-model="ps" type="password" placeholder="密码" style="width: 200px" />
-                </template>
-                <template>
-                    演唱会id：<i-input v-model="detailId" placeholder="输入演唱会URL地址" style="width: 200px" />
-                </template>
-                <template>
-                    时间（选择月份即可）：<Date-Picker type="date" v-model="date" placeholder="Select date" style="width: 200px"></Date-Picker>
-                </template>
-                <div style="height: 5px"></div>
-                <br />
-                <template>
-                    姓名：<i-input v-model="user" placeholder="姓名" style="width: 200px" />
-                </template>
-                <template>
-                    电话：<i-input v-model="tel_1" placeholder="010" style="width: 60px" />
-                </template>
-                <template>
-                    -<i-input v-model="tel_2" type="password" placeholder="5811" style="width: 60px" />
-                </template>
-                <template>
-                    -<i-input v-model="tel_3" type="password" placeholder="2859" style="width: 65px" />
-                </template>
-                <template>
-                    邮寄地址：<i-input v-model="address" placeholder="输入地址" style="width: 500px" />
-                </template>
-                <div style="height: 5px"></div>
-                <br />
-                <template>
-                    邮箱：<i-input v-model="email" placeholder="输入邮箱" style="width: 130px" />
-                </template>
-                <template>
-                    坐席张数：<i-input v-model="count" placeholder="输入邮箱" style="width: 130px" />
-                </template>
-                <template>
-                    是否联席：<i-Select v-model="isLianXi" style="width:200px">
-                        <i-Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-Option>
-                    </i-Select>
-                </template>
-                <br/>
-                <template>
-                    <i-button type="primary" style="margin-top: 10px" @click="running">开始抢票</i-button>
-                </template>
+</head>
+<body>
+<div class=panel-body style="display: none">
+    <div id=sales-chart style="height: 250px;"></div>
+</div>
+<div id=app>
+    <input type="hidden" value="" id="IdTime">
+    <div class="content">
+        <div class="content-left">
+            <template>
+                用户：
+                <i-input v-model="username" placeholder="用户名" style="width: 200px"/>
+            </template>
+            <template>
+                密码：
+                <i-input v-model="ps" type="password" placeholder="密码" style="width: 200px"/>
+            </template>
+            <template>
+                演唱会id：
+                <i-input v-model="detailId" placeholder="输入演唱会URL地址" style="width: 200px"/>
+            </template>
+            <template>
+                时间（选择月份即可）：
+                <Date-Picker type="date" v-model="date" placeholder="Select date" style="width: 200px"></Date-Picker>
+            </template>
+            <div style="height: 5px"></div>
+            <br/>
+            <template>
+                姓名：
+                <i-input v-model="user" placeholder="姓名" style="width: 200px"/>
+            </template>
+            <template>
+                电话：
+                <i-input v-model="tel_1" placeholder="010" style="width: 60px"/>
+            </template>
+            <template>
+                -
+                <i-input v-model="tel_2" type="password" placeholder="5811" style="width: 60px"/>
+            </template>
+            <template>
+                -
+                <i-input v-model="tel_3" type="password" placeholder="2859" style="width: 65px"/>
+            </template>
+            <template>
+                邮寄地址：
+                <i-input v-model="address" placeholder="输入地址" style="width: 500px"/>
+            </template>
+            <div style="height: 5px"></div>
+            <br/>
+            <template>
+                邮箱：
+                <i-input v-model="email" placeholder="输入邮箱" style="width: 130px"/>
+            </template>
+            <template>
+                坐席张数：
+                <i-input v-model="count" placeholder="输入邮箱" style="width: 130px"/>
+            </template>
+            <template>
+                是否联席：
+                <i-Select v-model="isLianXi" style="width:200px">
+                    <i-Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-Option>
+                </i-Select>
+            </template>
+            <br/>
+            <template>
+                <i-button type="primary" style="margin-top: 10px" @click="running">开始抢票</i-button>
+            </template>
+        </div>
+        <!-- 内容 -->
+        <!-- 日期列表 -->
+        <div class="frame-content">
+            <div v-show="playDateList.length">
+                <h3 class="common-title">【本月】演唱会演出时间：</h3>
+                <div class="playtime">
+                    <ul>
+                        <li v-for="item in playDateList" class="date-btn">
+                            {{ item }}
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- 内容 -->
-            <!-- 日期列表 -->
-            <div class="frame-content">
-                <div v-show="playDateList.length">
-                    <h3 class="common-title">【本月】演唱会演出时间：</h3>
-                    <div class="playtime">
-                        <ul>
-                            <li v-for="item in playDateList" class="date-btn">
-                                {{ item }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-               <!-- <div v-show="playDateList.length">
-                    <h3 class="common-title">是否存在演唱会抢票状态：</h3>
-                    <p class="result_title">[{{sDateStatus}}]</p>
-                </div>-->
+            <!-- <div v-show="playDateList.length">
+                 <h3 class="common-title">是否存在演唱会抢票状态：</h3>
+                 <p class="result_title">[{{sDateStatus}}]</p>
+             </div>-->
 
-                <!--<div v-show="step3">
-                    <h3 class="common-title">获取当前日期{{date}}场次信息：</h3>
-                    <p class="result_title">{{step3}}.......</p>
-                </div>
+            <!--<div v-show="step3">
+                <h3 class="common-title">获取当前日期{{date}}场次信息：</h3>
+                <p class="result_title">{{step3}}.......</p>
+            </div>
 -->
-                <div v-show="playSceneList.length">
-                    <h3 class="common-title">获取当天【 {{selectDate}} 】场次信息：</h3>
-                    <div class="result_title">当天场次：
-                        <ul>
-                            <li v-for="(item, i) in playSceneList">
-                                <span v-bind:class="{ select: item.select }">第{{i + 1}}场：{{ item.scene}}</span>
-                            </li>
-                        </ul>
-                   </div>
+            <div v-show="playSceneList.length">
+                <h3 class="common-title">获取当天【 {{selectDate}} 】场次信息：</h3>
+                <div class="result_title">当天场次：
+                    <ul>
+                        <li v-for="(item, i) in playSceneList">
+                            <span v-bind:class="{ select: item.select }">第{{i + 1}}场：{{ item.scene}}</span>
+                        </li>
+                    </ul>
                 </div>
+            </div>
 
-                <div v-show="seatInfoText">
-                    <h3 class="common-title">获取时间：【 {{selectDate}} 】,
-                        场次:【{{playSceneList.length? playSceneList[0].scene : ''}}】的坐席信息（查看即可）：</h3>
-                    <div class="result_title">坐席：
-                        <ul v-html="seatInfoText"></ul>
-                    </div>
+            <div v-show="seatInfoText">
+                <h3 class="common-title">获取时间：【 {{selectDate}} 】,
+                    场次:【{{playSceneList.length? playSceneList[0].scene : ''}}】的坐席信息（查看即可）：</h3>
+                <div class="result_title">坐席：
+                    <ul v-html="seatInfoText"></ul>
                 </div>
-                <div v-show="playInfoText" style="padding: 5px 1px;color: #ed1b1b;font-size: 18px;">..
-                    ....................................................... 进入占座
-                    ................................................</div>
-                <div v-show="playInfoText">
-                    <h3 class="common-title">
-                        获取详细的【演出时间 和 大厅信息】，【{{selectDate}}】, 相信信息：</h3>
-                    <div class="result_title" v-html="playInfoText"></div>
-                </div>
+            </div>
+            <div v-show="playInfoText" style="padding: 5px 1px;color: #ed1b1b;font-size: 18px;">..
+                ....................................................... 进入占座
+                ................................................
+            </div>
+            <div v-show="playInfoText">
+                <h3 class="common-title">
+                    获取详细的【演出时间 和 大厅信息】，【{{selectDate}}】, 相信信息：</h3>
+                <div class="result_title" v-html="playInfoText"></div>
+            </div>
 
-                <div v-show="seatInfo">
-                    <h3 class="common-title">获取：【{{selectDate}}】, 场次【{{ selectScene.scene }}】详情信息
-                        （价格，余位）：</h3>
-                    <div class="result_title price-seat" v-html="seatInfo">弹框选座，选座价格</div>
-                </div>
+            <div v-show="seatInfo">
+                <h3 class="common-title">获取：【{{selectDate}}】, 场次【{{ selectScene.scene }}】详情信息
+                    （价格，余位）：</h3>
+                <div class="result_title price-seat" v-html="seatInfo">弹框选座，选座价格</div>
+            </div>
 
-                <div v-show="seatInfo">
-                    <span class="fenge">............................................................</span>
-                    <h3 class="common-title">进入【 智能选座 】环节：【{{selectDate}}】....</h3>
+            <div v-show="seatInfo">
+                <span class="fenge">............................................................</span>
+                <h3 class="common-title">进入【 智能选座 】环节：【{{selectDate}}】....</h3>
 
-                    <!-- 弹出选座 界面-->
-                    <div class="bx_seatbg">
-                        <div class="seatarea">
-                            <div class="bx_top"></div>
-                            <div id="divGuide" class="bx_con1">
-                                <div id="divContainer" class="raffer"
-                                     style="width: 678px;height: 585px;
+                <!-- 弹出选座 界面-->
+                <div class="bx_seatbg">
+                    <div class="seatarea">
+                        <div class="bx_top"></div>
+                        <div id="divGuide" class="bx_con1">
+                            <div id="divContainer" class="raffer"
+                                 style="width: 678px;height: 585px;
                                      background-repeat: no-repeat;background-position: 0px 0px;">
-                                    <div id="divSeatArray"></div>
-                                </div>
+                                <div id="divSeatArray"></div>
                             </div>
                         </div>
                     </div>
-                    <!--当前选择的座位列表-->
-                    <h3 class="common-title">选择座位：...</h3>
-                    当前选择的座位
-                    <div id="liSelSeat" style="    width: 200px;
+                </div>
+                <!--当前选择的座位列表-->
+                <h3 class="common-title" style="clear: both">选择座位：...</h3>
+                当前选择的座位
+                <div id="liSelSeat" style="    width: 200px;
     padding: 11px 10px;
     border: 1px solid #DDD;
     margin-top: 5px;
     overflow: hidden;">
 
-                    </div>
-
-                    <h3 class="common-title">进入占位环节，锁定坐席：...</h3>
-
-                    <div id="step01_time" class="step01_time" style="display: block;">
-                        <ul id="ulSeatSpace" class="hi" style="background: #b5d2cf;"></ul>
-                    </div>
-
-
-                    <div id="StepCtrlBtn01" style="display: none;">
-                        <a class="dcursor" onclick="fdc_VerifySelSeatNumber();">
-                            <img src="http://tkfile.yes24.com/img/perfsale/btn_next04.gif" alt="다음단계"></a>
-                    </div>
-
-                    <!-- 选择优惠码 -->
-                    <h3 class="common-title">选择优惠券：... 当前优惠券：</h3>
-                    <div class="result_title">
-
-                    </div>
-                    <div v-show="playInfoText" style="padding: 5px 1px;color: #ed1b1b;font-size: 18px;">..
-                        ..........................................
-                        ............. 自动填写订单，开始占位，下单
-                        ................................................</div>
-
-                    <h3 class="common-title">填写订单信息... </h3>
-                    <div class="result_title">
-                    </div>
-
-                    <!--<div id="selectSeatMap">
-
-                    </div>-->
-
-                    <!-- 本月可以选择的 抢票日期 -->
-                    <!--<span>本月可以选择的 抢票日期</span>
-                    <i-Select v-model="Day" style="width:200px">
-                        <i-Option v-for="item in selectDay" :value="item.value" :key="item.value">{{ item.label }}</i-Option>
-                    </i-Select>-->
                 </div>
-               <!-- <h3 class="common-title">获取当天{{date}}场次时间：</h3>
-                <p class="result_title">当天场次：{{playSceneList.join(' , ')}}</p>-->
+
+                <h3 class="common-title">进入占位环节，锁定坐席：...</h3>
+
+                <div id="step01_time" class="step01_time" style="height: auto;
+    padding: 8px 3px;display: block;">
+                    <ul id="ulSeatSpace" class="hi" style="background: #b5d2cf;"></ul>
+                </div>
+
+
+                <div id="StepCtrlBtn01" style="display: none;">
+                    <a class="dcursor" onclick="fdc_VerifySelSeatNumber();">
+                        <img src="http://tkfile.yes24.com/img/perfsale/btn_next04.gif" alt="다음단계"></a>
+                </div>
+
+                <h3 class="common-title">坐席详情：... </h3>
+                <div id="StateBoard" style="display: inline-block !important;
+    padding: 12px 5px;
+    border: 1px solid #FF9800;
+    margin-top: 10px;">
+                    <div id="tk_seat"></div>
+                </div>
+
+                <!-- 选择优惠码 -->
+                <h3 class="common-title">选择优惠券：... 当前优惠券：</h3>
+                <div class="result_title">
+
+                </div>
+                <div v-show="playInfoText" style="padding: 5px 1px;color: #ed1b1b;font-size: 18px;">..
+                    ..........................................
+                    ............. 自动填写订单，开始占位，下单
+                    ................................................
+                </div>
+
+                <h3 class="common-title">填写订单信息... </h3>
+                <div class="result_title">
+                </div>
+
+                <!--<div id="selectSeatMap">
+
+                </div>-->
+
+                <!-- 本月可以选择的 抢票日期 -->
+                <!--<span>本月可以选择的 抢票日期</span>
+                <i-Select v-model="Day" style="width:200px">
+                    <i-Option v-for="item in selectDay" :value="item.value" :key="item.value">{{ item.label }}</i-Option>
+                </i-Select>-->
             </div>
+            <!-- <h3 class="common-title">获取当天{{date}}场次时间：</h3>
+             <p class="result_title">当天场次：{{playSceneList.join(' , ')}}</p>-->
         </div>
     </div>
-    <script src="/app/assets/js/jquery-1.10.2.min.js"></script>
+</div>
+<script src="/app/assets/js/jquery-1.10.2.min.js"></script>
 <!--
     <script src="http://ticket.yes24.com/inc/js/jquery-1.7.2.js"></script>
 -->
-    <script src="/app/assets/js/vue.min.js"></script>
-    <script src="/app/assets/js/iview.min.js"></script>
-    <script src="/app/js/chooseSeat.js"></script>
-    <script src="/app/js/book.js"></script>
-    <script src="/app/js/index.js"></script>
-    </body>
+<script src="/app/assets/js/vue.min.js"></script>
+<script src="/app/assets/js/iview.min.js"></script>
+<script src="/app/js/chooseSeat.js"></script>
+<script src="/app/js/book.js"></script>
+<script src="/app/js/index.js"></script>
+</body>
 </html>

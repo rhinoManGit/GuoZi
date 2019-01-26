@@ -97,7 +97,7 @@ a:hover{color:#888888;text-decoration:none}
 .container h2 span{ float:right; margin-top:3px; *margin-top:-13px;}
 
 .step01_date{ width:265px; height:365px;  border:1px solid #bebebe; float:left; margin-bottom:20px;}
-.step01_time{ width:421px; height:365px;  border:1px solid #bebebe; float:left; margin-left:-1px;}
+.step01_time{ width:421px; height:365px;  border:1px solid #bebebe; /*float:left;*/ margin-left:-1px;}
 .step02_promotion{ height:255px;  border:1px solid #bebebe;}
 .step02_receipt{ height:285px;  border:1px solid #bebebe;}
 .step02_coupon{ height:295px;  border:1px solid #bebebe;}

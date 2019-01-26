@@ -221,7 +221,7 @@ $(function() {
              * 获取当天的演唱会的时间
              * todo 默认先取当前最近的一天
              */
-            that.selectDate = that.playDateList[6];
+            that.selectDate = that.playDateList[0];
             that.fetchDatePlayTime();
           },
         });
@@ -742,6 +742,14 @@ $(function() {
           async: true,
           success: function (msg) {
             ChoiceEnd_CallBack(msg, token, tokenClass);
+
+            /**
+             * todo 选坐一起调用的6个接口
+             */
+            let zuoxi = tokenClass.split('.').join('-');
+            let zuoxiId = token.split('.').join('-');
+            that.fax_GetTimeSeatFlashEnd(zuoxi);
+            that.fax_GetSeatChoiceInfo(zuoxiId);
           },
           error: function (msg) {
             errormsg(msg.responseText);
@@ -893,14 +901,97 @@ $(function() {
        * style="LEFT: 391px; TOP: 298px" name="tk" value="1500029" title="1층 K열 019번" grade="R석" oldclass="s6"></div>
        */
       book:function() {
-
         ChoiceEndNew();
       },
+
       /**
        * 选择座位
        */
       choosieZuowei: function() {
 
+      },
+
+      /**
+       * @todo 这个接口和锁定坐席的接口一起调用的一共有6个， 这个第二个，lock是第1个
+       *
+       *
+       * @param jpCntClass R석
+       * eg. <p id="C600015" class="txt2" name="cseat" grade="R석">1층 B열 006번</p>
+       * pIdTime: 989802
+       * PCntClass: R석-시야제한석-시야제한석
+       */
+      fax_GetTimeSeatFlashEnd :function(jpCntClass) {
+        let that = this;
+
+        $j.ajax({
+          async: true,
+          type: "POST",
+          url: "/index/timeseatflashend",
+          data: {
+            idTime: that.currentPlayInfo[0].idTime/*$j.trim($j("#IdTime").val())*/,
+            PCntClass: jpCntClass
+          },
+          dataType: "html",
+          success: function (data, textStatus) {
+            if (data != "") {
+              var SeatInfo = $j("#step01_time #ulSeatSpace");
+
+              SeatInfo.html(data);
+
+              SeatInfo.find("select[id='selSeatClass']").prop("disabled", true);
+
+              /*
+              todo 暂时 注释
+              fdc_SeatButtonSwitch("show_seat2");
+
+              $j("#StepCtrlBtn01 a").trigger("click");*/
+            }
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            fbk_axAlert("좌석(선택정보) 조회 에러입니다.");
+          },
+          beforeSend: function (xhr, settings) {
+            fax_AjaxLoader(jcAJAX_BEFORESEND, "2_4", "#step01_time h2");
+          },
+          complete: function (xhr, textStatus) {
+            fax_AjaxLoader(jcAJAX_COMPLETE, "2_4", "#step01_time h2");
+          }
+        });
+      },
+
+      /**
+       * @todo 这个接口和锁定坐席的接口一起调用的一共有6个， 这个第二个，lock是第2个
+       *
+       *
+       * @param jpCntClass R석
+       * eg. <p id="C600015" class="txt2" name="cseat" grade="R석">1층 B열 006번</p>
+       * pIdTime: 989802
+       * pIdSeat: 1100023-2300022-2300023
+       */
+      fax_GetSeatChoiceInfo: function (/*jpIdTime, */jpSeat) {
+        let that = this;
+
+        $j.ajax({
+          async: true,
+          type: "POST",
+          url: "/index/seatchoiceinfo",
+          data: {
+            idTime: that.currentPlayInfo[0].idTime, //$j.trim(jpIdTime),
+            pIdSeat: $j.trim(jpSeat)
+          },
+          dataType: "html",
+          success: function (data, textStatus) {
+            $j("#StateBoard #tk_seat").html(data);
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            fbk_axAlert("좌석(선택정보2) 조회 에러입니다.");
+          },
+          beforeSend: function (xhr, settings) {
+            $j("#StateBoard #tk_seat").html("");
+          },
+          complete: function (xhr, textStatus) {
+          }
+        });
       },
 
       show        : function() {
