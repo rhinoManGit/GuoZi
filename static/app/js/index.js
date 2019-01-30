@@ -221,7 +221,7 @@ $(function() {
              * 获取当天的演唱会的时间
              * todo 默认先取当前最近的一天
              */
-            that.selectDate = that.playDateList[0];
+            that.selectDate = that.playDateList[1];
             that.fetchDatePlayTime();
           },
         });
@@ -520,7 +520,7 @@ $(function() {
             url    : `/index/fetchseatmap`,
             data   : param,
             success: function(res) {
-              console.log(res);
+              //console.log(res);
 
               /**
                * todo 获取座位图 这里面的一个参数暂时写死
@@ -597,7 +597,7 @@ $(function() {
           url    : `/index/fetchblock`,
           data   : {pIdTime: that.currentPlayInfo[0].idTime},
           success: function(res) {
-            console.log(res);
+            //console.log(res);
             that.block = res + '';
             that.fetchSeatMap();
             //that.fetchSeatMapHtml();
@@ -750,6 +750,8 @@ $(function() {
             let zuoxiId = token.split('.').join('-');
             that.fax_GetTimeSeatFlashEnd(zuoxi);
             that.fax_GetSeatChoiceInfo(zuoxiId);
+
+
           },
           error: function (msg) {
             errormsg(msg.responseText);
@@ -982,6 +984,11 @@ $(function() {
           dataType: "html",
           success: function (data, textStatus) {
             $j("#StateBoard #tk_seat").html(data);
+
+            /**
+             * todo 开始下单
+             */
+            that.bookStart();
           },
           error: function (xhr, textStatus, errorThrown) {
             fbk_axAlert("좌석(선택정보2) 조회 에러입니다.");
@@ -990,6 +997,36 @@ $(function() {
             $j("#StateBoard #tk_seat").html("");
           },
           complete: function (xhr, textStatus) {
+          }
+        });
+      },
+
+      /**
+       * todo 开始下单
+       */
+      bookStart: function() {
+        this.getUserInfo();
+
+      },
+
+      /**
+       * todo STEP 4
+       */
+      getUserInfo: function() {
+          // 获取用户信息
+
+        $.ajax({
+          type: "post",
+          url: '/index/userinfo',
+          dataType: "html",
+          async: true,
+          success: function (msg) {
+            console.log(msg);
+            $('.J-user-info').html($(msg));
+            $('.J-user-info').find('input').attr('type', '');
+          },
+          error: function (msg) {
+
           }
         });
       },

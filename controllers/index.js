@@ -478,6 +478,37 @@ class Index {
       }
     });
   }
+
+  /**
+   * 选座完成之后的一个接口
+   *
+   */
+  userinfo(req, res, next) {
+
+    let url   = 'http://ticket.yes24.com/Pages/Perf/Sale/Ajax/Perf/DeliveryUserInfo.aspx';
+
+    // todo 必须要有cookie
+    request.post({
+      url: url, headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+
+        /*'Cookie': 'ServiceCookies=MTQ0NDQzMjRgZmVpc2U1MTQ3YFpIT1UgWUlOR2AwYDA1YHNoaWJhYGAxNDQ0NDMyNGAzMWBNTS9sU21DOVlKVXZQbnBpNmRJa2hzSkZtY3RpU2xBQk9MaER3dWNtcVpNZUN1aGk3NS9WNjhVRHF4ZG43Y291eW5jRTJLQlFDaEQxL2VyVlRFcEVVZz09YGNoL3R2U3U5d1JYZ0dMQy85aiszSWZKcHJGWll1L2NOSVJ6TnlsTmFNS3RRVkRlTnNBSmRwcTdFZFBkZ2JIRWxjYUl0Qm5NOHI4SGUwZW1rMjhGaUE2N3BuNktqQVg0UXp6Nmtvd0hScjBwTGJNVmhaMG5Qa1lRYm9UcW1tdWw3c2Fabm9XK2UrcmtjdGUyQ1pKeWROc0J2MWVQVVR2TlkrbSt0NUVmV2JZTT1gNDJpSjRwbkRPbE1iVkthZko1NG5SZz09;'
+         */
+        'Cookie': 'PCID=15412575754544845754324; __utmz=186092716.1543761346.9.3.utmcsr=10.102.42.86:1302|utmccn=(referral)|utmcmd=referral|utmcct=/; ASP.NET_SessionId=2cezhhvcncsyd1tkuqqiv5du; __utmc=186092716; RecentViewGoods=; __utma=12748607.1899395315.1541259374.1541842300.1546615669.4; __utmc=12748607; __utmz=12748607.1546615669.4.4.utmcsr=ticket.yes24.com|utmccn=(referral)|utmcmd=referral|utmcct=/Pages/Perf/Detail/Detail.aspx; HTTP_REFERER=https://www.yes24.com/Templates/FTLogin.aspx?ReturnURL=http://ticket.yes24.com/Pages/Perf/Detail/Detail.aspx&&ReturnParams=IdPerf=32050`Gcode=009_112_001; AT_LOGIN=AT_MID=meilan1&AT_SID=31617DC7FADC961F0F5960AD07D91B90&AT_PID=0x572F1A06ACE3D962AA6DBFDF02F2F490AFD632F5&AT_LDTS=201901050035; ClientIPAddress=; ServerIPAddress=; MEM_NO=; MEM_ID=; MEM_NM=; FAMILY_PAY_NO=; MEM_GB=; NICK_NM=; BLOG_URL=; CART_NO=; MEM_AGE=; NEW_PID=; ServiceCookies=MTQ0NDE1OTBgbWVpbGFuMWBMSSBLT05HYDBgMDVgxOFgYDE0NDQxNTkwYDQwYDRhV2hna0lFSEorRnBnczlwc0NwY05reHExanlkLzNONFEvRloxOC9OdVdEbG9CN0lrbTJ4VzlNMEZJNjBESFpgY2gvdHZTdTl3UlhnR0xDLzlqKzNJZkpwckZaWXUvY05JUnpOeWxOYU1LdFFWRGVOc0FKZHBxN0VkUGRnYkhFbGNhSXRCbk04cjhIZTBlbWsyOEZpQTY3cG42S2pBWDRReno2a293SFJyMHBMYk1WaFowblBrWVFib1RxbW11bDdzYVpub1crZStya2N0ZTJDWkp5ZE5zQnYxZVBVVHZOWSttK3Q1RWZXYllNPWBtbjg5ZE9FdmJtMmZCbnR5ckVlRit3PT0=; Mallinmall_CKMN=14441590; Mallinmall_CKMI=meilan1; Mallinmall_CKMNM=LI+KONG; Mallinmall_CKMAG=40; Yes24LoginID=meilan1; EntLoginInfo=bWVpbGFuMXwyMDE5LTAxLTA1IL/AwPwgMTI6MzU6MzU=; RecentViewInfo=NotCookie%3DY%26Interval%3D5%26ReloadTime%3DFri%2C%2004%20Jan%202019%2015%3A35%3A35%20GMT%26First%3Dtrue; YesTicket=UserNO=188,245,80,36,225,67,30,48,1,226,126,212,222,58,235,168&UserID=99,234,69,255,226,231,191,185&UserName=13,227,113,214,49,206,191,105&UserNickName=164,80,231,199,85,14,246,109&Email=50,7,127,115,196,36,63,201,58,103,19,12,172,140,46,27,187,143,247,158,65,238,42,0&ManiaLevel=185,175,224,130,94,14,207,79&MemberStatus=245,54,43,158,39,91,228,116&UserIdentiNumber=186,219,219,185,232,25,153,61,215,6,226,217,129,93,201,98&StarLevel=245,54,43,158,39,91,228,116&PromotionCode=245,54,43,158,39,91,228,116&MemberGB=100,254,24,90,225,175,0,66&UserAge=18,183,46,181,134,149,118,19&ORD_PATH_GB=195,31,27,161,165,198,213,175&ZipCode=255,150,156,169,164,205,217,43&Address=29,144,253,142,54,202,36,187&Addr1=245,54,43,158,39,91,228,116&Addr2=245,54,43,158,39,91,228,116&Addr3=245,54,43,158,39,91,228,116&Addr4=245,54,43,158,39,91,228,116&Phone=48,70,225,17,96,140,199,186,95,2,35,151,126,204,152,122&Mobile=48,70,225,17,96,140,199,186,95,2,35,151,126,204,152,122&OrgID=13,101,187,16,10,24,135,131&Channel=13,101,187,16,10,24,135,131; __utma=186092716.778539359.1541257578.1546612005.1546616414.22; TVPERF=9,205,148,67,207,154,165,152,149,37,174,14,127,99,168,116,138,110,246,241,108,29,141,70'
+      },
+    }, function(error, response, body) {
+      console.log('ssssssssss', body);
+
+      if (error) {
+        return next(error);
+      }
+
+      if (response.statusCode == 200) {
+        res.send(body);
+      }
+    });
+  }
+
   /**
    * 本地详情
    * @param req
